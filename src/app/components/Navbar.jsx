@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
@@ -24,25 +25,32 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
-      <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
+    <nav className="fixed mx-auto shadow-md top-0 left-0 right-0 bg-[#20202a] bg-opacity-100 z-50">
+      <div className="flex container lg:py-1 flex-wrap items-center justify-between mx-auto px-4 py-2 white">
         <Link
           href={"/"}
-          className="text-2xl md:text-5xl text-white font-semibold"
-        >HOME
+          className="text-2xl md:text-5xl font-semibold w-20 h-20 overflow-hidden rounded-full"
+        >     <Image
+              src="/images/photos/ProfileGreen.jpg"
+              alt="hero image"
+              className="object-fit w-full"
+              layout=""
+              width={80}
+              height={80}
+            />
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
+              className="flex items-center px-3 py-2 border rounded border-slate-200 text-white hover:text-primary-100 hover:border-white"
             >
               <Bars3Icon className="h-5 w-5" />
             </button>
           ) : (
             <button
               onClick={() => setNavbarOpen(false)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
+              className="flex items-center px-3 py-2 border rounded border-slate-200 text-white hover:text-primary-100 hover:border-white"
             >
               <XMarkIcon className="h-5 w-5" />
             </button>
