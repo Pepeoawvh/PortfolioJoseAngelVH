@@ -11,9 +11,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html className="w-100 overflow-x-hidden" lang="en">
+    <html className="w-100 overflow-x-hidden bg-[#191923]" lang="en">
       <Navbar />
-      <body className= {` ${inter.className}`}>
+      <body className= {`bg-[#191923] ${inter.className}`}>
       {children}
       <WspButton />
       </body>
