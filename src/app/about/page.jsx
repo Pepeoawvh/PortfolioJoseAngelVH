@@ -32,10 +32,25 @@ const TAB_DATA = [
     title: "Certifications",
     id: "certifications",
     content: (
-      <ul className="list-disc pl-2">
-        <li>Insignias UDD</li>
+  
+  <div className="grid grid-cols-3">
+    <Image
+      src="https://images.credly.com/size/680x680/images/791d0469-ca15-4bc9-b9b3-2b8dca821b62/image.png"
+      width={150}
+      height={150}
+    />
+        <Image
+      src="https://images.credly.com/size/680x680/images/71ed1274-3d7c-40f4-9194-e464643719e3/image.png"
+      width={150}
+      height={150}
+    />
+        <Image
+      src="https://images.credly.com/size/680x680/images/50a7358c-80d1-4a5d-a1d7-a9e0997de2be/image.png"
+      width={150}
+      height={150}
+    />
+  </div>
 
-      </ul>
     ),
   },
 ];
@@ -57,7 +72,7 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4 mt-10 ">Perfil Profesional</h2>
           <p className="text-base lg:text-lg">
-            Soy Fotografo Profesional y Desarrollador Fullstack. Tengo experiencia trabajando con JavaScript, React, Node.js, Express, MongoDB, HTML, CSS, and Git. Soy una persona curiosa y comprometida, lo que me permite aprender efectivamente todo aquello que me interesa, busco expandir constantemente mis conocimientos y habilidades. Tengo mucha experiencia trabajando con equipos multidisciplinarios y diversos.
+            Soy Fotografo Profesional y Desarrollador Fullstack. Tengo experiencia trabajando con HTML, CSS,JavaScript, React, Node.js, Express, MongoDB,  y Git. Soy una persona curiosa y comprometida, entusiasta y autodidacta lo que me permite aprender efectivamente todo aquello que me interesa, busco expandir constantemente mis conocimientos y habilidades. Tengo mucha experiencia trabajando con equipos multidisciplinarios y diversos.
             Me interesa participar en proyectos para aumentar mi experiencia.
           </p>
           <div className="flex flex-row justify-start mt-8">
@@ -73,7 +88,7 @@ const AboutSection = () => {
               active={tab === "education"}
             >
               {" "}
-              Educacion{" "}
+              Educación{" "}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("certifications")}
