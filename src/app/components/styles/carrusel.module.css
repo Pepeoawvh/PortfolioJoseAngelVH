@@ -30,3 +30,16 @@
         filter: blur(20px)
     }
 }
+
+
+.radialFade{
+
+    background: radial-gradient(circle 260px,#33334600 60%,#191923 70%);
+}
+
+@media (min-width: 640px) {
+    .radialFade{
+
+        background: radial-gradient(circle 630px,#33334600 55%,#191923 70%);
+    }
+}

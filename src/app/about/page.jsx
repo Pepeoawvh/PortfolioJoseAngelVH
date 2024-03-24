@@ -11,10 +11,10 @@ const TAB_DATA = [
       <ul className="list-disc pl-2">
         <li>Node.js</li>
         <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
+        <li>MongoDB</li>
         <li>JavaScript</li>
         <li>React</li>
+        <li>Next Js</li>
       </ul>
     ),
   },
@@ -23,8 +23,8 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <li>BootCamp Desarrollo Web FullStack Universidad del Desarrollo</li>
+        <li>Fotografia Profesional, Instituto Profesional Arcos Viña del Mar</li>
       </ul>
     ),
   },
@@ -33,8 +33,8 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+        <li>Insignias UDD</li>
+
       </ul>
     ),
   },
@@ -55,14 +55,10 @@ const AboutSection = () => {
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <Image src="/images/about-image.png" width={500} height={500} />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+          <h2 className="text-4xl font-bold text-white mb-4 mt-10 ">Perfil Profesional</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+            Soy Fotografo Profesional y Desarrollador Fullstack. Tengo experiencia trabajando con JavaScript, React, Node.js, Express, MongoDB, HTML, CSS, and Git. Soy una persona curiosa y comprometida, lo que me permite aprender efectivamente todo aquello que me interesa, busco expandir constantemente mis conocimientos y habilidades. Tengo mucha experiencia trabajando con equipos multidisciplinarios y diversos.
+            Me interesa participar en proyectos para aumentar mi experiencia.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
@@ -70,21 +66,21 @@ const AboutSection = () => {
               active={tab === "skills"}
             >
               {" "}
-              Skills{" "}
+              Habilidades{" "}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
               {" "}
-              Education{" "}
+              Educacion{" "}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("certifications")}
               active={tab === "certifications"}
             >
               {" "}
-              Certifications{" "}
+              Certificaciones{" "}
             </TabButton>
           </div>
           <div className="mt-8">

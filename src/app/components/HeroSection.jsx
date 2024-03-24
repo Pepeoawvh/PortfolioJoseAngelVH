@@ -7,19 +7,19 @@ import Link from "next/link";
 import CarruselCircular from "./CarruselCircular";
 const HeroSection = () => {
   return (
-    <section className="d-grid align-content-lg-center lg:py-10 z-40">
-      <div className="grid grid-cols-1 sm:grid-cols-12 sm:place-self-start sm:grid-rows-1 z-40 ">
+    <section className="d-grid align-content-lg-center lg:py-10 z-10 ">
+      <div className="overflow-hidden grid grid-cols-1 sm:grid-cols-12 sm:place-self-start sm:grid-rows-1 z-10 mb-7 ">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="col-span-8 place-self-center text-center sm:text-left sm:place-self-start z-40"
+          className="col-span-8 place-self-center text-center sm:text-left sm:place-self-start"
         >
           <h1 className="text-white mt-4 mb-4 text-3xl sm:text-4xl lg:text-3xm lg:leading-normal font-extrabold">
             <span className=" text-transparent bg-clip-text bg-gradient-to-r from-primary-200 to-secondary-700">
               ¡Hola! <br></br>Mi nombre es José Angel{" "}
             </span>
-            <br></br> Soy {" "}
+            <br></br> Soy{" "}
             <TypeAnimation
               sequence={[
                 "FullStack Developer",
@@ -37,14 +37,14 @@ const HeroSection = () => {
           </p>
           <div>
             <Link
-              href="/#contact"
+              href="/#form"
               className="mb-3 px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-400 to-secondary-600 hover:bg-slate-200 text-white"
             >
               Contacto
             </Link>
             <Link
               href="/"
-              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-300 to-secondary-600 hover:bg-slate-800 text-white mt-3"
+              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-100 to-primary-500 hover:bg-slate-800 text-white mt-3"
             >
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
                 Descargar CV
@@ -52,12 +52,6 @@ const HeroSection = () => {
             </Link>
           </div>
         </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="col-span-4 place-self-center mt-4 lg:mt-0 z-10"
-        ></motion.div>
         <CarruselCircular />
       </div>
     </section>

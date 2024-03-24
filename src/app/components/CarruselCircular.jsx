@@ -36,21 +36,27 @@ const CarruselCircular = () => {
   }, []);
 
   return (
+<>
+    <div
+    className={` top-[100px] sm:grid absolute sm:-top-1/4 sm:-right-40 ${styles.radialFade} rounded-full  w-[390px] h-[390px] lg:w-[910px] lg:h-[910px] overflow-hidden z-10 `}
+></div>
+
     <div className="justify-self-center top-[100px] sm:grid absolute sm:-top-1/4 sm:-right-40 -z-0">
       <div
-        className={`rounded-full bg-[#191923]  w-[380px] h-[380px] lg:w-[900px] lg:h-[900px] overflow-hidden opacity-80 -z-80`}
+        className={`rounded-full bg-[#191923]  w-[380px] h-[380px] lg:w-[900px] lg:h-[900px] overflow-hidden opacity-80 mb-7`}
       >
-        <Image
-          src={images[index]}
-          alt="Imagen del slideshow"
-          className={`object-cover w-full h-full ${
-            fade ? styles.fadeIn : styles.fadeOut
-          } ${styles.sombraCirular}  `}
-          width={4000}
-          height={4000}
-        />
+          <Image
+            src={images[index]}
+            alt="Imagen del slideshow"
+            className={` object-cover w-  h-full ${
+              fade ? styles.fadeIn : styles.fadeOut
+            }`}
+            width={4000}
+            height={4000}
+          />
       </div>
     </div>
+    </>
   );
 };
 
