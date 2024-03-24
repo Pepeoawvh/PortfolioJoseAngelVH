@@ -36,15 +36,15 @@ const CarruselCircular = () => {
   }, []);
 
   return (
-<>
-    <div
-    className={` top-[100px] sm:grid absolute sm:-top-1/4 sm:-right-40 ${styles.radialFade} rounded-full  w-[390px] h-[390px] lg:w-[910px] lg:h-[910px] overflow-hidden z-10 `}
-></div>
-
-    <div className="justify-self-center top-[100px] sm:grid absolute sm:-top-1/4 sm:-right-40 -z-0">
+    <>
       <div
-        className={`rounded-full bg-[#191923]  w-[380px] h-[380px] lg:w-[900px] lg:h-[900px] overflow-hidden opacity-80 mb-7`}
-      >
+        className={` top-[100px] sm:grid absolute sm:-top-1/4 sm:-right-40 ${styles.radialFade} rounded-full  w-[390px] h-[390px] lg:w-[910px] lg:h-[910px] overflow-hidden -z-50 `}
+      ></div>
+
+      <div className="justify-self-center top-[100px] sm:grid absolute sm:-top-1/4 sm:-right-40 -z-0">
+        <div
+          className={`rounded-full bg-[#191923]  w-[380px] h-[380px] lg:w-[900px] lg:h-[900px] overflow-hidden opacity-80 mb-7`}
+        >
           <Image
             src={images[index]}
             alt="Imagen del slideshow"
@@ -54,8 +54,8 @@ const CarruselCircular = () => {
             width={4000}
             height={4000}
           />
+        </div>
       </div>
-    </div>
     </>
   );
 };
