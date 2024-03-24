@@ -7,8 +7,8 @@ import Link from "next/link";
 import CarruselCircular from "./CarruselCircular";
 const HeroSection = () => {
   return (
-    <section className="d-grid align-content-lg-center lg:py-10 z-10 ">
-      <div className=" grid grid-cols-1 sm:grid-cols-12 sm:place-self-start sm:grid-rows-1 z-10 mb-7 ">
+    <section className="d-grid align-content-lg-center lg:py-10">
+      <div className=" grid grid-cols-1 sm:grid-cols-12 sm:place-self-start sm:grid-rows-1 mb-7 ">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -38,22 +38,22 @@ const HeroSection = () => {
           <div>
             <Link
               href="/#form"
-              className=" mb-3 px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-400 to-secondary-600 hover:bg-slate-200 text-white"
+              className=" mb-3 px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-400 to-secondary-600 hover:bg-slate-200 text-white z-50"
             >
               Contacto
             </Link>
             <Link
               href="/"
-              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-100 to-primary-500 hover:bg-slate-800 text-white mt-3"
+              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-100 to-primary-500 hover:bg-slate-800 text-white mt-3 z-50"
             >
-              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2 z-40">
                 Descargar CV
               </span>
             </Link>
           </div>
         </motion.div>
-        <CarruselCircular />
       </div>
+      <CarruselCircular />
     </section>
   );
 };

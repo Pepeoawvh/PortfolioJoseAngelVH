@@ -1,31 +1,26 @@
-# Portfolio Website
+# Sitio web de Portafolio
 
-This is a portfolio website built with Next.js and Tailwind CSS. It showcases your skills, projects, and achievements in an elegant and responsive design.
+Este es un sitio web de portafolio construido con Next.js y Tailwind CSS. Muestra tus habilidades, proyectos y logros en un diseño elegante y receptivo.
 
-## Installation
+## Instalación
 
-1. Clone the repository: `git clone https://github.com/judygab/nextjs-portfolio.git`
-2. Navigate to the project directory: `cd portfolio-website`
-3. Install the dependencies: `npm install`
+1. Clona el repositorio: `git clone https://github.com/judygab/nextjs-portfolio.git`
+2. Navega al directorio del proyecto: `cd portfolio-website`
+3. Instala las dependencias: `npm install`
 
-## Usage
+## Uso
 
-1. Start the development server: `npm run dev`
-2. Open your browser and visit `http://localhost:3000` to view the website.
+1. Inicia el servidor de desarrollo: `npm run dev`
+2. Abre tu navegador y visita [http://localhost:3000](http://localhost:3000) para ver el sitio web.
 
-## Dependencies
+## Dependencias
 
-The following dependencies are required for this project:
+Las siguientes dependencias son necesarias para este proyecto:
 
-- Next.js: A React framework for server-side rendering and static site generation.
-- Tailwind CSS: A highly customizable CSS framework.
-- React: A JavaScript library for building user interfaces.
-- React Icons: A collection of popular icons for React projects.
-- TypeScript: A typed superset of JavaScript that compiles to plain JavaScript.
-- Resend: Resend is the email API for developers.
+- **Next.js:** Un framework de React para renderizado del lado del servidor y generación de sitios estáticos.
+- **Tailwind CSS:** Un framework CSS altamente personalizable.
+- **React:** Una biblioteca de JavaScript para construir interfaces de usuario.
+- **React Icons:** Una colección de iconos populares para proyectos de React.
+## Licencia
 
-## License
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute the code as per the terms of the license.
-
-"# PortfolioJoseAngelVH" 
+Este proyecto está licenciado bajo la [Licencia MIT](https://opensource.org/licenses/MIT). Siéntete libre de usar, modificar y distribuir el código según los términos de la licencia.
