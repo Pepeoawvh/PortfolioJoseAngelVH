@@ -1,11 +1,11 @@
+require('dotenv').config();
 import firebase  from "firebase/compat/app"
 import "firebase/compat/firestore"
-
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCRE7otSVdWrLliVoWoJ9zVFB85cXP47ag",
+  apiKey: process.env.API_KEY,
   authDomain: "portafolio-65500.firebaseapp.com",
   projectId: "portafolio-65500",
   storageBucket: "portafolio-65500.appspot.com",

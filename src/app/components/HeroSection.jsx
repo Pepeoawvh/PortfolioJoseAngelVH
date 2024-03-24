@@ -8,15 +8,15 @@ import CarruselCircular from "./CarruselCircular";
 const HeroSection = () => {
   return (
     <section className="d-grid align-content-lg-center lg:py-10 z-10 ">
-      <div className="overflow-hidden grid grid-cols-1 sm:grid-cols-12 sm:place-self-start sm:grid-rows-1 z-10 mb-7 ">
+      <div className=" grid grid-cols-1 sm:grid-cols-12 sm:place-self-start sm:grid-rows-1 z-10 mb-7 ">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
           className="col-span-8 place-self-center text-center sm:text-left sm:place-self-start"
         >
-          <h1 className="text-white mt-4 mb-4 text-3xl sm:text-4xl lg:text-3xm lg:leading-normal font-extrabold">
-            <span className=" text-transparent bg-clip-text bg-gradient-to-r from-primary-200 to-secondary-700">
+          <h1 className="mt-12  text-white mb-4 text-3xl sm:text-4xl lg:text-3xm lg:leading-normal font-extrabold z-50">
+            <span className=" mb-8 text-transparent bg-clip-text bg-gradient-to-r from-primary-200 to-secondary-700 z-50">
               ¡Hola! <br></br>Mi nombre es José Angel{" "}
             </span>
             <br></br> Soy{" "}
@@ -33,12 +33,12 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            Lorem ipsum dolor sit amet consectetur
+          
           </p>
           <div>
             <Link
               href="/#form"
-              className="mb-3 px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-400 to-secondary-600 hover:bg-slate-200 text-white"
+              className=" mb-3 px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-400 to-secondary-600 hover:bg-slate-200 text-white"
             >
               Contacto
             </Link>
