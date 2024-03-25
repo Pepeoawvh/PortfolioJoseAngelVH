@@ -39,10 +39,10 @@ const CarruselCircular = () => {
   return (
     <>   
         <div
-          className={`flex bg-[#191923] row-span-2 sm:col-span-6 w-[600] h-[600] sm:w-[1000px] sm:h-[1000px] overflow-hidden opacity-80 mb-7 z-0 sm:relative sm:right-[-30px] sm:top-[-200px] top-[100px] sm:left-[100px]  left-[-0px] absolute`}
+          className={`flex bg-[#191923] row-span-2 sm:col-span-6 w-[full] h-[400px] sm:w-[1000px] sm:h-[1000px] overflow-hidden opacity-80 mb-7 z-10 sm:relative sm:right-[-30px] sm:top-[-200px] top-[100px] sm:left-[100px]  left-[-0px] absolute`}
         >
           <div
-            className={` ${styles.radialFade} row-span-1 sm:col-span-6 w-[100%] h-[100%] absolute  z-10 justify-self-center`}
+            className={` ${styles.radialFade} row-span-1 sm:col-span-6 w-[100%] h-[100%] absolute  z-20 justify-self-center`}
           ></div>
           <Image
             src={images[index]}

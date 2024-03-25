@@ -27,9 +27,9 @@ const Form = () => {
     // Intentar conectarse a la colección de bbdd, y agrega nuevo doc
     try {
       await firestoreDB.collection("formularioPortafolio").add(datos);
-      alert("Mensaje enviado ;)");
+      alert("Mensaje enviado, te contactaré lo antes posible ;)");
     } catch (error) {
-      alert("No se pudo enviar ;( intentalo nuevamente");
+      alert("No se pudo enviar el mensaje ;( intentalo nuevamente");
       console.log(error)
     }
   };

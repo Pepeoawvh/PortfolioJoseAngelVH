@@ -79,8 +79,8 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section className="position-relative top-[-200px] z-30" id="projects">
-      <h2 className="text-center text-4xl font-bold text-white md:mb-12 relative
+    <section className="grid grid row-span-3 position-relative top-[-300px]  md:mt-0 mt-12 z-30" id="projects">
+      <h2 className="text-center text-4xl font-bold text-white  relative
      z-50">
         Proyectos
       </h2>
