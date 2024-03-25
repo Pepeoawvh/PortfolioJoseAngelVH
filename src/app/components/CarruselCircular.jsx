@@ -1,3 +1,4 @@
+"use client"
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./styles/carrusel.module.css";
@@ -36,26 +37,25 @@ const CarruselCircular = () => {
   }, []);
 
   return (
-    <>
-      <div
-        className={` top-[91px] sm:grid absolute sm:-top-1/4 sm:-right-40 ${styles.radialFade} rounded-full  w-[400px] h-[400px] lg:w-[910px] lg:h-[910px] overflow-hidden z-10`}
-      ></div>
-
-      <div className="justify-self-center top-[100px] sm:grid absolute sm:-top-1/4 sm:-right-40 z-0">
+    <>   
         <div
-          className={`rounded-full bg-[#191923]  w-[380px] h-[380px] lg:w-[900px] lg:h-[900px] overflow-hidden opacity-80 mb-7`}
+          className={`flex bg-[#191923] row-span-2 sm:col-span-6 w-[600] h-[600] sm:w-[1000px] sm:h-[1000px] overflow-hidden opacity-80 mb-7 z-0 sm:relative sm:right-[-30px] sm:top-[-200px] top-[100px] sm:left-[100px]  left-[-0px] absolute`}
         >
+          <div
+            className={` ${styles.radialFade} row-span-1 sm:col-span-6 w-[100%] h-[100%] absolute  z-10 justify-self-center`}
+          ></div>
           <Image
             src={images[index]}
             alt="Imagen del slideshow"
-            className={` object-cover w-  h-full ${
+            className={` object-cover w-[full] h-full z-0 ${
               fade ? styles.fadeIn : styles.fadeOut
             }`}
             width={4000}
             height={4000}
+            
           />
-        </div>
-      </div>
+          </div>
+        
     </>
   );
 };

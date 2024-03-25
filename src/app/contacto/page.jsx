@@ -1,11 +1,13 @@
-import React from 'react'
-import EmailSection from "../components/EmailSection"
+import React from "react";
+import EmailSection from "../components/EmailSection";
 const ContactPage = () => {
   return (
-    <div className='mx-64 mt-24'>
+    <main className="">
+      <div className="sm:mx-64 mx-12 mt-24">
+        <EmailSection />
+      </div>
+    </main>
+  );
+};
 
-    <EmailSection/></div>
-  )
-}
-
-export default ContactPage
+export default ContactPage;

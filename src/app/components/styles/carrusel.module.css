@@ -40,6 +40,6 @@
 @media (min-width: 640px) {
     .radialFade{
 
-        background: radial-gradient(circle 630px,#33334600 55%,#191923 70%);
+        background: radial-gradient(circle 600px,#33334600 55%,#191923 70%);
     }
 }

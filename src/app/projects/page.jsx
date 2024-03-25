@@ -2,9 +2,12 @@ import React from 'react'
 import ProjectsSection from "../components/ProjectsSection"
 const ProjectsPage = () => {
   return (
-    <div className='mx-28 mb-10 '>
-        <ProjectsSection/>
-    </div>
+    
+    <main>
+      <div className='mx-12 mb-10 '>
+          <ProjectsSection/>
+      </div>
+    </main>
   )
 }
 

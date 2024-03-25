@@ -80,7 +80,7 @@ const Form = () => {
           minLength={10}
           maxLength={1000}
         />
-        <button className="h-8 mt-6 bg-primary-900 rounded-md hover:bg-primary-600 transition-colors" type="submit">
+        <button className="h-8 mt-6 bg-gradient-to-r from-primary-400 to-secondary-500 rounded-md transition-colors hover:bg-lime-400 " type="submit">
           Enviar
         </button>
       </form>

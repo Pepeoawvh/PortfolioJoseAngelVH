@@ -1,22 +1,20 @@
-"use client";
-import React from "react";
-import Image from "next/image";
+"use client"
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import CarruselCircular from "./CarruselCircular";
 const HeroSection = () => {
   return (
-    <section className="h-96 d-grid align-content-lg-center lg:py-10">
-      <div className=" absolute grid grid-cols-1 sm:grid-cols-12 sm:place-self-start sm:grid-rows-1 mb-7 z-50">
+    <section className=" d-grid items-start h-[400px] md:h-[700px] sm:px-6">
+      <div className="grid grid-cols-1 grid-rows-1  justify-items-center md:px-6 items-start sm:grid-cols-12 sm:place-self-start sm:grid-rows-1 h-[500px]">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="col-span-8 place-self-center text-center sm:text-left sm:place-self-start"
+          className="col-span-8  text-center sm:text-left sm:place-self-start z-30"
         >
-          <h1 className=" mt-12  text-white mb-4 text-3xl sm:text-4xl lg:text-3xm lg:leading-normal font-extrabold z-50">
-            <span className=" mb-8 text-transparent bg-clip-text bg-gradient-to-r from-primary-200 to-secondary-700 z-50">
+          <h1 className=" mt-12  text-white mb-4 text-3xl sm:text-4xl lg:text-5xl lg:leading-normal font-extrabold ">
+            <span className=" mb-8 text-transparent bg-clip-text bg-gradient-to-r from-primary-200 to-secondary-700  z-50">
               ¡Hola! <br></br>Mi nombre es José Angel{" "}
             </span>
             <br></br> Soy{" "}
@@ -35,16 +33,16 @@ const HeroSection = () => {
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
           
           </p>
-          <div>
+          <div className="sm:mt-24 mt-14">
             <Link
-              href="/#form"
-              className=" mb-3 px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-400 to-secondary-600 hover:bg-slate-200 text-white z-50"
+              href="/#Form"
+              className=" mb-3 px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-400 to-secondary-600 hover:bg-slate-200 text-white "
             >
               Contacto
             </Link>
             <Link
               href="/"
-              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-100 to-primary-500 hover:bg-slate-800 text-white mt-3 z-50"
+              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-100 to-primary-500 hover:bg-slate-800 text-white mt-3 "
             >
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2 z-50">
                 Descargar CV
@@ -52,8 +50,11 @@ const HeroSection = () => {
             </Link>
           </div>
         </motion.div>
+        <div className="grid z-10 items-start" >
+        <CarruselCircular />
+        </div>
       </div>
-      <CarruselCircular />
+
     </section>
   );
 };

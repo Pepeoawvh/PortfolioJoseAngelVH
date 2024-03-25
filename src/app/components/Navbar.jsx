@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import Link from "next/link";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -26,11 +26,11 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <nav className=" fixed mx-auto shadow-md top-0 left-0 right-0 bg-[#20202a] bg-opacity-100 z-50">
-      <div className="grid grid-cols-2 container lg:py-1 items-center justify-between mx-auto px-4 py-2">
+    <nav className=" fixed mx-auto top-0 left-0 right-0 bg-[#20202a] bg-opacity-100 z-50">
+      <div className="grid grid-cols-2  container lg:py-1 items-center mx-auto px-4 py-2 ">
         <Link
           href={"/"}
-          className="text-2xl md:text-5xl font-semibold w-20 h-20 overflow-hidden rounded-full"
+          className="text-2xl md:text-5xl font-semibold w-20 h-20 overflow-hidden justify-self-center rounded-full"
         >     <Image
               src="/images/photos/ProfileGreen.jpg"
               alt="hero image"
@@ -40,7 +40,7 @@ const Navbar = () => {
               height={80}
             />
         </Link>
-        <div className="mobile-menu block md:hidden">
+        <div className="mobile-menu block md:hidden justify-self-end">
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
@@ -51,7 +51,7 @@ const Navbar = () => {
           ) : (
             <button
               onClick={() => setNavbarOpen(false)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-white hover:text-primary-100 hover:border-white"
+              className="flex items-center px-3 py-2 border rounded border-slate-200 text-white  hover:text-primary-600 transition-colors"
             >
               <XMarkIcon className="h-5 w-5" />
             </button>
@@ -60,8 +60,8 @@ const Navbar = () => {
         <div className="menu hidden md:block md:w-auto" id="navbar">
           <ul className="grid grid-cols-3 bx p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLinks.map((link, index) => (
-              <li key={index} className="grid justify-items-center shadow-xl">
-                <NavLink href={link.path} title={link.title} />
+              <li key={index} className="grid justify-items-center hover:bg-primary-900 transition-colors rounded-full ">
+                <NavLink href={link.path} title={link.title}/>
               </li>
             ))}
           </ul>
