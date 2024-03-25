@@ -19,7 +19,7 @@ const projectsData = [
     title: "P.2 CRUD Local para registro de pedidos web",
     description: "CRUD Javascript + HTML + CSS",
     image: "/images/projects/2.png",
-    tag: ["Todos", "Web/Mobile Responsive","All"],
+    tag: ["Todos", "Web/Mobile Responsive", "All"],
     gitUrl: "https://github.com/Pepeoawvh/PROYECTO2CRUDappTablaPedidos",
     previewUrl: "https://pepeoawvh.github.io/PROYECTO2CRUDappTablaPedidos/",
   },
@@ -79,13 +79,20 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section className="grid grid row-span-3 position-relative top-[-300px]  md:mt-0 mt-12 z-30" id="projects">
-      <h2 className="text-center text-4xl font-bold text-white  relative
-     z-50">
+    <section
+      className="grid grid row-span-3 position-relative top-[-300px]  md:mt-0 mt-12 z-30"
+      id="projects"
+    >
+      <h2
+        className="text-center text-4xl font-bold text-white  relative
+     z-50"
+      >
         Proyectos
       </h2>
-      <div className="text-white relative
-     z-50 flex flex-row justify-center items-center gap-2 py-6">
+      <div
+        className="text-white relative
+     z-50 flex flex-row justify-center items-center gap-2 py-6"
+      >
         {/* <ProjectTag
           onClick={handleTagChange}
           name="Todos"
@@ -96,7 +103,6 @@ const ProjectsSection = () => {
           name="Web/Mobile Responsive"
           isSelected={tag === "Web"}
         />
-
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
         {filteredProjects.map((project, index) => (
@@ -123,5 +129,3 @@ const ProjectsSection = () => {
 };
 
 export default ProjectsSection;
-
-

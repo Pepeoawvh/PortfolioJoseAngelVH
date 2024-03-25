@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { firestoreDB } from "../../firebase/config.js"
+import { firestoreDB } from "../../firebase/config.js";
 
 const Form = () => {
   // Creamos un estado para guardar los datos del formulario
@@ -30,18 +30,23 @@ const Form = () => {
       alert("Mensaje enviado, te contactaré lo antes posible ;)");
     } catch (error) {
       alert("No se pudo enviar el mensaje ;( intentalo nuevamente");
-      console.log(error)
+      console.log(error);
     }
   };
 
   return (
     <div className="grid justify-items-center w-full">
-      <form className="grid items-center w-full gap-3 row-start-auto sm:w-full sm:ml-16 sm:px-3 shadow-sm" id="form"
-      onSubmit={handleSubmit}>
-        <input className="text-gray-400 px-2 form bg-[#20202a] rounded-md focus:outline-none"
+      <form
+        className="grid items-center w-full gap-3 row-start-auto sm:w-full sm:ml-16 sm:px-3 shadow-sm"
+        id="form"
+        onSubmit={handleSubmit}
+      >
+        <input
+          className="text-gray-400 px-2 form bg-[#20202a] rounded-md focus:outline-none"
           type="text"
           id="nombre"
-          name="nombre" required
+          name="nombre"
+          required
           value={datos.nombre}
           onChange={handleChange}
           placeholder="Nombre"
@@ -50,7 +55,8 @@ const Form = () => {
           maxLength={45}
         />
 
-        <input className="text-gray-400 px-2 bg-[#20202a] rounded-md focus:outline-none "
+        <input
+          className="text-gray-400 px-2 bg-[#20202a] rounded-md focus:outline-none "
           type="tel"
           id="telefono"
           name="telefono"
@@ -61,26 +67,33 @@ const Form = () => {
           minLength={9}
           pattern="\d*"
         />
-        <input className="text-gray-400 px-2 bg-[#20202a] rounded-md focus:outline-none "
+        <input
+          className="text-gray-400 px-2 bg-[#20202a] rounded-md focus:outline-none "
           type="email"
           id="correo"
-          name="correo" required
+          name="correo"
+          required
           value={datos.correo}
           onChange={handleChange}
           placeholder="Correo suco@rreo.cl"
           autoComplete="email"
         />
-        <input className="text-gray-400 px-2 bg-[#20202a] rounded-md h-24 focus:outline-none items-start "
+        <input
+          className="text-gray-400 px-2 bg-[#20202a] rounded-md h-24 focus:outline-none items-start "
           type="text"
           id="mensaje"
-          name="mensaje" required
+          name="mensaje"
+          required
           value={datos.mensaje}
           onChange={handleChange}
           placeholder="Aqui tu mensaje"
           minLength={10}
           maxLength={1000}
         />
-        <button className="h-8 mt-6 bg-gradient-to-r from-primary-400 to-secondary-500 rounded-md transition-colors hover:bg-lime-400 " type="submit">
+        <button
+          className="h-8 mt-6 bg-gradient-to-r from-primary-400 to-secondary-500 rounded-md transition-colors hover:bg-lime-400 "
+          type="submit"
+        >
           Enviar
         </button>
       </form>

@@ -5,7 +5,10 @@ const MenuOverlay = ({ links }) => {
   return (
     <ul className="flex flex-col py-4 items-center ">
       {links.map((link, index) => (
-        <li key={index} className="hover:bg-primary-900 transition-colors rounded-full ">
+        <li
+          key={index}
+          className="hover:bg-primary-900 transition-colors rounded-full "
+        >
           <NavLink href={link.path} title={link.title} />
         </li>
       ))}

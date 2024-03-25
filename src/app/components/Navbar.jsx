@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -7,7 +7,6 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
 
 const navLinks = [
-
   {
     title: "Proyectos",
     path: "projects",
@@ -31,14 +30,16 @@ const Navbar = () => {
         <Link
           href={"/"}
           className="text-2xl md:text-5xl font-semibold w-20 h-20 overflow-hidden justify-self-center rounded-full"
-        >     <Image
-              src="/images/photos/ProfileGreen.jpg"
-              alt="hero image"
-              className="object-fit w-full"
-              layout=""
-              width={80}
-              height={80}
-            />
+        >
+          {" "}
+          <Image
+            src="/images/photos/ProfileGreen.jpg"
+            alt="hero image"
+            className="object-fit w-full"
+            layout=""
+            width={80}
+            height={80}
+          />
         </Link>
         <div className="mobile-menu block md:hidden justify-self-end">
           {!navbarOpen ? (
@@ -60,8 +61,11 @@ const Navbar = () => {
         <div className="menu hidden md:block md:w-auto" id="navbar">
           <ul className="grid grid-cols-3 bx p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLinks.map((link, index) => (
-              <li key={index} className="grid justify-items-center hover:bg-primary-900 transition-colors rounded-full ">
-                <NavLink href={link.path} title={link.title}/>
+              <li
+                key={index}
+                className="grid justify-items-center hover:bg-primary-900 transition-colors rounded-full "
+              >
+                <NavLink href={link.path} title={link.title} />
               </li>
             ))}
           </ul>

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -30,9 +30,7 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-          
-          </p>
+          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl"></p>
           <div className="sm:mt-24 mt-16">
             <Link
               href="#form"
@@ -50,11 +48,10 @@ const HeroSection = () => {
             </Link>
           </div>
         </motion.div>
-        <div className="grid z-10 items-start" >
-        <CarruselCircular />
+        <div className="grid z-10 items-start">
+          <CarruselCircular />
         </div>
       </div>
-
     </section>
   );
 };

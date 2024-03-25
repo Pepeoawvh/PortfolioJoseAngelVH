@@ -68,7 +68,12 @@ const AboutSection = () => {
   return (
     <section className="text-white" id="about">
       <div className="md:grid md:grid-cols-2 sm:mt-0 mt-20 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/about-image.png" width={500} height={500} className="rounded-md justify-self-center" />
+        <Image
+          src="/images/about-image.png"
+          width={500}
+          height={500}
+          className="rounded-md justify-self-center"
+        />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4 mt-10 text-center">
             Perfil Profesional
@@ -76,11 +81,12 @@ const AboutSection = () => {
           <p className="text-base lg:text-lg px-3">
             Soy Fotografo Profesional y Desarrollador Fullstack. Tengo
             experiencia trabajando con HTML, CSS,JavaScript, React, Node.js,
-            Express, MongoDB, y Git. Soy una persona curiosa y
-            entusiasta, autodidacta y comprometida lo que me permite incursionar y aprender de manera efectiva aquello que me interesa, busco expandir constantemente mis
-            conocimientos y habilidades. Tengo mucha experiencia trabajando con
-            equipos multidisciplinarios y diversos. Me interesa participar en
-            proyectos para aumentar mi experiencia.
+            Express, MongoDB, y Git. Soy una persona curiosa y entusiasta,
+            autodidacta y comprometida lo que me permite incursionar y aprender
+            de manera efectiva aquello que me interesa, busco expandir
+            constantemente mis conocimientos y habilidades. Tengo mucha
+            experiencia trabajando con equipos multidisciplinarios y diversos.
+            Me interesa participar en proyectos para aumentar mi experiencia.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
