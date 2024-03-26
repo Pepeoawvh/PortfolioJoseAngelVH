@@ -5,7 +5,6 @@ import styles from "./styles/carrusel.module.css";
 const images = [
   "/images/photos/profileBackground/camaraNaranja.jpg",
   "/images/photos/profileBackground/cerroMisterio.jpg",
-  "/images/photos/profileBackground/CirueloWhiteBlue.jpg",
   "/images/photos/profileBackground/FLores.jpg",
   "/images/photos/profileBackground/laserYellow.jpg",
   "/images/photos/profileBackground/norte1234.jpg",
@@ -13,8 +12,17 @@ const images = [
   "/images/photos/profileBackground/ptoNatales.jpg",
   "/images/photos/profileBackground/ValdiHumedal.jpg",
   "/images/photos/profileBackground/ValdiPink.jpg",
+  "/images/photos/profileBackground/ArbolOrange.jpg",
+  "/images/photos/profileBackground/ArbolPink.jpg",
   "/images/photos/profileBackground/ZoomOutCieloEsponja.jpg",
-]; // Añade todas las rutas de tus imágenes aquí
+  "/images/photos/profileBackground/Glaciar.jpg",
+  "/images/photos/profileBackground/basilica.jpg",
+  "/images/photos/profileBackground/CirueloWhiteBlue.jpg",
+  "/images/photos/profileBackground/cami2.jpg",
+  "/images/photos/profileBackground/mirrorcellar.jpg",
+  "/images/photos/profileBackground/laser2.jpg",
+  "/images/photos/profileBackground/contraLuz.jpg",
+]; 
 
 const CarruselCircular = () => {
   const [index, setIndex] = useState(0);
@@ -26,7 +34,7 @@ const CarruselCircular = () => {
       setTimeout(() => {
         setIndex((prevIndex) => (prevIndex + 1) % images.length);
         setFade(true); // Inicia el fade in
-      }, 1000); // Espera 2 segundos para iniciar el fade in
+      }, 1000); // Espera 1 segundo para iniciar el fade in
     };
 
     // Cambia la imagen cada 7 segundos

@@ -63,7 +63,7 @@ const Navbar = () => {
             {navLinks.map((link, index) => (
               <li
                 key={index}
-                className="grid justify-items-center hover:bg-primary-900 transition-colors rounded-full "
+                className="grid justify-items-center hover:bg-primary-600 transition-colors rounded-full "
               >
                 <NavLink href={link.path} title={link.title} />
               </li>

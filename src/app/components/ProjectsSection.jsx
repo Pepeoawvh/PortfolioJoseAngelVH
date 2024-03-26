@@ -17,7 +17,7 @@ const projectsData = [
   {
     id: 2,
     title: "P.2 CRUD Local para registro de pedidos web",
-    description: "CRUD Javascript + HTML + CSS",
+    description: "CRUD / DOM Web App",
     image: "/images/projects/2.png",
     tag: ["Todos", "Web/Mobile Responsive", "All"],
     gitUrl: "https://github.com/Pepeoawvh/PROYECTO2CRUDappTablaPedidos",
@@ -26,7 +26,7 @@ const projectsData = [
   {
     id: 3,
     title: "P.3 Busca Patitas, adopción animal",
-    description: "Api Request, ",
+    description: "API/ Js Dashboard",
     image: "/images/projects/3.png",
     tag: ["Todos", "Web/Mobile Responsive", "All"],
     gitUrl: "https://github.com/Pepeoawvh/Proyecto-3",
@@ -80,7 +80,7 @@ const ProjectsSection = () => {
 
   return (
     <section
-      className="grid grid row-span-3 position-relative top-[-300px]  md:mt-0 mt-12 z-30"
+      className="grid row-span-3 position-relative top-[-300px]  sm:mt-0 mt-12 z-30"
       id="projects"
     >
       <h2
