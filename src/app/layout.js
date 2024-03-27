@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+// import Navbar2 from "./components/NavBar2";
 import "./globals.css";
 import WspButton from "./components/WspButton.jsx";
 import {jost} from './ui/fonts'
@@ -11,6 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html className={`  w-100 overflow-x-hidden bg-[#191923]`} lang="en">
       <Navbar />
+      {/* <Navbar2 /> */}
       <body className={`bg-[#191923] ${jost.className}`}>
         {children}
         <WspButton />

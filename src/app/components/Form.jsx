@@ -35,7 +35,7 @@ const Form = () => {
   };
 
   return (
-    <div className="grid justify-items-center w-full">
+    <div className="animate-fade animate-delay-300 grid justify-items-center w-full">
       <form
         className="grid items-center w-full gap-3 row-start-auto sm:w-full sm:ml-16 sm:px-3 shadow-sm"
         id="form"

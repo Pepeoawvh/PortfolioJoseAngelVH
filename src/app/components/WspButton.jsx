@@ -6,9 +6,9 @@ import WspIcon from "../../../public/wspicon.svg";
 const WspButton = () => {
   return (
     <div>
-      <button className={`${styles.wsp}`}>
+      <button className={`animate-fade animate-delay-300 ${styles.wsp}`}>
         <Link href="https://wa.me/+56949866129">
-          <Image src={WspIcon} alt="WhatsApp Icon" />
+          <Image src={WspIcon} alt="WhatsApp Icon" width={50} height={50} />
         </Link>
       </button>
     </div>

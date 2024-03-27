@@ -80,7 +80,7 @@ const ProjectsSection = () => {
 
   return (
     <section
-      className="grid row-span-3 position-relative top-[-300px]  sm:mt-0 mt-12 z-30"
+      className="animate-fade animate-delay-300 grid row-span-3 position-relative top-[-300px]  sm:mt-0 mt-12 z-30"
       id="projects"
     >
       <h2

@@ -9,7 +9,7 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <div className="grid grid-cols-2">
+      <div className="animate-fade animate-delay-200 grid grid-cols-2 ml-6">
       <div>
       <h2 className="underline text-lg">FullStack</h2>
         <ul className="list-disc pl-2">
@@ -39,7 +39,7 @@ const TAB_DATA = [
     title: "Education",
     id: "education",
     content: (
-      <ul className="list-disc pl-2">
+      <ul className="animate-fade animate-delay-200 list-disc pl-2">
         <li>BootCamp Desarrollo Web FullStack Universidad del Desarrollo</li>
         <li>
           Fotografia Profesional, Instituto Profesional Arcos Viña del Mar
@@ -51,7 +51,7 @@ const TAB_DATA = [
     title: "Certifications",
     id: "certifications",
     content: (
-      <div className="grid grid-cols-3">
+      <div className="animate-fade animate-delay-200 grid grid-cols-3 ">
       <Link href="https://www.credly.com/badges/f83b2e7b-43f3-4135-8d35-63212c36ce4d/public_url">
         <Image
           src="https://images.credly.com/size/680x680/images/791d0469-ca15-4bc9-b9b3-2b8dca821b62/image.png"
@@ -90,13 +90,13 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white" id="about">
-      <div className="md:grid md:grid-cols-2 sm:mt-0 mt-20 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+    <section className="text-white animate-fade animate-delay-200]" id="about">
+      <div className=" mx-5 items-start md:grid md:grid-cols-2 sm:mt-0 mt-20 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <Image
           src="/images/about-image.png"
           width={500}
           height={500}
-          className="rounded-md justify-self-center"
+          className="rounded-md justify-self-center self-start mt-10"
         />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4 mt-10 text-center">
