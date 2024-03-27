@@ -1,0 +1,4 @@
+.fadeInCustom{
+    animation: fade-in 2s forwards;
+    transition-delay: 4s;
+    }

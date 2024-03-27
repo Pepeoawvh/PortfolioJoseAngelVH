@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
-
+import styles from "../stylesGlobal/globals.module.css"
 const navLinks = [
   {
     title: "Proyectos",
@@ -25,20 +25,20 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <nav className=" fixed mx-auto top-0 left-0 right-0 bg-[#20202a] bg-opacity-100 z-50">
-      <div className="grid grid-cols-2  container lg:py-1 items-center mx-auto px-4 py-2 ">
+    <nav className={`  ${styles.fadeInCustom} fixed mx-auto top-0 left-0  right-0 bg-[#20202a] bg-opacity-100 z-50`}>
+      <div className="grid grid-cols-2  container lg:py-1 items-center mx-auto px-4 py-3 shadow-md z-[100]">
         <Link
           href={"/"}
-          className="text-2xl md:text-5xl font-semibold w-20 h-20 overflow-hidden justify-self-center rounded-full"
+          className="justify-self-center auto"
         >
           {" "}
           <Image
-            src="/images/photos/ProfileGreen.jpg"
-            alt="hero image"
-            className="object-fit w-full"
+            src="/images/logoWhite.svg"
+            alt="LOGO"
+            className="fill-white"
             layout=""
-            width={80}
-            height={80}
+            width={250}
+            height={100}
           />
         </Link>
         <div className="mobile-menu block md:hidden justify-self-end">

@@ -1,8 +1,9 @@
 import React from "react";
 import ProjectsSection from "../components/ProjectsSection";
+import styles from '../stylesGlobal/globals.module.css'
 const ProjectsPage = () => {
   return (
-    <main className="mt-36 transition-opacity from-0% to-100%">
+    <main className={`mt-36 transition-opacity from-0% to-100% ${styles.fadeInCustom}`}>
       <div className="mx-12 mb-10  ">
         <ProjectsSection />
       </div>

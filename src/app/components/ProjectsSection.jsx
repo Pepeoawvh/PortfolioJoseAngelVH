@@ -85,13 +85,13 @@ const ProjectsSection = () => {
     >
       <h2
         className="text-center text-4xl font-bold text-white  relative
-     z-50"
+     z-30"
       >
         Proyectos
       </h2>
       <div
         className="text-white relative
-     z-50 flex flex-row justify-center items-center gap-2 py-6"
+     z-30 flex flex-row justify-center items-center gap-2 py-6"
       >
         {/* <ProjectTag
           onClick={handleTagChange}
