@@ -103,14 +103,7 @@ const AboutSection = () => {
             Perfil Profesional
           </h2>
           <p className="text-base lg:text-lg px-3">
-            Soy Fotografo Profesional y Desarrollador Fullstack. Tengo
-            experiencia trabajando con HTML, CSS,JavaScript, React, Node.js,
-            Express, MongoDB, y Git. Soy una persona curiosa y entusiasta,
-            autodidacta y comprometida lo que me permite incursionar y aprender
-            de manera efectiva aquello que me interesa, busco expandir
-            constantemente mis conocimientos y habilidades. Tengo mucha
-            experiencia trabajando con equipos multidisciplinarios y diversos.
-            Me interesa participar en proyectos para aumentar mi experiencia.
+          Soy Fotógrafo Profesional y Desarrollador Fullstack. Tengo experiencia trabajando con Node.js y Git, en FrontEnd HTML, CSS, JavaScript para proyectos React o Next. En backend Express y MongoDB y librerías. Me considero una persona curiosa, entusiasta y autodidacta. Además, tengo un alto nivel de compromiso lo que me permite aprender rápida y efectivamente aquello en lo que incursiono.  Busco expandir constantemente mis conocimientos y habilidades. Tengo mucha experiencia trabajando con equipos multidisciplinarios y diversos. Me interesa participar en proyectos para aumentar mi experiencia.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
