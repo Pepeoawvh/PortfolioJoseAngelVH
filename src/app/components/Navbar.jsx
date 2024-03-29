@@ -25,9 +25,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`  animate-fade-down fixed mx-auto top-0 left-0  right-0 bg-[#20202a] bg-opacity-100 z-50`}
+      className={`  animate-fade-down fixed mx-auto top-0 left-0  right-0 bg-[#20202a] bg-opacity-100 z-50 shadow-md`}
     >
-      <div className="grid grid-cols-2  container lg:py-1 items-center mx-auto px-4 py-3 shadow-md z-[100]">
+      <div className="grid grid-cols-2  container lg:py-1 items-center mx-auto px-4 my-2  z-[100]">
         <Link href={"/"} className="animate-fade-downjustify-self-center auto">
           {" "}
           <Image
@@ -45,14 +45,14 @@ const Navbar = () => {
               onClick={() => setNavbarOpen(true)}
               className="flex  items-center animate-fade-down px-3 py-2 border rounded border-slate-200 text-white hover:text-primary-100 hover:border-white"
             >
-              <Bars3Icon className="h-5 w-5" />
+              <Bars3Icon className="h-5 w-5 animate-fade-right animate-once" />
             </button>
           ) : (
             <button
               onClick={() => setNavbarOpen(false)}
               className="flex items-center px-3 py-2 animate-fade-down border rounded border-slate-200 text-white  hover:text-primary-600 transition-colors"
             >
-              <XMarkIcon className="h-5 w-5" />
+              <XMarkIcon className="h-5 w-5 animate-spin animate-once" />
             </button>
           )}
         </div>

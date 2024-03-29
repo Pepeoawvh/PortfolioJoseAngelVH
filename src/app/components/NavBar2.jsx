@@ -1,5 +1,5 @@
 // 'use client'
-// import "./styles/NavBar.css";
+// import styles from "./styles/NavBar.module.css"
 // import {useEffect, useRef, useState } from "react";
 // import Link from "next/link";
 
@@ -22,7 +22,7 @@
 //   }, []);
 
 //   return (
-//     <header>
+//     <header className="z-70">
 //       <nav ref={navRef}>
 //         <Link href="/">
 //           {" "}

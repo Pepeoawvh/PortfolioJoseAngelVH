@@ -17,35 +17,49 @@ const HeroSection = () => {
             <span className=" mb-8 text-transparent bg-clip-text bg-gradient-to-r from-primary-200 to-secondary-700  z-50">
               ¡Hola! <br></br>Mi nombre es José Angel{" "}
             </span>
-            <br></br> Soy{" "}
+            <br></br>{" "}
             <TypeAnimation
               sequence={[
-                "FullStack Developer",
+                "Desarrollador Fullstack",
+                2000,
+                "Desarrollador Fullstack",
+                2000,
+              ]}
+              wrapper="span"
+              speed={40}
+              repeat={Infinity}
+            /><br/>
+            <TypeAnimation
+              sequence={[
+                "Fotógrafo Profesional",
                 2000,
                 "Fotógrafo Profesional",
                 2000,
               ]}
               wrapper="span"
-              speed={50}
+              speed={40}
               repeat={Infinity}
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl"></p>
-          <div className="sm:mt-24 mt-16">
+          <div className="sm:mt-12 mt-16">
             <Link
               href="#form"
               className=" mb-3 px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-400 to-secondary-600 hover:bg-slate-200 text-white "
             >
               Contacto
             </Link>
-            <Link
-              href="#form"
+            <a
+              href="/CVJVH2024.pdf"
+              download="CVJVH2024.pdf"
               className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-100 to-primary-500 hover:bg-slate-800 text-white mt-3 "
             >
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2 z-50">
-                Descargar CV
+              <span>
+            Descargar CV
+        </span>
               </span>
-            </Link>
+            </a>
           </div>
         </motion.div>
         <div className="grid z-10 items-start">

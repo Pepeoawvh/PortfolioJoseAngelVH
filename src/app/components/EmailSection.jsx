@@ -16,7 +16,7 @@ const EmailSection = () => {
           {" "}
           Estoy en busqueda de nuevas experiencias laborales, me interesa
           participar en proyectos novedosos con equipos creativos y
-          comprometidos. Hablemos! Tengo experiencia en el area de las artes
+          comprometidos. ¡Hablemos! Tengo experiencia en el area de las artes
           visuales y la fotografía, desde donde puedo aportar con un enfoque
           diferente a distintos grupos de trabajo.
         </p>
