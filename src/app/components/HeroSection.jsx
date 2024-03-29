@@ -21,9 +21,9 @@ const HeroSection = () => {
             <TypeAnimation
               sequence={[
                 "Desarrollador Fullstack",
-                2000,
+                3000,
                 "Desarrollador Fullstack",
-                2000,
+                3000,
               ]}
               wrapper="span"
               speed={40}
@@ -32,9 +32,9 @@ const HeroSection = () => {
             <TypeAnimation
               sequence={[
                 "Fotógrafo Profesional",
-                2000,
+                3000,
                 "Fotógrafo Profesional",
-                2000,
+                3000,
               ]}
               wrapper="span"
               speed={40}
