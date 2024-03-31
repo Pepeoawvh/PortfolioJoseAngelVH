@@ -13,8 +13,8 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-8  text-center sm:text-left mt-8 sm:mt-0 sm:place-self-start z-30"
         >
-          <h1 className=" sm:mt-12 mt-4 text-white text-[1.4rem] sm:text-4xl lg:text-5xl lg:leading-normal font-extrabold ">
-            <span className=" mb-8 text-transparent bg-clip-text bg-gradient-to-r from-primary-200 to-secondary-700  z-50">
+          <h1 className=" sm:mt-12 mt-4 text-white text-[1.4rem] sm:text-4xl lg:text-5xl lg:leading-normal font-extrabold drop-shadow-xl ">
+            <span className=" mb-8 text-transparent bg-clip-text bg-gradient-to-r from-primary-200 to-primary-600  z-50 ">
               ¡Hola! <br></br>Mi nombre es José Angel{" "}
             </span>
             <br></br>{" "}
@@ -37,7 +37,7 @@ const HeroSection = () => {
                 3000,
               ]}
               wrapper="span"
-              speed={40}
+              speed={30}
               repeat={Infinity}
             />
           </h1>

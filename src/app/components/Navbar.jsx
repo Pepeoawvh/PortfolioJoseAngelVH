@@ -1,6 +1,7 @@
 "use client";
-import React, { useState } from "react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import React, { useState, useRef, useEffect } from "react";
+import { XMarkIcon } from "@heroicons/react/24/solid";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import NavLink from "./NavLink";
@@ -22,9 +23,23 @@ const navLinks = [
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setNavbarOpen(false);
+      }
+    };
+    document.addEventListener("click", handleOutsideClick);
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
 
   return (
     <nav
+      ref={navRef}
       className={`  animate-fade-down fixed mx-auto top-0 left-0  right-0 bg-[#20202a] bg-opacity-100 z-50 shadow-md`}
     >
       <div className="grid grid-cols-2  container lg:py-1 items-center mx-auto px-4 my-2  z-[100]">
@@ -43,14 +58,14 @@ const Navbar = () => {
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
-              className="flex  items-center animate-fade-down px-3 py-2 border rounded border-slate-200 text-white hover:text-primary-100 hover:border-white"
+              className="flex  items-center px-3 py-2 border rounded text-primary-500 hover:text-primary-300 border-slate-200 hover:text-primary-100 hover:border-white"
             >
-              <Bars3Icon className="h-5 w-5 animate-fade-right animate-once" />
+              Menú
             </button>
           ) : (
             <button
               onClick={() => setNavbarOpen(false)}
-              className="flex items-center px-3 py-2 animate-fade-down border rounded border-slate-200 text-white  hover:text-primary-600 transition-colors"
+              className="flex items-center px-3 py-2 border rounded border-slate-200 text-primary-500 transition-colors"
             >
               <XMarkIcon className="h-5 w-5 animate-spin animate-once" />
             </button>
@@ -61,7 +76,8 @@ const Navbar = () => {
             {navLinks.map((link, index) => (
               <li
                 key={index}
-                className="grid justify-items-center hover:bg-primary-600 transition-colors rounded-full  animate-fade-down"
+                className={`grid justify-items-center hover:bg-primary-600 transition-colors rounded-full  animate-fade-down
+                `}
               >
                 <NavLink href={link.path} title={link.title} />
               </li>
