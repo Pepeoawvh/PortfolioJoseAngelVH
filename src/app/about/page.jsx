@@ -10,28 +10,28 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <div className="animate-fade animate-delay-200 grid grid-cols-2 ml-6">
-      <div>
-      <h2 className="underline text-lg">FullStack</h2>
-        <ul className="list-disc pl-2">
-          <li>Node.js</li>
-          <li>Express</li>
-          <li>MongoDB</li>
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>Next Js</li>
-        </ul>
-      </div>
-      <div>
-      <h2 className="underline text-lg">Fotografía/Diseño</h2>
-        <ul className="list-disc pl-2">
-          <li>Photoshop - Avanzado</li>
-          <li>Lightroom</li>
-          <li>Illustrator</li>
-          <li>Fotografía de estudio</li>
-          <li>Tecnicas fotográficas</li>
-          <li>Gestion de archivo fotográfico</li>
-        </ul>
-      </div>
+        <div>
+          <h2 className="underline text-lg">FullStack</h2>
+          <ul className="list-disc pl-2">
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>MongoDB</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Next Js</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="underline text-lg">Fotografía/Diseño</h2>
+          <ul className="list-disc pl-2">
+            <li>Photoshop - Avanzado</li>
+            <li>Lightroom</li>
+            <li>Illustrator</li>
+            <li>Fotografía de estudio</li>
+            <li>Tecnicas fotográficas</li>
+            <li>Gestion de archivo fotográfico</li>
+          </ul>
+        </div>
       </div>
     ),
   },
@@ -52,27 +52,33 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <div className="animate-fade animate-delay-200 grid grid-cols-3 ">
-      <Link href="https://www.credly.com/badges/f83b2e7b-43f3-4135-8d35-63212c36ce4d/public_url">
-        <Image
-          src="https://images.credly.com/size/680x680/images/791d0469-ca15-4bc9-b9b3-2b8dca821b62/image.png"
-          width={150}
-          height={150}
-        />
+        <Link href="https://www.credly.com/badges/f83b2e7b-43f3-4135-8d35-63212c36ce4d/public_url">
+          <Image
+            src="https://images.credly.com/size/680x680/images/791d0469-ca15-4bc9-b9b3-2b8dca821b62/image.png"
+            width={150}
+            height={150}
+          />
         </Link>
         <Link href="https://www.credly.com/badges/e0a8aa56-d906-4040-a1a6-254d02053649/public_url">
-        <Image
-          src="https://images.credly.com/size/680x680/images/71ed1274-3d7c-40f4-9194-e464643719e3/image.png"
-          width={150}
-          height={150}
-        />
+          <Image
+            src="https://images.credly.com/size/680x680/images/71ed1274-3d7c-40f4-9194-e464643719e3/image.png"
+            width={150}
+            height={150}
+          />
         </Link>
         <Link href="https://www.credly.com/badges/299da870-993e-4be6-a7fb-05a6cb647ac5/public_url">
-
-        <Image
-          src="https://images.credly.com/size/680x680/images/50a7358c-80d1-4a5d-a1d7-a9e0997de2be/image.png"
-          width={150}
-          height={150}
-        />
+          <Image
+            src="https://images.credly.com/size/680x680/images/50a7358c-80d1-4a5d-a1d7-a9e0997de2be/image.png"
+            width={150}
+            height={150}
+          />
+        </Link>
+        <Link href="https://www.credly.com/badges/c6dd2b2c-9149-429d-94de-5ceed5770d58/public_url">
+          <Image
+            src="https://images.credly.com/size/680x680/images/17dd77a2-4101-4d2b-84da-425fb5591c9a/image.png"
+            width={150}
+            height={150}
+          />
         </Link>
       </div>
     ),
@@ -103,7 +109,16 @@ const AboutSection = () => {
             Perfil Profesional
           </h2>
           <p className="text-base lg:text-lg px-3">
-          Soy Fotógrafo Profesional y Desarrollador Fullstack. Tengo experiencia trabajando con Node.js y Git, en FrontEnd HTML, CSS, JavaScript para proyectos React o Next. En backend Express y MongoDB y librerías. Me considero una persona curiosa, entusiasta y autodidacta. Además, tengo un alto nivel de compromiso lo que me permite aprender rápida y efectivamente aquello en lo que incursiono.  Busco expandir constantemente mis conocimientos y habilidades. Tengo mucha experiencia trabajando con equipos multidisciplinarios y diversos. Me interesa participar en proyectos para aumentar mi experiencia.
+            Soy Fotógrafo Profesional y Desarrollador Fullstack. Tengo
+            experiencia trabajando con Node.js y Git, en FrontEnd HTML, CSS,
+            JavaScript para proyectos React o Next. En backend Express y MongoDB
+            y librerías. Me considero una persona curiosa, entusiasta y
+            autodidacta. Además, tengo un alto nivel de compromiso lo que me
+            permite aprender rápida y efectivamente aquello en lo que
+            incursiono. Busco expandir constantemente mis conocimientos y
+            habilidades. Tengo mucha experiencia trabajando con equipos
+            multidisciplinarios y diversos. Me interesa participar en proyectos
+            para aumentar mi experiencia.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
