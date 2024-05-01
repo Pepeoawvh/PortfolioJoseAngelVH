@@ -52,12 +52,14 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <div className="animate-fade animate-delay-200 grid grid-cols-3 ">
+      {/* INSIGNIA 1 */}
         <Link href="https://www.credly.com/badges/f83b2e7b-43f3-4135-8d35-63212c36ce4d/public_url">
           <Image
             src="https://images.credly.com/size/680x680/images/791d0469-ca15-4bc9-b9b3-2b8dca821b62/image.png"
             width={150}
             height={150}
           />
+          {/* INSIGNIA 2 */}
         </Link>
         <Link href="https://www.credly.com/badges/e0a8aa56-d906-4040-a1a6-254d02053649/public_url">
           <Image
@@ -66,6 +68,7 @@ const TAB_DATA = [
             height={150}
           />
         </Link>
+        {/* INSIGNIA 3 */}
         <Link href="https://www.credly.com/badges/299da870-993e-4be6-a7fb-05a6cb647ac5/public_url">
           <Image
             src="https://images.credly.com/size/680x680/images/50a7358c-80d1-4a5d-a1d7-a9e0997de2be/image.png"
@@ -73,16 +76,18 @@ const TAB_DATA = [
             height={150}
           />
         </Link>
+        {/* INSIGNIA 4 */}
         <Link href="https://www.credly.com/badges/ef2ec8e9-fb6c-4fe0-8e65-c8ff48c7fef2/public_url">
           <Image
-            src="https://images.credly.com/size/680x680/images/50a7358c-80d1-4a5d-a1d7-a9e0997de2be/image.png"
+            src="https://images.credly.com/size/680x680/images/5a6985ec-c5f8-4c59-8668-8278971a368e/image.png"
             width={150}
             height={150}
           />
         </Link>
+        {/* INSIGNIA 5 */}
         <Link href="https://www.credly.com/badges/c6dd2b2c-9149-429d-94de-5ceed5770d58/public_url">
           <Image
-            src="https://images.credly.com/size/680x680/images/5a6985ec-c5f8-4c59-8668-8278971a368e/image.png"
+            src="https://images.credly.com/size/680x680/images/17dd77a2-4101-4d2b-84da-425fb5591c9a/image.png"
             width={150}
             height={150}
           />
