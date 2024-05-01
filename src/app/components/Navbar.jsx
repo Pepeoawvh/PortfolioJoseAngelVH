@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import NavLink from "./NavLink";
@@ -37,10 +36,12 @@ const Navbar = () => {
     };
   }, []);
 
+
   return (
-    <nav
+    <>
+    <div
       ref={navRef}
-      className={`  animate-fade-down fixed mx-auto top-0 left-0  right-0 bg-[#20202a] bg-opacity-100 z-50 shadow-md`}
+      className={`  animate-fade-down fixed w-screen bg-[#20202a] bg-opacity-100 z-50 shadow-md`}
     >
       <div className="grid grid-cols-2  container lg:py-1 items-center mx-auto px-4 my-2  z-[100]">
         <Link href={"/"} className="animate-fade-downjustify-self-center auto">
@@ -86,7 +87,8 @@ const Navbar = () => {
         </div>
       </div>
       {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
-    </nav>
+    </div>
+    </>
   );
 };
 

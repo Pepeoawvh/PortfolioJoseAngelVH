@@ -3,9 +3,11 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import CarruselCircular from "./CarruselCircular";
+
+
 const HeroSection = () => {
   return (
-    <section className=" animate-fade animate-delay-300 d-grid items-start h-[400px] md:h-[700px] sm:px-6">
+    <section className=" mt-16 animate-fade animate-delay-300 d-grid items-start h-[400px] md:h-[600px] sm:px-6">
       <div className="grid grid-cols-1 grid-rows-1  justify-items-center md:px-6 items-start sm:grid-cols-12 sm:place-self-start sm:grid-rows-1 h-[500px]">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
