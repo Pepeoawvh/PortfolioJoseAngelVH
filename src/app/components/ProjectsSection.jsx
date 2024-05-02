@@ -80,7 +80,7 @@ const ProjectsSection = () => {
 
   return (
     <section
-      className="animate-fade animate-delay-300 grid row-span-3 position-relative top-[-300px]  sm:mt-0 mt-12 z-30"
+      className="animate-fade animate-delay-300 grid row-span-3 position-relative top-[-300px]  sm:mt-0 z-30"
       id="projects"
     >
       <h2
@@ -90,7 +90,7 @@ const ProjectsSection = () => {
         Proyectos
       </h2>
       <div
-        className="text-white relative
+        className="text-white relative mt-12
      z-30 flex flex-row justify-center items-center gap-2 py-6"
       >
         {/* <ProjectTag
