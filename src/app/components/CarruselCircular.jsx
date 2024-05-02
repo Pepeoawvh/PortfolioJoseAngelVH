@@ -5,7 +5,6 @@ import styles from "./styles/carrusel.module.css";
 const images = [
   "/images/photos/profileBackground/camaraNaranja.jpg",
   "/images/photos/profileBackground/cerroMisterio.jpg",
-  "/images/photos/profileBackground/FLores.jpg",
   "/images/photos/profileBackground/laserYellow.jpg",
   "/images/photos/profileBackground/norte1234.jpg",
   "/images/photos/profileBackground/prismaYellow.jpg",
