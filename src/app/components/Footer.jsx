@@ -1,13 +1,69 @@
-
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faInstagram,
+  faBehance,
+  faWhatsapp,
+  faLinkedin,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
-    <footer className="animate-fade-up animate-delay-200 footer border z-10 border-t-[#33353F] border-l-transparent border-r-transparent text-white">
-      <div className=" container p-8 flex justify-between">
-        <span></span>
-        <p className="text-slate-600">Todos los derechos reservados</p>
-      </div>
+    <footer className="grid justify-items-center text-xs bg-[#20202a] text-white py-4">
+        <div className="grid grid-flow-col gap-4 w-full justify-items-center ">
+          <a
+            href="https://www.instagram.com/joseangel.vh"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon
+              icon={faInstagram}
+              className="h-5 text-white hover:text-gray-400"
+            />
+          </a>
+          <a
+            href="https://www.behance.net/ljpp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon
+              icon={faBehance}
+              className="h-5 text-white hover:text-gray-400"
+            />
+          </a>
+          <a
+            href="https://wa.me/56949866129"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon
+              icon={faWhatsapp}
+              className="h-5 text-white hover:text-gray-400"
+            />
+          </a>
+          <a
+            href="https://github.com/tu-usuario"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon
+              icon={faGithub}
+              className=" h-5 text-white hover:text-gray-400"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/tu-usuario"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon
+              icon={faLinkedin}
+              className=" text-white h-5 hover:text-gray-400"
+            />
+          </a>
+        </div>
+
     </footer>
   );
 };

@@ -1,36 +1,27 @@
 "use client";
-import GithubIcon from "../../../public/github-icon.svg";
-import LinkedinIcon from "../../../public/linkedin-icon.svg";
-import Link from "next/link";
-import Image from "next/image";
 import Form from "./Form";
 const EmailSection = () => {
   return (
     <section
       id="contact"
-      className="animate-fade animate-delay-300 grid md:grid-cols-2 py-24 sm:pt-40 gap-4 relative"
+      className="animate-fade animate-delay-300 grid md:grid-cols-2 py-20 sm:pt-40 gap-4 relative px-12"
     >
       <div className="z-10">
-        <h5 className="text-xl font-bold text-white my-2">Hablemos!</h5>
+        <h5 className="text-xl font-bold text-white my-2">Conversemos</h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
-          {" "}
-          Estoy en busqueda de nuevas experiencias laborales, me interesa
+          {" "}Me encantaría
           participar en proyectos novedosos con equipos creativos y
           comprometidos. ¡Hablemos! Tengo experiencia en el area de las artes
-          visuales y la fotografía, desde donde puedo aportar con un enfoque
+          visuales, fotografía y diseño, desde donde puedo aportar con un enfoque
           diferente a distintos grupos de trabajo.
+          Visita mis redes sociales.
+          Si tienes alguna idea o proyecto en mente, no dudes en contactarme.
         </p>
-        <div className="socials flex flex-row gap-2">
-          <Link href="https://github.com/Pepeoawvh">
-            <Image src={GithubIcon} alt="Github Icon" />
-          </Link>
-          <Link href="https://www.linkedin.com/in/jos%C3%A9-%C3%A1ngel-vald%C3%A9s-hernandez-757124149/">
-            <Image src={LinkedinIcon} alt="Linkedin Icon" />
-          </Link>
-        </div>
       </div>
 
       <Form />
+      <p>Tambien puedes contactarme a través de mis redes sociales o por WhatsApp presionando el icono de la barra inferior.</p>
+
     </section>
   );
 };

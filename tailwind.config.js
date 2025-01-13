@@ -13,6 +13,10 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      clipPath: {
+        'webdev': 'polygon(0 0, 100% 0, 0 100%)',
+        'photography': 'polygon(100% 0, 100% 100%, 0 100%)',
+      },
     },
     colors: {
       ...colors,
@@ -21,6 +25,16 @@ module.exports = {
     },
   },
   plugins: [
-    require('tailwindcss-animated')
+    require('tailwindcss-animated'),
+    function({ addUtilities }) {
+      addUtilities({
+        '.clip-path-webdev': {
+          'clip-path': 'polygon(0 0, 100% 0, 0 100%)',
+        },
+        '.clip-path-photography': {
+          'clip-path': 'polygon(100% 0, 100% 100%, 0 100%)',
+        },
+      });
+    }
   ],
 };
