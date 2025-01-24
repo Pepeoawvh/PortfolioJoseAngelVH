@@ -38,7 +38,7 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <div className="animate-fade animate-delay-200 grid grid-cols-3 pb-12">
-      {/* INSIGNIA 1 */}
+        {/* INSIGNIA 1 */}
         <Link href="https://www.credly.com/badges/f83b2e7b-43f3-4135-8d35-63212c36ce4d/public_url">
           <Image
             src="https://images.credly.com/size/680x680/images/791d0469-ca15-4bc9-b9b3-2b8dca821b62/image.png"
@@ -102,11 +102,11 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white animate-fade animate-delay-200" id="about">
-      <div className=" mx-5  md:grid md:grid-cols-2 sm:mt-0 mt-12 gap-8 items-center px-4 xl:gap-16  xl:px-16 pb-12">
-          <h2 className="text-4xl font-bold text-white mb-4 mt-6 text-center">
-            Bienvenid@
-          </h2>
+    <section className=" text-white animate-fade animate-delay-200" id="about">
+      <h2 className="text-4xl font-bold text-white mb-4 mt-6 text-center">
+        Bienvenid@
+      </h2>
+      <div className="grid auto-rows-min mx-5  md:grid-cols-2 sm:mt-0 mt-12 gap-8 items-center px-4 xl:gap-16  xl:px-16 pb-12">
         <Image
           src="/images/about-image.png"
           width={500}
@@ -114,11 +114,12 @@ const AboutSection = () => {
           className="rounded-md justify-self-center self-start mt-10"
         />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <p className="text-base lg:text-lg px-3">
+          <p className="pt-10 text-base lg:text-lg px-3">
             Soy Fotógrafo Profesional y Desarrollador Fullstack. Tengo
             experiencia trabajando con Node.js y Git, en FrontEnd HTML, CSS,
-            JavaScript para proyectos React principalmente utilizando Next. En backend tengo conocimientos de Express, MongoDB
-            y librerías asociadas. Me considero una persona curiosa, entusiasta y
+            JavaScript para proyectos React principalmente utilizando Next. En
+            backend tengo conocimientos de Express, MongoDB y librerías
+            asociadas. Me considero una persona curiosa, entusiasta y
             autodidacta. Además, tengo un alto nivel de compromiso lo que me
             permite aprender rápida y efectivamente aquello en lo que
             incursiono. Busco expandir constantemente mis conocimientos y
@@ -151,22 +152,18 @@ const AboutSection = () => {
           </div>
           <div className="mt-8">
             {TAB_DATA.find((t) => t.id === tab).content}
-          </div>
-         
-        </div>
-        <a
+            <a
               href="/CVJVH2024.pdf"
               download="CVJVH2024.pdf"
               className="grid justify-items-center w-fit px-1 h-8 py-1 justify-self-center sm:w-fit rounded-md mb-12 bg-gradient-to-br from-primary-100 to-primary-500 hover:bg-slate-800 text-white mt-3 "
             >
               <span className="grid h-6 w-fit items-center text-center bg-[#121212] hover:bg-slate-800 rounded-md px-5 z-50">
-              
-            Descargar CV
-        
+                Descargar CV
               </span>
             </a>
+          </div>
+        </div>
       </div>
-
     </section>
   );
 };

@@ -7,10 +7,10 @@ const FooterWeb = () => {
     <footer className="bg-[#20202a] py-2 fixed bottom-0 w-full">
       <div className="container p-2 flex justify-between items-center">
         <div className="grid grid-flow-col w-full justify-items-center gap-6 ">
-          <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Pepeoawvh" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faGithub} className=" h-5 text-white hover:text-gray-400" />
           </a>
-          <a href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/jose-angel-valdes-hernandez/" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faLinkedin} className=" text-white h-5 hover:text-gray-400" />
           </a>
 

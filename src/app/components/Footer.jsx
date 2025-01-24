@@ -43,7 +43,7 @@ const Footer = () => {
             />
           </a>
           <a
-            href="https://github.com/tu-usuario"
+            href="https://github.com/Pepeoawvh"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -53,7 +53,7 @@ const Footer = () => {
             />
           </a>
           <a
-            href="https://www.linkedin.com/in/tu-usuario"
+            href="https://www.linkedin.com/in/jose-angel-valdes-hernandez/"
             target="_blank"
             rel="noopener noreferrer"
           >

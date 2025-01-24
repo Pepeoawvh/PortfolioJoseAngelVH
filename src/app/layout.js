@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
       </head>
-      <body className={` bg-[#191923] ${jost.className}`}>
+      <body className={`bg-[#191923] ${jost.className}`}>
         {children}
 
       </body>

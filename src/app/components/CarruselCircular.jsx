@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import styles from "./styles/carrusel.module.css";
+
+// Lista de imágenes para el carrusel
 const images = [
   "/images/photos/profileBackground/camaraNaranja.jpg",
   "/images/photos/profileBackground/cerroMisterio.jpg",
@@ -21,19 +22,16 @@ const images = [
   "/images/photos/profileBackground/mirrorcellar.jpg",
   "/images/photos/profileBackground/laser2.jpg",
   "/images/photos/profileBackground/contraLuz.jpg",
-]; 
+];
 
-const CarruselCircular = () => {
+const CarruselCircular = ({ width = "100%", height = "400px" }) => {
+  // Estado para el índice de la imagen actual
   const [index, setIndex] = useState(0);
-  const [fade, setFade] = useState(true);
 
   useEffect(() => {
+    // Función para cambiar la imagen
     const changeImage = () => {
-      setFade(false); // Inicia el fade out
-      setTimeout(() => {
-        setIndex((prevIndex) => (prevIndex + 1) % images.length);
-        setFade(true); // Inicia el fade in
-      }, 1000); // Espera 1 segundo para iniciar el fade in
+      setIndex((prevIndex) => (prevIndex + 1) % images.length); // Cambia al siguiente índice
     };
 
     // Cambia la imagen cada 7 segundos
@@ -44,24 +42,19 @@ const CarruselCircular = () => {
   }, []);
 
   return (
-    <>
-      <div
-        className={`flex bg-[#191923] row-span-2 sm:col-span-6 w-[full] h-[400px] sm:w-[1000px] sm:h-[1000px] overflow-hidden opacity-80 mb-7 z-10 sm:relative sm:right-[-30px] sm:top-[-230px] top-[100px] sm:left-[100px]  left-[-0px] absolute`}
-      >
-        <div
-          className={` ${styles.radialFade} row-span-1 sm:col-span-6 w-[100%] h-[100%] absolute  z-20 justify-self-center`}
-        ></div>
-        <Image
-          src={images[index]}
-          alt="Imagen del slideshow"
-          className={` object-cover w-[full] h-full z-0 ${
-            fade ? styles.fadeIn : styles.fadeOut
-          }`}
-          width={4000}
-          height={4000}
-        />
-      </div>
-    </>
+    <div
+      className="relative overflow-hidden bg-[#191923] opacity-80"
+      style={{ width, height }}
+    >
+      {/* Imagen del carrusel */}
+      <Image
+        src={images[index]}
+        alt="Imagen del slideshow"
+        layout="fill"
+        objectFit="cover"
+        className="transition-opacity duration-1000 ease-in-out"
+      />
+    </div>
   );
 };
 

@@ -41,7 +41,7 @@ const NavbarPhoto = () => {
     <>
     <div
       ref={navRef}
-      className={` animate-fade-down fixed w-screen bg-[#20202a] bg-opacity-100 z-50 shadow-md`}
+      className={` animate-fade-down w-screen bg-[#20202a] bg-opacity-100 z-50 shadow-md`}
     >
       <div className="grid grid-cols-2  container lg:py-1 items-center mx-auto px-4 my-2  z-[100]">
         <Link href={"/"} className="animate-fade-downjustify-self-center auto">
