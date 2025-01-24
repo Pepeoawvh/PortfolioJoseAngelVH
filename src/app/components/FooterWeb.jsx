@@ -4,7 +4,7 @@ import { faWhatsapp, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-i
 
 const FooterWeb = () => {
   return (
-    <footer className="bg-[#20202a] py-2 fixed bottom-0 w-full">
+    <footer className="bg-[#20202a] py-2 bottom-0 w-full">
       <div className="container p-2 flex justify-between items-center">
         <div className="grid grid-flow-col w-full justify-items-center gap-6 ">
           <a href="https://github.com/Pepeoawvh" target="_blank" rel="noopener noreferrer">
