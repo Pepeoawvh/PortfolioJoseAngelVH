@@ -10,6 +10,7 @@ import {
 const FooterPhoto = () => {
   return (
     <footer className="grid justify-items-center text-xs bg-[#20202a] text-white py-4">
+    
       <div className="grid grid-flow-col gap-4 w-full justify-items-center ">
         <a
           href="https://www.instagram.com/joseangel.vh"
@@ -42,6 +43,7 @@ const FooterPhoto = () => {
           />
         </a>
       </div>
+      <p className="p-4 bg-">© {new Date().getFullYear()} José Valdés Hernández</p>
     </footer>
   );
 };

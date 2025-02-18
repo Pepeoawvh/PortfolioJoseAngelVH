@@ -6,16 +6,15 @@ import Image from "next/image";
 
 const navLinks = [
   {
-    title: "Proyectos Web",
-    path: "projects",
-  },
-  {
-    title: "Contacto",
-    path: "contacto",
+    
   },
   {
     title: "Sobre mi",
-    path: "about",
+    path: "/portphoto/aboutphoto",
+  },
+  {
+    title: "Contacto",
+    path: "/portphoto/contactphoto",
   },
 ];
 
@@ -34,14 +33,13 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
       document.removeEventListener("click", handleOutsideClick);
     };
   }, []);
-
   return (
     <div
       ref={navRef}
       className="w-screen h-20 bg-[#20202a] shadow-md fixed top-0 left-0 z-50"
     >
       <div className="flex justify-between text-[#FFB300] items-center container mx-auto px-4 h-full ">
-        <Link href={"/"} className="h-[40px]">
+        <Link href="/" className="h-[40px]">
           <Image
             src="/images/logoWhite.svg"
             alt="LOGO"
@@ -51,7 +49,7 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
             className="object-contain h-full"
           />
         </Link>
-        
+
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <button
@@ -74,13 +72,14 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
           {navLinks
             .filter((link) => link.path !== activeSection)
             .map((link, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveSection(link.path)}
-                className="hover:bg-[#FFB300] hover:text-white text-shadow-md transition-colors rounded px-3 py-2"
-              >
-                {link.title}
-              </button>
+              <Link key={index} href={link.path}>
+                <button
+                  onClick={() => setActiveSection(link.path)}
+                  className="hover:bg-[#FFB300] hover:text-white text-shadow-md transition-colors rounded px-3 py-2"
+                >
+                  {link.title}
+                </button>
+              </Link>
             ))}
         </div>
       </div>
@@ -95,15 +94,17 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
             .filter((link) => link.path !== activeSection)
             .map((link, index) => (
               <li key={index}>
-                <button
-                  onClick={() => {
-                    setActiveSection(link.path);
-                    setNavbarOpen(false);
-                  }}
-                  className="hover:bg-[#FFB300]  text-shadow-md transition-colors rounded-full px-3 py-2"
-                >
-                  {link.title}
-                </button>
+                <Link href={link.path}>
+                  <button
+                    onClick={() => {
+                      setActiveSection(link.path);
+                      setNavbarOpen(false);
+                    }}
+                    className="hover:bg-[#FFB300] text-shadow-md transition-colors rounded-full px-3 py-2"
+                  >
+                    {link.title}
+                  </button>
+                </Link>
               </li>
             ))}
         </ul>
