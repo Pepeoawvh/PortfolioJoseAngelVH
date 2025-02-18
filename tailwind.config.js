@@ -26,6 +26,8 @@ module.exports = {
   },
   plugins: [
     require('tailwindcss-animated'),
+    require('tailwindcss-textshadow'),
+    require('tailwind-scrollbar'),
     function({ addUtilities }) {
       addUtilities({
         '.clip-path-webdev': {

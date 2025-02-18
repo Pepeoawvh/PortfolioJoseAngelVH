@@ -109,7 +109,7 @@ const AboutPhoto = () => {
 
   return (
     <section className="text-white animate-fade animate-delay-200]" id="about">
-      <div className=" mx-5 items-start md:grid md:grid-cols-2 sm:mt-0 mt-20 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+      <div className=" mx-5  md:grid md:grid-cols-2 sm:mt-0 mt-20 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <Image
           src="/images/about-image.png"
           width={500}

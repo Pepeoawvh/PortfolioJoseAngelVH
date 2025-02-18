@@ -25,7 +25,7 @@ const Welcome = () => {
         >
           <Link
             href="/webdev"
-            className={`text-xl mr-36 sm:mr-40 mb-44 tracking-wider ${
+            className={`text-xl select-none mr-36 sm:mr-40 mb-44 tracking-wider  hover:text-primary-300 hover:bg-black hover:py-2 hover:px-4 rounded ${
               isWebClicked
                 ? "bg-black shadow-md text-primary-500 py-2 px-4 rounded cursor-pointer"
                 : "text-gray-700 cursor-pointer"
@@ -45,9 +45,9 @@ const Welcome = () => {
         >
           <Link
             href="/portphoto"
-            className={`ml-44 mt-36 text-xl ${
+            className={`ml-44 mt-36 text-xl select-none hover:text-[#fdd067] hover:bg-black hover:py-2 hover:px-4 rounded ${
               isPhotoClicked
-                ? "bg-black shadow-md text-primary-500 py-2 px-4 rounded cursor-pointer"
+                ? "bg-black shadow-md text-[#FFB300] py-2 px-4 rounded cursor-pointer"
                 : "text-gray-700 cursor-pointer"
             }`}
           >

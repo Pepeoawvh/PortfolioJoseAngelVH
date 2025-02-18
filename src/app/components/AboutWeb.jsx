@@ -9,7 +9,7 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <div className="animate-fade pb-12 animate-delay-200 grid grid-cols-2 ml-6">
+      <div className="animate-fade pb-12 animate-delay-200 grid grid-cols-1 md:grid-cols-2 ml-6">
         <div>
           <h2 className="underline text-lg">FullStack</h2>
           <ul className="grid grid-cols-2 gap-x-12 list-disc pl-2">
@@ -119,14 +119,12 @@ const AboutSection = () => {
             experiencia trabajando con Node.js y Git, en FrontEnd HTML, CSS,
             JavaScript para proyectos React principalmente utilizando Next. En
             backend tengo conocimientos de Express, MongoDB y librerías
-            asociadas. Me considero una persona curiosa, entusiasta y
-            autodidacta. Además, tengo un alto nivel de compromiso lo que me
-            permite aprender rápida y efectivamente aquello en lo que
-            incursiono. Busco expandir constantemente mis conocimientos y
+            asociadas.</p> <p className="pt-3 text-base lg:text-lg px-3">
+            Busco expandir constantemente mis conocimientos y
             habilidades. Tengo mucha experiencia trabajando con equipos
             multidisciplinarios y diversos. Me interesa participar en proyectos
-            para aumentar mi experiencia.
-          </p>
+            para aumentar mi experiencia.</p>
+          
           <div className="flex flex-row justify-start mt-8">
             <TabButton
               selectTab={() => handleTabChange("skills")}

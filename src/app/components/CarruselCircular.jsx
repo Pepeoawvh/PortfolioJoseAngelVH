@@ -24,36 +24,36 @@ const images = [
   "/images/photos/profileBackground/contraLuz.jpg",
 ];
 
-const CarruselCircular = ({ width = "100%", height = "400px" }) => {
-  // Estado para el índice de la imagen actual
+const CarruselCircular = () => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    // Función para cambiar la imagen
-    const changeImage = () => {
-      setIndex((prevIndex) => (prevIndex + 1) % images.length); // Cambia al siguiente índice
-    };
+    const intervalId = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 7000);
 
-    // Cambia la imagen cada 7 segundos
-    const intervalId = setInterval(changeImage, 7000);
-
-    // Limpieza al desmontar el componente
     return () => clearInterval(intervalId);
   }, []);
 
   return (
-    <div
-      className="relative overflow-hidden bg-[#191923] opacity-80"
-      style={{ width, height }}
-    >
-      {/* Imagen del carrusel */}
-      <Image
-        src={images[index]}
-        alt="Imagen del slideshow"
-        layout="fill"
-        objectFit="cover"
-        className="transition-opacity duration-1000 ease-in-out"
-      />
+    <div className="w-full max-w-7xl mx-auto relative group p-4 bg-white rounded mt-4">
+      <div className="relative aspect-[3/4] sm:aspect-video md:aspect-[16/9] rounded shadow  lg:aspect-[21/9] overflow-hidden bg-[#191923] opacity-95">
+        <Image
+          src={images[index]}
+          alt="Imagen del slideshow"
+          fill
+          priority
+          quality={100}
+          sizes="(max-width: 640px) 100vw,
+                 (max-width: 768px) 100vw,
+                 (max-width: 1024px) 100vw,
+                 100vw"
+          className="object-cover object-center transition-opacity duration-1500 ease-in-out"
+        />
+        
+        {/* Efecto de overlay para transiciones */}
+        <div className="absolute inset-0 bg-black opacity-0 transition-opacity duration-1000" />
+      </div>
     </div>
   );
 };

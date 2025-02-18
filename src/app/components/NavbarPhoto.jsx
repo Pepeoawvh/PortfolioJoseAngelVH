@@ -3,11 +3,10 @@ import React, { useState, useRef, useEffect } from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import Image from "next/image";
-import NavLink from "./NavLink";
-import MenuOverlay from "./MenuOverlay";
+
 const navLinks = [
   {
-    title: "Proyectos",
+    title: "Proyectos Web",
     path: "projects",
   },
   {
@@ -20,7 +19,7 @@ const navLinks = [
   },
 ];
 
-const NavbarPhoto = () => {
+const NavbarWeb = ({ activeSection, setActiveSection }) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const navRef = useRef(null);
 
@@ -36,60 +35,81 @@ const NavbarPhoto = () => {
     };
   }, []);
 
-
   return (
-    <>
     <div
       ref={navRef}
-      className={` animate-fade-down w-screen bg-[#20202a] bg-opacity-100 z-50 shadow-md`}
+      className="w-screen h-20 bg-[#20202a] shadow-md fixed top-0 left-0 z-50"
     >
-      <div className="grid grid-cols-2  container lg:py-1 items-center mx-auto px-4 my-2  z-[100]">
-        <Link href={"/"} className="animate-fade-downjustify-self-center auto">
-          {" "}
+      <div className="flex justify-between text-[#FFB300] items-center container mx-auto px-4 h-full ">
+        <Link href={"/"} className="h-[40px]">
           <Image
             src="/images/logoWhite.svg"
             alt="LOGO"
-            className="fill-white animate-fade-down"
-            layout=""
-            width={250}
-            height={100}
+            width={200}
+            height={40}
+            priority
+            className="object-contain h-full"
           />
         </Link>
-        <div className="mobile-menu block md:hidden justify-self-end animate-fade-down">
+        
+        <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
-              className="flex  items-center px-3 py-2 border rounded text-primary-500 hover:text-primary-300 border-slate-200 hover:text-primary-100 hover:border-white"
+              className="flex items-center px-3 py-2 border rounded text-[#FFB300] hover:text-[#f7d78d] border-slate-200 hover:border-white"
             >
               Menú
             </button>
           ) : (
             <button
               onClick={() => setNavbarOpen(false)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-primary-500 transition-colors"
+              className="flex items-center px-3 py-2 border rounded border-slate-200 text-[#FFB300] transition-colors"
             >
-              <XMarkIcon className="h-5 w-5 animate-spin animate-once" />
+              <XMarkIcon className="h-5 w-5" />
             </button>
           )}
         </div>
-        <div className="menu hidden md:block md:w-auto" id="navbar">
-          <ul className="grid grid-cols-3 bx p-4 md:p-0 md:flex-row animate-fade-down md:space-x-8 mt-0">
-            {navLinks.map((link, index) => (
-              <li
+
+        <div className="hidden md:flex space-x-8">
+          {navLinks
+            .filter((link) => link.path !== activeSection)
+            .map((link, index) => (
+              <button
                 key={index}
-                className={`grid justify-items-center hover:bg-primary-600 transition-colors rounded-full  animate-fade-down
-                `}
+                onClick={() => setActiveSection(link.path)}
+                className="hover:bg-[#FFB300] hover:text-white text-shadow-md transition-colors rounded px-3 py-2"
               >
-                <NavLink href={link.path} title={link.title} />
-              </li>
+                {link.title}
+              </button>
             ))}
-          </ul>
         </div>
       </div>
-      {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
+
+      <div
+        className={`md:hidden transition-[max-height] duration-500 ease-in-out overflow-hidden ${
+          navbarOpen ? "max-h-96" : "max-h-0"
+        }`}
+      >
+        <ul className="flex flex-col items-center space-y-4 py-4 bg-[#20202a]">
+          {navLinks
+            .filter((link) => link.path !== activeSection)
+            .map((link, index) => (
+              <li key={index}>
+                <button
+                  onClick={() => {
+                    setActiveSection(link.path);
+                    setNavbarOpen(false);
+                  }}
+                  className="hover:bg-[#FFB300]  text-shadow-md transition-colors rounded-full px-3 py-2"
+                >
+                  {link.title}
+                </button>
+              </li>
+            ))}
+        </ul>
+      </div>
     </div>
-    </>
   );
 };
 
-export default NavbarPhoto;
+export default NavbarWeb;

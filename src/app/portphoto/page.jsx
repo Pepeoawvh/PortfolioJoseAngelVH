@@ -1,30 +1,39 @@
 "use client";
 import CarruselCircular from "../components/CarruselCircular";
+import {sourceSansPro} from "../ui/fonts";
 
 const PortPhoto = () => {
   return (
-    <div className="grid h-screen">
-      <h1 className="text-center pt-4">Hola, Gracias por visitar mi portafolio personal</h1>
+    <div className={`flex flex-col min-h-screen`}>
+      <header className="text-center py-4 bg-gray-800 text-white">
+        <h1>Hola, Gracias por visitar mi portafolio personal</h1>
+      </header>
 
-      <div className="grid sm:h-64 md:justify-items-center">
-        <CarruselCircular
-          width="100%"
-          height="300px"
-        />
-      </div>
-      <h2 className="text-center px-12">
-        Soy Fotógrafo profesional y desarrollador web.
-        Aquí exhíbo mi trabajo personal y mis intereses en torno a la
-        fotografía, contáctame si quieres comentar o hablar sobre algún tema o
-        proyecto.
-      </h2>
-      <div className="grid grid-cols-3 gap-4 px-12">
-        <button className="bg-primary-600 h-12 rounded-full">
-          <span>Fotolibros</span>
-        </button>
-        <button className="bg-primary-600 h-12 rounded-full z-40">Proyectos</button>
-        <button className="bg-primary-600 h-12 rounded-full">Material Educativo</button>
-      </div>
+      <main className="flex-grow">
+        <div className="flex justify-center py-4">
+          <CarruselCircular />
+        </div>
+        <section className={`text-center px-4 md:px-12 py-4`}>
+          <h2>
+            Soy Fotógrafo profesional y desarrollador web. Aquí exhíbo mi trabajo personal y mis intereses en torno a la fotografía,
+          </h2>
+          <h2>
+            contáctame si quieres comentar o hablar sobre algún tema o proyecto.
+          </h2>
+        </section>
+        <section className="relative grid grid-cols-1 md:grid-cols-3 justify-items-center gap-4 px-4 md:px-12 py-4 text-[#FFB300]">
+          <div className="absolute top-0 left-1/4 w-1/2 border-t border-[#FFB300]"></div>
+          <button className="border-2 border-[#FFB300] h-10 w-1/2 rounded transition-all duration-300 text-shadow-md hover:w-4/5 hover:text-xl">
+            <span>Fotolibros</span>
+          </button>
+          <button className="border-2 border-[#FFB300] h-10 w-1/2 rounded transition-all duration-300 text-shadow-md hover:w-4/5 hover:text-xl">
+            <span>Proyectos</span>
+          </button>
+          <button className="border-2 border-[#FFB300] h-10 w-1/2 rounded transition-all duration-300 text-shadow-md hover:w-4/5 hover:text-xl">
+            <span>Material Educativo</span>
+          </button>
+        </section>
+      </main>
     </div>
   );
 };
