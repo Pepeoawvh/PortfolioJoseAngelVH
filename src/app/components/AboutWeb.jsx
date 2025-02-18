@@ -44,6 +44,8 @@ const TAB_DATA = [
             src="https://images.credly.com/size/680x680/images/791d0469-ca15-4bc9-b9b3-2b8dca821b62/image.png"
             width={150}
             height={150}
+            alt="Certificacion"
+
           />
           {/* INSIGNIA 2 */}
         </Link>
@@ -52,6 +54,8 @@ const TAB_DATA = [
             src="https://images.credly.com/size/680x680/images/71ed1274-3d7c-40f4-9194-e464643719e3/image.png"
             width={150}
             height={150}
+            alt="Certificacion"
+
           />
         </Link>
         {/* INSIGNIA 3 */}
@@ -60,6 +64,8 @@ const TAB_DATA = [
             src="https://images.credly.com/size/680x680/images/50a7358c-80d1-4a5d-a1d7-a9e0997de2be/image.png"
             width={150}
             height={150}
+            alt="Certificacion"
+
           />
         </Link>
         {/* INSIGNIA 4 */}
@@ -68,6 +74,8 @@ const TAB_DATA = [
             src="https://images.credly.com/size/680x680/images/5a6985ec-c5f8-4c59-8668-8278971a368e/image.png"
             width={150}
             height={150}
+            alt="Certificacion"
+
           />
         </Link>
         {/* INSIGNIA 5 */}
@@ -76,6 +84,7 @@ const TAB_DATA = [
             src="https://images.credly.com/size/680x680/images/17dd77a2-4101-4d2b-84da-425fb5591c9a/image.png"
             width={150}
             height={150}
+            alt="Certificacion"
           />
         </Link>
         {/* INSIGNIA 6 */}
@@ -84,6 +93,7 @@ const TAB_DATA = [
             src="https://images.credly.com/size/680x680/images/0513e558-a243-40ca-a27a-dd088eed3e4f/image.png"
             width={150}
             height={150}
+            alt="Certificacion"
           />
         </Link>
       </div>
@@ -112,6 +122,7 @@ const AboutSection = () => {
           width={500}
           height={500}
           className="rounded-md justify-self-center self-start mt-10"
+          alt="Jose Angel VH"
         />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <p className="pt-10 text-base lg:text-lg px-3">

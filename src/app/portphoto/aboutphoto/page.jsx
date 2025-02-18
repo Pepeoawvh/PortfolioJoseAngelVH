@@ -1,7 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { sourceSansPro } from "../../ui/fonts";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import HeaderPhoto from "../../components/HeaderPhoto";
+import MobileSectionsPhoto from "../../components/MobileSectionsPhoto";
+import DesktopSectionsPhoto from "../../components/DesktopSectionsPhoto";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -31,125 +33,101 @@ const AboutPhoto = () => {
     }
   };
 
-const secciones = {
+  const secciones = {
     perfil: {
-        titulo: "Perfíl Profesional",
-        subtitulo: "Fotógrafo Profesional y Artista Visual",
-        contenido: (
-            <div className="space-y-4">
-                <p>
-                    Fotógrafo profesional titulado del Instituto Profesional Arcos
-                    (2017) con más de 12 años de experiencia en distintos géneros
-                    fotográficos. Mi trabajo se caracteriza por una búsqueda constante, especialmente en técnicas de larga
-                    exposición con láser y fotografía de paisaje.
-                </p>
-                <p>
-                    Intento combinar mi formación técnica con reflexiónes sobre el rol
-                    de la imagen y la fotografía en la era digital.
-                </p>
-            </div>
-        ),
+      titulo: "Perfíl Profesional",
+      subtitulo: "Fotógrafo Profesional y Artista Visual",
+      contenido: (
+        <div className="space-y-4">
+          <p>
+            Fotógrafo profesional titulado del Instituto Profesional Arcos (2017) con más de 12 años de experiencia en distintos géneros fotográficos. Mi trabajo se caracteriza por una búsqueda constante, especialmente en técnicas de larga exposición con láser y fotografía de paisaje.
+          </p>
+          <p>
+            Intento combinar mi formación técnica con reflexiónes sobre el rol de la imagen y la fotografía en la era digital.
+          </p>
+        </div>
+      ),
     },
     especializacion: {
-        titulo: "Especialización",
-        subtitulo: "Áreas de expertise",
-        contenido: (
-            <div className="space-y-4">
-                <div>
-                    <h3 className="font-semibold text-lg">
-                        Fotografía de Larga Exposición y Light Painting
-                    </h3>
-                    <p>
-                        He desarrollado una técnica personal de larga exposición
-                        utilizando láser de alta energía para "dibujar" sobre las escenas
-                        capturadas, con post-producción selectiva para transformar
-                        tonalidades.
-                    </p>
-                </div>
-                <div>
-                    <h3 className="font-semibold text-lg">Fotografía de Paisaje</h3>
-                    <p>
-                        Especializado en capturar la sublimidad de paisajes naturales, con
-                        particular atención a escenas montañosas con efectos de niebla y
-                        profundidad atmosférica.
-                    </p>
-                </div>
-                <div>
-                    <h3 className="font-semibold text-lg">
-                        Fotografía 360° y Arquitectónica
-                    </h3>
-                    <p>
-                        Ofrezco servicios de documentación arquitectónica mediante
-                        tecnología 360° para recorridos virtuales inmersivos de inmuebles,
-                        museos y espacios educativos.
-                    </p>
-                </div><div>
-                    <h3 className="font-semibold text-lg">
-                        PostProducción Digital
-                    </h3>
-                    <p>
-                        Amplia experiencia y dominio de software de edición de imágenes como Adobe Lightroom y Photoshop, con habilidades avanzadas en retoque y manipulación de imágenes. Además de nociones avanzadas de Diseño gráfico y diagramación. Conocimientos de impresión digital y offset.
-                    </p>
-                </div>
-            </div>
-        ),
+      titulo: "Especialización",
+      subtitulo: "Áreas de expertise",
+      contenido: (
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-semibold text-lg">Fotografía de Larga Exposición y Light Painting</h3>
+            <p>
+              He desarrollado una técnica personal de larga exposición utilizando láser de alta energía para &quot;dibujar&quot; sobre las escenas capturadas, con post-producción selectiva para transformar tonalidades.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg">Fotografía de Paisaje</h3>
+            <p>
+              Especializado en capturar la sublimidad de paisajes naturales, con particular atención a escenas montañosas con efectos de niebla y profundidad atmosférica.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg">Fotografía 360° y Arquitectónica</h3>
+            <p>
+              Ofrezco servicios de documentación arquitectónica mediante tecnología 360° para recorridos virtuales inmersivos de inmuebles, museos y espacios educativos.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg">PostProducción Digital</h3>
+            <p>
+              Amplia experiencia y dominio de software de edición de imágenes como Adobe Lightroom y Photoshop, con habilidades avanzadas en retoque y manipulación de imágenes. Además de nociones avanzadas de Diseño gráfico y diagramación. Conocimientos de impresión digital y offset.
+            </p>
+          </div>
+        </div>
+      ),
     },
     proyectos: {
-        titulo: "Proyectos Destacados",
-        subtitulo: "Mi obra personal",
-        contenido: (
-            <div className="space-y-4" id="proyectos-destacados">
-<div className="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 items-center">
-    <Image
-        src="/images/projects/LCDLP.jpg"
-        alt="La Caza de las Pantallas"
-        width={3000}
-        height={3000}
-        className="h-28 w-auto rounded-md"
-    />
-    <div>
-        <h3 className="font-semibold text-lg">La Caza de las Pantallas</h3>
-        <p>
-            Ensayo visual y reflexivo sobre la evolución del rol de la
-            fotografía en la era digital. Este proyecto resultó en un
-            fotolibro que funciona como comentario crítico sobre nuestra
-            relación con las imágenes y pantallas. <Link href="https://www.behance.net/gallery/215597665/La-caza-de-las-Pantallas" className="text-[#FFB300] hover:text-yellow-400" >Ver en Behance</Link>
-        </p>
-    </div>
-</div>
-<div className="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 items-center">
-<Image
-        src="/images/projects/despliegueluz.jpg"
-        alt="La Caza de las Pantallas"
-        width={3000}
-        height={3000}
-        className="h-28 w-auto rounded-md"
-    />
-<div>
-                            <h3 className="font-semibold text-lg">Despliegue de la Luz</h3>
-                            <p>
-                                Fotolibro que explora el espectro visible a través de una
-                                aproximación tanto física como poética a la luz. Un recorrido
-                                visual por los colores y sus manifestaciones en diferentes
-                                contextos.
-                            </p>
-                    </div>
-                </div>
+      titulo: "Proyectos Destacados",
+      subtitulo: "Mi obra personal",
+      contenido: (
+        <div className="space-y-4" id="proyectos-destacados">
           <div className="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 items-center">
-          <Image
-      src="/images/projects/stalkerph.jpg"
-      alt="La Caza de las Pantallas"
-      width={3000}
-      height={3000}
-      className="h-28 w-auto rounded-md"
-    />
-<div>
-                <h3 className="font-semibold text-lg">Stalker.ph</h3>
-                <p>
-                  Proyecto transmedia que combina fotografía de juegos (screenshots)
-                  con narrativa personal. Incluye componente de redes sociales con
-                  una comunidad activa de seguidores.
-                </p>
+            <Image
+              src="/images/projects/LCDLP.jpg"
+              alt="La Caza de las Pantallas"
+              width={3000}
+              height={3000}
+              className="h-28 w-auto rounded-md"
+            />
+            <div>
+              <h3 className="font-semibold text-lg">La Caza de las Pantallas</h3>
+              <p>
+                Ensayo visual y reflexivo sobre la evolución del rol de la fotografía en la era digital. Este proyecto resultó en un fotolibro que funciona como comentario crítico sobre nuestra relación con las imágenes y pantallas. <Link href="https://www.behance.net/gallery/215597665/La-caza-de-las-Pantallas" className="text-[#FFB300] hover:text-yellow-400">Ver en Behance</Link>
+              </p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 items-center">
+            <Image
+              src="/images/projects/despliegueluz.jpg"
+              alt="Despliegue de la Luz"
+              width={3000}
+              height={3000}
+              className="h-28 w-auto rounded-md"
+            />
+            <div>
+              <h3 className="font-semibold text-lg">Despliegue de la Luz</h3>
+              <p>
+                Fotolibro que explora el espectro visible a través de una aproximación tanto física como poética a la luz. Un recorrido visual por los colores y sus manifestaciones en diferentes contextos.
+              </p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 items-center">
+            <Image
+              src="/images/projects/stalkerph.jpg"
+              alt="Stalker.ph"
+              width={3000}
+              height={3000}
+              className="h-28 w-auto rounded-md"
+            />
+            <div>
+              <h3 className="font-semibold text-lg">Stalker.ph</h3>
+              <p>
+                Proyecto transmedia que combina fotografía de juegos (screenshots) con narrativa personal. Incluye componente de redes sociales con una comunidad activa de seguidores.
+              </p>
             </div>
           </div>
         </div>
@@ -161,19 +139,13 @@ const secciones = {
       contenido: (
         <div className="space-y-4">
           <p>
-            Entiendo la fotografía como una afirmación de existencia, un medio
-            para documentar y expresar la presencia de lo que hay en este universo aunque sea de manera efimera. A través
-            de mis imágenes, busco dialogar con la luz —aspecto fundamental que
-            no solo permite ver, sino también ser existir.
+            Entiendo la fotografía como una afirmación de existencia, un medio para documentar y expresar la presencia de lo que hay en este universo aunque sea de manera efimera. A través de mis imágenes, busco dialogar con la luz —aspecto fundamental que no solo permite ver, sino también ser existir.
           </p>
           <blockquote className="italic border-l-4 border-[#FFB300] pl-4 my-4">
-            "Somos gracias a la luz y es ella misma quien nos permite afirmar su
-            existencia, y por lo tanto, la nuestra."
+            &quot;Somos gracias a la luz y es ella misma quien nos permite afirmar su existencia, y por lo tanto, la nuestra.&quot;
           </blockquote>
           <p>
-            Esta visión conceptual sustenta mis proyectos personales, mientras
-            que en mi trabajo comercial me enfoco en la excelencia técnica y la
-            satisfacción de requisitos de mis clientes.
+            Esta visión conceptual sustenta mis proyectos personales, mientras que en mi trabajo comercial me enfoco en la excelencia técnica y la satisfacción de requisitos de mis clientes.
           </p>
         </div>
       ),
@@ -186,120 +158,23 @@ const secciones = {
           <li>Fotografía arquitectónica y recorridos virtuales 360°</li>
           <li>Fotografía de paisaje y naturaleza</li>
           <li>Retratos artísticos</li>
-          <li>
-            Fotografía de interiores y exteriores (jardines, espacios
-            residenciales)
-          </li>
+          <li>Fotografía de interiores y exteriores (jardines, espacios residenciales)</li>
           <li>Proyectos fotográficos conceptuales y de autor</li>
         </ul>
       ),
     },
   };
 
-  // Vista móvil: acordeón
-  const renderMobileSections = () => (
-    <div className="space-y-2 ">
-      {Object.keys(secciones).map((seccion) => (
-        <div
-          key={seccion}
-          className="border border-gray-300 rounded-md overflow-hidden"
-        >
-          <button
-            className={`w-full text-left p-4 flex justify-between items-center ${
-              seccionesAbiertas[seccion]
-                ? "bg-gray-800 text-white"
-                : "bg-gray-800"
-            }`}
-            onClick={() => toggleSeccion(seccion)}
-          >
-            <span className="font-semibold">{secciones[seccion].titulo}</span>
-            {seccionesAbiertas[seccion] ? (
-              <ChevronUp className="h-5 w-5 text-[#FFB300]" />
-            ) : (
-              <ChevronDown className="h-5 w-5 text-gray-500" />
-            )}
-          </button>
-
-          {seccionesAbiertas[seccion] && (
-            <div className="p-4 bg-[#191923]`">
-              <h3 className="text-lg text-[#FFB300] mb-4">
-                {secciones[seccion].subtitulo}
-              </h3>
-              <div className="prose max-w-none">
-                {secciones[seccion].contenido}
-              </div>
-            </div>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-
-  // Vista desktop: tabs
-  const renderDesktopSections = () => (
-    <>
-      <section className="bg-gray-800 px-4 md:px-12 py-2 text-sm text-white">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 justify-items-center">
-          {Object.keys(secciones).map((seccion) => (
-            <button
-              key={seccion}
-              className={`border-2 ${
-                seccionActiva === seccion
-                  ? "border-[#FFB300] bg-gray-700"
-                  : "border-gray-600 hover:border-[#FFB300]"
-              } h-10 w-full rounded transition-all duration-300 text-shadow-md hover:text-[#FFB300]`}
-              onClick={() => setSeccionActiva(seccion)}
-            >
-              <span>{secciones[seccion].titulo}</span>
-            </button>
-          ))}
-        </div>
-      </section>
-
-
-      <section className="px-4 md:px-12 py-8">
-        <div className="max-w-4xl mx-auto rounded-lg shadow-md p-6">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">
-            {secciones[seccionActiva].titulo}
-          </h2>
-          <h3 className="text-lg text-[#FFB300] mb-6">
-            {secciones[seccionActiva].subtitulo}
-          </h3>
-          <div className="prose max-w-none">
-            {secciones[seccionActiva].contenido}
-          </div>
-        </div>
-      </section>
-    </>
-  );
-
   return (
     <div className={`flex flex-col min-h-screen bg-gray-900 ${sourceSansPro.className}`}>
-      <header className="grid grid-cols-1 md:grid-cols-[0.71fr,1fr] items-center  text-center py-6 mt-20 bg-gray-800 text-white">
-        <div className="  gap-4 items-center">
-            <h1 className="text-2xl md:text-3xl font-bold">
-              José Valdés Hernández
-            </h1>
-            <p className="text-lg text-[#FFB300]">
-              Fotógrafo Profesional y Artista Visual
-            </p>
-        </div>
-        <section className={`text-center px-4 md:px-12 py-6`}>
-          <p className="text-sm mx-auto text-left">
-            Soy un fotógrafo profesional con más de 12 años de experiencia en
-            distintos géneros fotográficos, especializado en técnicas de larga
-            exposición, fotografía de paisaje y fotografía arquitectónica 360°.
-          </p>
-        </section>
-      </header>
-
+      <HeaderPhoto />
       <main className="flex-grow">
-
-        {/* Renderizar según el tipo de dispositivo */}
         {esMobil ? (
-          <section className="px-4 py-4">{renderMobileSections()}</section>
+          <section className="px-4 py-4">
+            <MobileSectionsPhoto secciones={secciones} seccionesAbiertas={seccionesAbiertas} toggleSeccion={toggleSeccion} />
+          </section>
         ) : (
-          renderDesktopSections()
+          <DesktopSectionsPhoto secciones={secciones} seccionActiva={seccionActiva} setSeccionActiva={setSeccionActiva} />
         )}
       </main>
     </div>
