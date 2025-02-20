@@ -162,8 +162,8 @@ const AboutSection = () => {
           <div className="mt-8">
             {TAB_DATA.find((t) => t.id === tab).content}
             <a
-              href="/CVJVH2024.pdf"
-              download="CVJVH2024.pdf"
+              href="/docs/JVCVWD25.pdf"
+              download="JVCVWD25.pdf"
               className="grid justify-items-center w-fit px-1 h-8 py-1 justify-self-center sm:w-fit rounded-md mb-12 bg-gradient-to-br from-primary-100 to-primary-500 hover:bg-slate-800 text-white mt-3 "
             >
               <span className="grid h-6 w-fit items-center text-center bg-[#121212] hover:bg-slate-800 rounded-md px-5 z-50">

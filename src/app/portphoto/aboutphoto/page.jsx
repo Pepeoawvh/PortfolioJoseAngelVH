@@ -48,38 +48,74 @@ const AboutPhoto = () => {
         </div>
       ),
     },
-    especializacion: {
-      titulo: "Especialización",
-      subtitulo: "Áreas de expertise",
-      contenido: (
-        <div className="space-y-4">
-          <div>
-            <h3 className="font-semibold text-lg">Fotografía de Larga Exposición y Light Painting</h3>
-            <p>
-              He desarrollado una técnica personal de larga exposición utilizando láser de alta energía para &quot;dibujar&quot; sobre las escenas capturadas, con post-producción selectiva para transformar tonalidades.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-semibold text-lg">Fotografía de Paisaje</h3>
-            <p>
-              Especializado en capturar la sublimidad de paisajes naturales, con particular atención a escenas montañosas con efectos de niebla y profundidad atmosférica.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-semibold text-lg">Fotografía 360° y Arquitectónica</h3>
-            <p>
-              Ofrezco servicios de documentación arquitectónica mediante tecnología 360° para recorridos virtuales inmersivos de inmuebles, museos y espacios educativos.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-semibold text-lg">PostProducción Digital</h3>
-            <p>
-              Amplia experiencia y dominio de software de edición de imágenes como Adobe Lightroom y Photoshop, con habilidades avanzadas en retoque y manipulación de imágenes. Además de nociones avanzadas de Diseño gráfico y diagramación. Conocimientos de impresión digital y offset.
-            </p>
-          </div>
+especializacion: {
+  titulo: "Especialización",
+  subtitulo: "Áreas de expertise",
+  contenido: (
+    <div className="space-y-4">
+      <div className="flex items-start">
+        <Image
+          src="/images/icons/LEicon.png"
+          alt="Icono de Larga Exposición"
+          width={100}
+          height={100}
+          className="mr-4"
+        />
+        <div>
+          <h3 className="font-semibold text-lg">Fotografía de Larga Exposición y Light Painting</h3>
+          <p>
+            He desarrollado una técnica personal de larga exposición utilizando láser de alta energía para &quot;dibujar&quot; sobre las escenas capturadas, con post-producción selectiva para transformar tonalidades.
+          </p>
         </div>
-      ),
-    },
+      </div>
+      <div className="flex items-start">
+        <Image
+          src="/images/icons/LAicon.png"
+          alt="Icono de Paisaje"
+          width={100}
+          height={100}
+          className="mr-4"
+        />
+        <div>
+          <h3 className="font-semibold text-lg">Fotografía de Paisaje</h3>
+          <p>
+            Especializado en capturar la sublimidad de paisajes naturales, con particular atención a escenas montañosas con efectos de niebla y profundidad atmosférica.
+          </p>
+        </div>
+      </div>
+      <div className="flex items-start">
+        <Image
+          src="/images/icons/360icon.png"
+          alt="Icono de Arquitectónica"
+          width={100}
+          height={100}
+          className="mr-4"
+        />
+        <div>
+          <h3 className="font-semibold text-lg">Fotografía 360° y Arquitectónica</h3>
+          <p>
+            Ofrezco servicios de documentación arquitectónica mediante tecnología 360° para recorridos virtuales inmersivos de inmuebles, museos y espacios educativos.
+          </p>
+        </div>
+      </div>
+      <div className="flex items-start">
+        <Image
+          src="/images/icons/psicon.png"
+          alt="Icono de PostProducción"
+          width={100}
+          height={100}
+          className="mr-4"
+        />
+        <div>
+          <h3 className="font-semibold text-lg">PostProducción Digital</h3>
+          <p>
+            Amplia experiencia y dominio de software de edición de imágenes como Adobe Lightroom y Photoshop, con habilidades avanzadas en retoque y manipulación de imágenes. Además de nociones avanzadas de Diseño gráfico y diagramación. Conocimientos de impresión digital y offset.
+          </p>
+        </div>
+      </div>
+    </div>
+  ),
+},
     proyectos: {
       titulo: "Proyectos Destacados",
       subtitulo: "Mi obra personal",
@@ -152,7 +188,7 @@ const AboutPhoto = () => {
     },
     servicios: {
       titulo: "Servicios Profesionales",
-      subtitulo: "Lo que puedo ofrecerte",
+      subtitulo: "Lo que puedo ofrecer",
       contenido: (
         <ul className="list-disc pl-5 space-y-2">
           <li>Fotografía arquitectónica y recorridos virtuales 360°</li>
@@ -160,6 +196,7 @@ const AboutPhoto = () => {
           <li>Retratos artísticos</li>
           <li>Fotografía de interiores y exteriores (jardines, espacios residenciales)</li>
           <li>Proyectos fotográficos conceptuales y de autor</li>
+          <li>Talleres y clases de Fotografía</li>
         </ul>
       ),
     },
