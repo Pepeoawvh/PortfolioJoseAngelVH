@@ -22,6 +22,12 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const navRef = useRef(null);
 
+  // Esta función manejará tanto la navegación como el cierre del menú
+  const handleNavigation = (path) => {
+    setActiveSection(path);
+    setNavbarOpen(false);
+  };
+
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
@@ -33,6 +39,7 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
       document.removeEventListener("click", handleOutsideClick);
     };
   }, []);
+  
   return (
     <div
       ref={navRef}
@@ -54,7 +61,7 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
-              className="flex items-center px-3 py-2 border rounded text-[#FFB300] hover:text-[#f7d78d] border-slate-200 hover:border-white"
+              className="flex items-center  px-3 py-2 border rounded text-[#FFB300] hover:text-[#f7d78d] border-slate-200 hover:border-white"
             >
               Menú
             </button>
@@ -64,7 +71,7 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
               className="flex items-center px-3 py-2 border rounded border-slate-200 text-[#FFB300] transition-colors"
             >
               <XMarkIcon className="h-5 w-5" />
-            </button>
+              </button>
           )}
         </div>
 
@@ -72,13 +79,13 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
           {navLinks
             .filter((link) => link.path !== activeSection)
             .map((link, index) => (
-              <Link key={index} href={link.path}>
-                <button
-                  onClick={() => setActiveSection(link.path)}
-                  className="hover:bg-[#FFB300] hover:text-white text-shadow-md transition-colors rounded px-3 py-2"
-                >
-                  {link.title}
-                </button>
+              <Link 
+                key={index} 
+                href={link.path}
+                onClick={() => handleNavigation(link.path)}
+                className="hover:bg-[#FFB300] hover:text-white text-shadow-md transition-colors rounded px-3 py-2"
+              >
+                {link.title}
               </Link>
             ))}
         </div>
@@ -93,17 +100,13 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
           {navLinks
             .filter((link) => link.path !== activeSection)
             .map((link, index) => (
-              <li key={index}>
-                <Link href={link.path}>
-                  <button
-                    onClick={() => {
-                      setActiveSection(link.path);
-                      setNavbarOpen(false);
-                    }}
-                    className="hover:bg-[#FFB300] text-shadow-md transition-colors rounded-full px-3 py-2"
-                  >
-                    {link.title}
-                  </button>
+              <li key={index} className="w-4/5 md:w-full text-center">
+                <Link 
+                  href={link.path}
+                  onClick={() => handleNavigation(link.path)}
+                  className="block hover:bg-[#FFB300] text-[#FFB300] hover:text-white text-shadow-md transition-colors rounded-full px-3 py-2"
+                >
+                  {link.title}
                 </Link>
               </li>
             ))}

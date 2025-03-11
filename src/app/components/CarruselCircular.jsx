@@ -36,7 +36,7 @@ const CarruselCircular = () => {
   }, []);
 
   return (
-    <div className="w-full max-w-7xl mx-auto relative group p-4 bg-white rounded mt-4">
+    <div className="w-full max-w-7xl mx-auto relative group p-12 bg-white rounded mt-4">
       <div className="relative aspect-[3/4] sm:aspect-video md:aspect-[16/9] rounded shadow  lg:aspect-[21/9] overflow-hidden bg-[#191923] opacity-95">
         <Image
           src={images[index]}
@@ -48,7 +48,7 @@ const CarruselCircular = () => {
                  (max-width: 768px) 100vw,
                  (max-width: 1024px) 100vw,
                  100vw"
-          className="object-cover object-center transition-opacity duration-1500 ease-in-out"
+          className="object-cover object-center transition-opacity shadow-md duration-1500 ease-in-out"
         />
         
         {/* Efecto de overlay para transiciones */}

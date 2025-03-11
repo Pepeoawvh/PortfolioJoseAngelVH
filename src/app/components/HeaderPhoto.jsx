@@ -52,15 +52,15 @@ const HeaderPhoto = () => {
         <p className="text-sm mx-auto text-left" style={{ letterSpacing: "0.05em" }}>
           Soy un fotógrafo profesional con más de 12 años de experiencia en distintos géneros fotográficos, especializado en técnicas de larga exposición, fotografía de paisaje y fotografía arquitectónica 360°.
         </p> 
-        <a
-          href="/docs/JVCVPH25.pdf"
-          download="JVCVPH25.pdf"
-          className="grid justify-items-center px-1 h-6 py-1 sm:w-fit rounded-md bg-gradient-to-br from-[#fff8e9] to-[#FFB300] hover:bg-slate-800 text-white mt-3"
-        >
-          <span className="grid h-4 text-[14px] items-center text-center bg-[#121212] hover:bg-slate-800 rounded px-5 z-50">
-            Descargar CV
-          </span>
-        </a>
+        <div className="grid justify-items-center md:justify-items-start grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+  <a
+    href="/docs/JVCVPH25.pdf"
+    download="JVCVPH25.pdf"
+    className="inline-block px-6 py-2 text-sm font-medium text-white bg-[#121212] border-2 border-[#FFB300] rounded- transition-all rounded duration-300 hover:bg-[#FFB300] hover:text-black"
+  >
+    Descargar CV
+  </a>
+</div>
       </section>
       <div className="absolute inset-0 bg-black opacity-50 z-1"></div>
     </header>

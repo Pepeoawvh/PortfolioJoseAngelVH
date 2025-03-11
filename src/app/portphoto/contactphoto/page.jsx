@@ -17,7 +17,7 @@ const ContactPhoto = () => {
           <p className="text-sm mx-auto text-left">
             Estoy disponible para colaborar en proyectos fotográficos, 
             tanto comerciales como artísticos. Contáctame para discutir 
-            tus ideas y crear algo extraordinario juntos.
+            tus ideas.
           </p>
         </section>
       </header>
