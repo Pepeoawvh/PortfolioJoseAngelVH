@@ -1,69 +1,76 @@
 "use client";
 import React from "react";
 import { sourceSansPro } from "../../ui/fonts";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import FormPhoto from "../components/FormPhoto";
+import Image from "next/image";
 
 const ContactPhoto = () => {
   return (
-    <div className={`flex flex-col min-h-screen ${sourceSansPro.className}`}>
-      <header className="grid grid-cols-1 md:grid-cols-[0.71fr,1fr] items-center text-center py-6 mt-20 bg-gray-800 text-white">
-        <div className="gap-4 items-center">
-          <h1 className="text-2xl md:text-3xl font-bold">Contacto</h1>
-          <p className="text-lg text-[#FFB300]">¡Conversemos sobre tu proyecto!</p>
+    <div className={`flex flex-col min-h-screen bg-[#0a0a0a] ${sourceSansPro.className}`}>
+      <header className="relative grid grid-cols-1 md:grid-cols-2 items-center py-10 mt-20">
+        {/* Fondo con efecto de viñeta */}
+        <div className="absolute inset-0 bg-black shadow-[inset_0_0_100px_rgba(0,0,0,0.9)] z-0"></div>
+        
+        {/* Contenido del encabezado */}
+        <div className="relative z-10 px-6 py-6 md:py-10 flex flex-col items-center md:items-end">
+          <div className="md:text-right text-center">
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 tracking-wide">Contacto</h1>
+            <div className="h-0.5 w-24 bg-gradient-to-r from-[#FFB300] to-transparent md:ml-auto mx-auto md:mx-0 mb-3"></div>
+            <p className="text-lg text-[#FFB300] font-light tracking-wide">¡Conversemos sobre tu proyecto!</p>
+          </div>
         </div>
-        <section className="text-center px-4 md:px-12 py-6">
-          <p className="text-sm mx-auto text-left">
+        
+        <section className="relative z-10 px-6 md:px-10 py-6">
+          <p className="text-gray-300 leading-relaxed max-w-lg">
             Estoy disponible para colaborar en proyectos fotográficos, 
             tanto comerciales como artísticos. Contáctame para discutir 
-            tus ideas.
+            tus ideas y convertirlas en imágenes impactantes.
           </p>
         </section>
       </header>
 
-      <main className="flex-grow">
-        <section className="px-4 md:px-12 py-8">
+      <main className="flex-grow bg-[#0a0a0a]">
+        <section className="px-4 md:px-12 py-10">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-[1fr,auto] gap-8">
               {/* Formulario de contacto */}
-              <div className="bg-[#20202a] rounded-lg shadow-md p-6">
-                <h2 className="text-xl font-bold text-white mb-6">
-                  Formulario de Contacto
+              <div className="bg-black/50 rounded-md border border-white/10 shadow-lg p-6">
+                <h2 className="text-xl font-medium text-white mb-4 flex items-center">
+                  <span className="h-3.5 w-3.5 rounded-full bg-[#FFB300] mr-3"></span>
+                  Contacto Directo
                 </h2>
                 <FormPhoto />
               </div>
 
               {/* Información de contacto */}
               <div className="space-y-6">
-                <div className="bg-[#20202a] rounded-lg shadow-md p-6">
-                  <h2 className="text-xl font-bold text-white mb-4">
-                    Contacto Directo
-                  </h2>
-                  <div className="space-y-4">
-                    <a
-                      href="https://wa.me/56949866129"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3 px-4 py-3 bg-[#25D366] text-white rounded-md hover:bg-[#128C7E] transition-colors"
-                    >
-                      <FontAwesomeIcon icon={faWhatsapp} className="h-5 w-5" />
-                      <span>WhatsApp</span>
-                    </a>
-                  </div>
-                </div>
-
-                <div className="bg-[#20202a] rounded-lg shadow-md p-6">
-                  <h2 className="text-xl font-bold text-white mb-4">
+                <div className="bg-black/50 rounded-md border border-white/10 p-6">
+                  <h2 className="text-lg font-medium text-white mb-4 flex items-center">
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#FFB300] mr-3"></span>
                     Horario de Atención
                   </h2>
-                  <ul className="space-y-2 text-gray-300">
-                    <li>Lunes a Viernes</li>
-                    <li>9:00 - 18:00 hrs</li>
-                    <li className="text-[#FFB300] mt-4">
+                  <ul className="space-y-2 text-gray-300 pl-5">
+                    <li className="flex items-start">
+                      <span className="inline-block h-1 w-1 bg-white rounded-full mt-2 mr-2"></span>
+                      <span>Lunes a Viernes</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="inline-block h-1 w-1 bg-white rounded-full mt-2 mr-2"></span>
+                      <span>9:00 - 18:00 hrs</span>
+                    </li>
+                    <li className="text-[#FFB300]/80 mt-4 text-sm italic">
                       * Disponibilidad flexible para sesiones fotográficas
                     </li>
                   </ul>
+                </div>
+
+                <div className="bg-black/50 rounded-md border border-white/10 p-6">
+                  <h2 className="text-lg font-medium text-white mb-4 flex items-center">
+                    <span className="h-2.5 w-2.5 rounded-full bg-[#FFB300] mr-3"></span>
+                    Ubicación
+                  </h2>
+                  <p className="text-gray-300">Santiago, Chile</p>
+                  <p className="text-gray-300">Disponible para proyectos en todo el país y extranjero</p>
                 </div>
               </div>
             </div>
@@ -71,26 +78,30 @@ const ContactPhoto = () => {
         </section>
 
         {/* Sección inferior con información adicional */}
-        <section className="bg-gray-800 px-4 md:px-12 py-8 text-center text-white">
+        <section className="bg-black border-t border-white/10 px-4 md:px-12 py-10 text-center">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-xl font-bold mb-4">¿Por qué trabajar conmigo?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="p-4">
-                <h3 className="text-[#FFB300] font-semibold mb-2">Experiencia</h3>
-                <p className="text-sm">
-                  Más de 12 años dedicados a la fotografía
+            <h2 className="text-xl font-medium text-white mb-8">
+              <span className="inline-block h-px w-10 bg-[#FFB300] mr-3 align-middle"></span>
+              ¿Por qué trabajar conmigo?
+              <span className="inline-block h-px w-10 bg-[#FFB300] ml-3 align-middle"></span>
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-black/30 border border-white/5 rounded-md p-6 hover:border-[#FFB300]/30 transition-all duration-300">
+                <h3 className="text-[#FFB300] font-medium mb-3">Experiencia</h3>
+                <p className="text-gray-300">
+                  Más de 12 años dedicados a la fotografía profesional y artística
                 </p>
               </div>
-              <div className="p-4">
-                <h3 className="text-[#FFB300] font-semibold mb-2">Personalización</h3>
-                <p className="text-sm">
-                  Cada proyecto se adapta a tus necesidades específicas
+              <div className="bg-black/30 border border-white/5 rounded-md p-6 hover:border-[#FFB300]/30 transition-all duration-300">
+                <h3 className="text-[#FFB300] font-medium mb-3">Personalización</h3>
+                <p className="text-gray-300">
+                  Cada proyecto se adapta meticulosamente a tus necesidades específicas
                 </p>
               </div>
-              <div className="p-4">
-                <h3 className="text-[#FFB300] font-semibold mb-2">Calidad</h3>
-                <p className="text-sm">
-                  Compromiso con la excelencia en cada imagen
+              <div className="bg-black/30 border border-white/5 rounded-md p-6 hover:border-[#FFB300]/30 transition-all duration-300">
+                <h3 className="text-[#FFB300] font-medium mb-3">Calidad</h3>
+                <p className="text-gray-300">
+                  Compromiso con la excelencia técnica y artística en cada imagen
                 </p>
               </div>
             </div>

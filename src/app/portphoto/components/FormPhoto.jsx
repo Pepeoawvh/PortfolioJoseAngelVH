@@ -1,283 +1,72 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { firestoreDB } from "../../../firebase/config.js";
+import React from "react";
+import Link from "next/link";
 
 const FormPhoto = () => {
-  const [formData, setFormData] = useState({
-    nombre: "",
-    email: "",
-    telefono: "",
-    tipoProyecto: "comercial",
-    presupuestoEstimado: "",
-    fechaEstimada: "",
-    mensaje: "",
-  });
-
-  const [status, setStatus] = useState({
-    submitting: false,
-    submitted: false,
-    error: null
-  });
-
-  // Validación de email
-  const validateEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  };
-
-  // Validación de teléfono
-  const validatePhone = (phone) => {
-    const re = /^\d{9,12}$/;
-    return re.test(phone);
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus({ submitting: true, submitted: false, error: null });
-
-    // Validaciones
-    if (!validateEmail(formData.email)) {
-      setStatus({
-        submitting: false,
-        submitted: false,
-        error: "Por favor, ingresa un email válido"
-      });
-      return;
-    }
-
-    if (formData.telefono && !validatePhone(formData.telefono)) {
-      setStatus({
-        submitting: false,
-        submitted: false,
-        error: "El número de teléfono debe tener entre 9 y 12 dígitos"
-      });
-      return;
-    }
-
-    // Validación anti-spam
-    if (formData.mensaje.includes('http') || formData.mensaje.includes('www')) {
-      setStatus({
-        submitting: false,
-        submitted: false,
-        error: "Por favor, no incluyas enlaces en el mensaje"
-      });
-      return;
-    }
-
-    try {
-      // Recopilar metadatos
-      const metadata = {
-        userAgent: window.navigator.userAgent,
-        idioma: window.navigator.language,
-        plataforma: window.navigator.platform,
-        pantalla: {
-          width: window.screen.width,
-          height: window.screen.height
-        },
-        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-        fechaEnvio: new Date(),
-        origen: document.referrer || 'directo'
-      };
-
-      // Obtener IP del usuario
-      const ipResponse = await fetch('https://api.ipify.org?format=json');
-      const ipData = await ipResponse.json();
-
-      await firestoreDB.collection("formularioFotografia").add({
-        ...formData,
-        metadata,
-        estado: 'pendiente',
-        leido: false,
-        IP: ipData.ip,
-        fechaEnvio: new Date(),
-        ultimaActualizacion: new Date()
-      });
-      
-      setStatus({
-        submitting: false,
-        submitted: true,
-        error: null
-      });
-      
-      // Resetear el formulario
-      setFormData({
-        nombre: "",
-        email: "",
-        telefono: "",
-        tipoProyecto: "comercial",
-        presupuestoEstimado: "",
-        fechaEstimada: "",
-        mensaje: "",
-      });
-
-      alert("¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.");
-    } catch (error) {
-      console.error("Error al enviar el formulario:", error);
-      setStatus({
-        submitting: false,
-        submitted: false,
-        error: "Hubo un error al enviar el mensaje. Por favor, inténtalo nuevamente."
-      });
-    }
-  };
+  // Número de WhatsApp con código de país
+  const whatsappNumber = "569XXXXXXXX"; // Ejemplo: 569XXXXXXXX para Chile
+  
+  // Mensaje predeterminado codificado para URL
+  const defaultMessage = encodeURIComponent("Hola José, me interesa conocer más sobre tus servicios fotográficos.");
+  
+  // URL de WhatsApp con número y mensaje
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${defaultMessage}`;
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label htmlFor="nombre" className="block text-sm font-medium text-gray-300 mb-1">
-            Nombre
-          </label>
-          <input
-            type="text"
-            id="nombre"
-            name="nombre"
-            value={formData.nombre}
-            onChange={handleChange}
-            className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:border-[#FFB300] focus:ring-1 focus:ring-[#FFB300]"
-            required
-            minLength={2}
-            maxLength={45}
-          />
-        </div>
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:border-[#FFB300] focus:ring-1 focus:ring-[#FFB300]"
-            required
-          />
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label htmlFor="telefono" className="block text-sm font-medium text-gray-300 mb-1">
-            Teléfono
-          </label>
-          <input
-            type="tel"
-            id="telefono"
-            name="telefono"
-            value={formData.telefono}
-            onChange={handleChange}
-            className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:border-[#FFB300] focus:ring-1 focus:ring-[#FFB300]"
-            pattern="\d*"
-            minLength={9}
-            maxLength={12}
-          />
-        </div>
-        <div>
-          <label htmlFor="tipoProyecto" className="block text-sm font-medium text-gray-300 mb-1">
-            Tipo de Proyecto
-          </label>
-          <select
-            id="tipoProyecto"
-            name="tipoProyecto"
-            value={formData.tipoProyecto}
-            onChange={handleChange}
-            className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:border-[#FFB300] focus:ring-1 focus:ring-[#FFB300]"
-            required
-          >
-            <option value="comercial">Fotografía Comercial</option>
-            <option value="eventos">Eventos</option>
-            <option value="retrato">Retratos</option>
-            <option value="arquitectura">Arquitectura</option>
-            <option value="otro">Otro</option>
-          </select>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label htmlFor="presupuestoEstimado" className="block text-sm font-medium text-gray-300 mb-1">
-            Presupuesto Estimado
-          </label>
-          <select
-            id="presupuestoEstimado"
-            name="presupuestoEstimado"
-            value={formData.presupuestoEstimado}
-            onChange={handleChange}
-            className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:border-[#FFB300] focus:ring-1 focus:ring-[#FFB300]"
-            required
-          >
-            <option value="">Selecciona un rango</option>
-            <option value="0-100000">Menos de $100.000</option>
-            <option value="100000-300000">$100.000 - $300.000</option>
-            <option value="300000-500000">$300.000 - $500.000</option>
-            <option value="500000+">Más de $500.000</option>
-          </select>
-        </div>
-        <div>
-          <label htmlFor="fechaEstimada" className="block text-sm font-medium text-gray-300 mb-1">
-            Fecha Estimada del Proyecto
-          </label>
-          <input
-            type="date"
-            id="fechaEstimada"
-            name="fechaEstimada"
-            value={formData.fechaEstimada}
-            onChange={handleChange}
-            min={new Date().toISOString().split('T')[0]}
-            className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:border-[#FFB300] focus:ring-1 focus:ring-[#FFB300]"
-            required
-          />
-        </div>
-      </div>
-
-      <div>
-        <label htmlFor="mensaje" className="block text-sm font-medium text-gray-300 mb-1">
-          Mensaje
-        </label>
-        <textarea
-          id="mensaje"
-          name="mensaje"
-          value={formData.mensaje}
-          onChange={handleChange}
-          rows="4"
-          className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:border-[#FFB300] focus:ring-1 focus:ring-[#FFB300]"
-          required
-          minLength={10}
-          maxLength={1000}
-          placeholder="Describe tu proyecto o idea..."
-        ></textarea>
-      </div>
-
-      <button
-        type="submit"
-        disabled={status.submitting}
-        className={`w-full ${
-          status.submitting 
-            ? 'bg-gray-500 cursor-not-allowed' 
-            : 'bg-[#FFB300] hover:bg-[#cc8f00]'
-        } text-white py-2 px-4 rounded-md transition-colors duration-300 font-medium`}
-      >
-        {status.submitting ? 'Enviando...' : 'Enviar Mensaje'}
-      </button>
-
-      {status.error && (
-        <p className="text-red-500 text-sm mt-2">{status.error}</p>
-      )}
-      {status.submitted && (
-        <p className="text-green-500 text-sm mt-2">
-          ¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.
+    <div className="space-y-8 py-6">
+      {/* Encabezado de contacto */}
+      <div className="text-center mb-10">
+        <p className="text-gray-300 max-w-2xl mx-auto">
+          Para una comunicación más rápida y eficiente, ahora puedes contactarme directamente a través de WhatsApp. Responderé a tu mensaje tan pronto como sea posible.
         </p>
-      )}
-    </form>
+      </div>
+      
+      {/* Botón de WhatsApp */}
+      <div className="flex justify-center">
+        <Link 
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative overflow-hidden bg-black border border-[#FFB300] rounded-md py-5 px-8 transition-all duration-500 hover:bg-[#0a0a0a] hover:border-white/50 hover:shadow-[0_0_15px_rgba(255,179,0,0.15)] flex items-center justify-center"
+        >
+          {/* Efecto de luz */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#FFB300]/10 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-shine"></div>
+          
+          {/* Icono de WhatsApp */}
+          <svg 
+  xmlns="http://www.w3.org/2000/svg" 
+  className="h-7 w-7 mr-4 text-white transition-all duration-300 group-hover:text-[#FFB300] group-hover:scale-110" 
+  fill="currentColor" 
+  viewBox="0 0 24 24"
+>
+  {/* Símbolo interior de WhatsApp (teléfono) */}
+  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path>
+  
+  {/* Círculo exterior con borde más delgado */}
+  <path fillRule="evenodd" clipRule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"></path>
+</svg>
+          
+          {/* Texto del botón */}
+          <div className="flex flex-col items-start">
+            <span className="text-lg font-medium text-white tracking-wide group-hover:text-[#FFB300] transition-colors duration-300">Contáctame por WhatsApp</span>
+            <span className="text-xs text-gray-300 font-light group-hover:text-white transition-colors duration-300">Respuesta rápida garantizada</span>
+          </div>
+        </Link>
+      </div>
+      
+      {/* Información adicional */}
+      <div className="mt-10 text-center">
+        <p className="text-gray-400 text-sm">
+          También puedes enviarme un correo a{" "}
+          <a href="mailto:jpp@gmail.com" className="text-[#FFB300] hover:text-white transition-colors duration-300">
+            contacto@josevaldes.com
+          </a>
+        </p>
+        <p className="text-gray-500 text-xs mt-2">
+          Disponible para proyectos fotográficos en Chile y el extranjero
+        </p>
+      </div>
+    </div>
   );
 };
 

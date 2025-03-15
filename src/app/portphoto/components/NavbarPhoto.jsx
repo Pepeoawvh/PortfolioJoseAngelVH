@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   {
@@ -23,6 +24,7 @@ const NavbarPhoto = ({ activeSection, setActiveSection }) => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef(null);
+  const pathname = usePathname(); // Obtener la ruta actual
 
   // Manejar navegación y cierre de menú
   const handleNavigation = (path) => {
@@ -99,10 +101,10 @@ const NavbarPhoto = ({ activeSection, setActiveSection }) => {
           )}
         </div>
 
-        {/* Menú desktop */}
+        {/* Menú desktop - Filtrando la ruta activa */}
         <div className="hidden md:flex space-x-8">
           {navLinks
-            .filter((link) => link.path !== activeSection)
+            .filter((link) => link.path !== pathname)
             .map((link, index) => (
               <Link 
                 key={index} 
@@ -119,7 +121,7 @@ const NavbarPhoto = ({ activeSection, setActiveSection }) => {
         </div>
       </div>
 
-      {/* Menú móvil desplegable */}
+      {/* Menú móvil desplegable - Filtrando la ruta activa */}
       <div
         className={`md:hidden transition-[max-height] duration-500 ease-in-out overflow-hidden ${
           navbarOpen ? "max-h-96" : "max-h-0"
@@ -127,7 +129,7 @@ const NavbarPhoto = ({ activeSection, setActiveSection }) => {
       >
         <ul className="flex flex-col items-center space-y-4 py-4 backdrop-blur-md bg-black/80 border-t border-white/10">
           {navLinks
-            .filter((link) => link.path !== activeSection)
+            .filter((link) => link.path !== pathname)
             .map((link, index) => (
               <li key={index} className="w-4/5 md:w-full text-center">
                 <Link 
