@@ -3,7 +3,7 @@ import React from "react";
 import { sourceSansPro } from "../../ui/fonts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import FormPhoto from "../../components/FormPhoto";
+import FormPhoto from "../components/FormPhoto";
 
 const ContactPhoto = () => {
   return (
