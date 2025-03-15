@@ -4,48 +4,67 @@ import {
   faInstagram,
   faBehance,
   faWhatsapp,
-
 } from "@fortawesome/free-brands-svg-icons";
 
 const FooterPhoto = () => {
   return (
-    <footer className="grid justify-items-center text-xs bg-[#20202a] text-white py-4">
-    
-      <div className="grid grid-flow-col gap-4 w-full justify-items-center ">
-        <a
-          href="https://www.instagram.com/joseangel.vh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon
-            icon={faInstagram}
-            className="h-5 text-white hover:text-gray-400"
+    <footer className="bg-[#0a0a0a] text-white py-6 border-t border-white/10 shadow-inner">
+      <div className="container mx-auto px-4">
+        {/* Contenedor de iconos sociales */}
+        <div className="flex justify-center space-x-6">
+          <SocialIcon 
+            href="https://www.instagram.com/joseangel.vh" 
+            icon={faInstagram} 
+            label="Instagram"
           />
-        </a>
-        <a
-          href="https://www.behance.net/ljpp"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon
-            icon={faBehance}
-            className="h-5 text-white hover:text-gray-400"
+          <SocialIcon 
+            href="https://www.behance.net/ljpp" 
+            icon={faBehance} 
+            label="Behance"
           />
-        </a>
-        <a
-          href="https://wa.me/56949866129"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon
-            icon={faWhatsapp}
-            className="h-5 text-white hover:text-gray-400"
+          <SocialIcon 
+            href="https://wa.me/56949866129" 
+            icon={faWhatsapp} 
+            label="WhatsApp"
           />
-        </a>
+        </div>
+        
+        {/* Línea decorativa monocromática */}
+        <div className="flex justify-center my-4">
+          <div className="h-px w-24 bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+        </div>
+        
+        {/* Copyright */}
+        <div className="text-center text-xs text-gray-400 mt-2">
+          &copy; {new Date().getFullYear()} José Angel Valdés Hernández | <span className="text-white">Fotografía Profesional</span>
+        </div>
       </div>
-      <p className="p-4 bg-">© {new Date().getFullYear()} José Valdés Hernández</p>
     </footer>
   );
 };
+
+// Componente para los iconos sociales
+const SocialIcon = ({ href, icon, label }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group relative"
+    aria-label={label}
+  >
+    <div className="w-10 h-10 flex items-center justify-center rounded-full bg-black border border-transparent transition-all duration-300 group-hover:border-white/30 group-hover:bg-black/60">
+      <FontAwesomeIcon
+        icon={icon}
+        className="h-5 text-gray-300 transition-all duration-300 group-hover:text-white group-hover:scale-110"
+      />
+      <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/5 blur-sm"></span>
+    </div>
+    
+    {/* Tooltip */}
+    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs bg-black/80 text-white rounded opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none border border-white/20">
+      {label}
+    </span>
+  </a>
+);
 
 export default FooterPhoto;

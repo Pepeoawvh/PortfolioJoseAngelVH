@@ -19,9 +19,7 @@ const PortPhoto = () => {
       </header>
 
       <main className="flex-grow">
-        <div className="flex justify-center py-4">
-          <CarruselCircular />
-        </div>
+
 
         <section className="relative bg-gray-800 grid grid-cols-1 md:grid-cols-3 justify-items-center gap-4 px-4 md:px-12 py-4 text-[#FFB300]">
           <button
@@ -43,10 +41,14 @@ const PortPhoto = () => {
             <span>Material Educativo</span>
           </button>
         </section>
+
         <div className="overflow-hidden transition-all duration-500">
           {activeSection === "fotolibros" && <Fotolibros />}
           {activeSection === "proyectos" && <ProyectosPh />}
           {activeSection === "materialEducativo" && <EducPh />}
+        </div>
+        <div className="flex justify-center py-4">
+          <CarruselCircular />
         </div>
       </main>
     </div>
