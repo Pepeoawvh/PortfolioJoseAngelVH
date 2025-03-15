@@ -1,6 +1,6 @@
 import React from "react";
-import NavbarPhoto from "../components/NavbarPhoto";
-import FooterPhoto from "../components/FooterPhoto";
+import NavbarPhoto from "./components/NavbarPhoto";
+import FooterPhoto from "./components/FooterPhoto";
 
 const PortPhotoLayout = ({ children }) => {
   return (

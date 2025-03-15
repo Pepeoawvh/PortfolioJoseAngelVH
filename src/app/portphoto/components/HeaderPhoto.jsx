@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const images = [
   { src: "/images/photos/aboutphotopic1.jpg", position: "center 70%" },
@@ -53,13 +54,13 @@ const HeaderPhoto = () => {
           Soy un fotógrafo profesional con más de 12 años de experiencia en distintos géneros fotográficos, especializado en técnicas de larga exposición, fotografía de paisaje y fotografía arquitectónica 360°.
         </p> 
         <div className="grid justify-items-center md:justify-items-start grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-  <a
+  <Link
     href="/docs/JVCVPH25.pdf"
     download="JVCVPH25.pdf"
     className="inline-block px-6 py-2 text-sm font-medium text-white bg-[#121212] border-2 border-[#FFB300] rounded- transition-all rounded duration-300 hover:bg-[#FFB300] hover:text-black"
   >
     Descargar CV
-  </a>
+  </Link>
 </div>
       </section>
       <div className="absolute inset-0 bg-black opacity-50 z-1"></div>

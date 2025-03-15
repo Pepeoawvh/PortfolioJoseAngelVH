@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { firestoreDB } from "../../firebase/config.js";
+import { firestoreDB } from "../../../firebase/config.js";
 
 const FormPhoto = () => {
   const [formData, setFormData] = useState({

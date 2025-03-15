@@ -31,7 +31,7 @@ module.exports = {
     function({ addUtilities }) {
       addUtilities({
         '.clip-path-webdev': {
-          'clip-path': 'polygon(0 0, 100% 0, 0 100%)',
+          'clip-path': 'polygon(0 0, 120% 0, 0 100%)',
         },
         '.clip-path-photography': {
           'clip-path': 'polygon(100% 0, 100% 100%, 0 100%)',

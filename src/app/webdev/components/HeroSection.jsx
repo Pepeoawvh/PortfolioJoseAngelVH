@@ -2,7 +2,7 @@
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import CarruselCircular from "./CarruselCircular";
+import CarruselCircular from "../../portphoto/components/CarruselCircular";
 
 
 const HeroSection = () => {

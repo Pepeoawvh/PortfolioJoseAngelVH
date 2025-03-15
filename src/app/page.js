@@ -5,10 +5,12 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-min h-full bg-[#191923] ">
+    <div className="flex flex-col min-h-screen bg-[#0a1914]">
       <NavbarIntro />
-      <main className="">
+      <main className="flex-grow flex flex-col">
+        <div className="relative flex-grow">
           <Welcome />
+        </div>
       </main>
       <Footer />
     </div>

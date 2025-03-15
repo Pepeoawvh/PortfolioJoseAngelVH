@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import CarruselCircular from "../components/CarruselCircular";
-import Fotolibros from "../components/Fotolibros";
-import ProyectosPh from "../components/ProyectosPh";
-import EducPh from "../components/EducPh";
+import CarruselCircular from "./components/CarruselCircular";
+import Fotolibros from "./components/Fotolibros";
+import ProyectosPh from "./components/ProyectosPh";
+import EducPh from "./components/EducPh";
 import { sourceSansPro } from "../ui/fonts";
 
 const PortPhoto = () => {

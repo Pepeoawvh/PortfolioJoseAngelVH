@@ -17,18 +17,19 @@ const Welcome = () => {
   };
 
   return (
-    <div className="grid h-screen bg-[#0c0c10] text-gray-50">
-      <div>
+    <div className="absolute inset-0 text-gray-50 overflow-hidden">
+      <div className="relative h-full">
+        {/* Sección Desarrollo Web */}
         <div
-          className={`absolute w-full h-full grid items-center justify-center transition-colors duration-300 ease-in-out hover:text-white hover:bg-[#20202a] clip-path-webdev`}
+          className={`absolute w-full h-full grid items-center justify-center transition-all duration-500 hover:text-white hover:bg-[#0f2c1b] clip-path-webdev shadow-lg`}
           onClick={handleWebClick}
         >
           <Link
             href="/webdev"
-            className={`text-xl select-none mr-36 sm:mr-40 mb-44 tracking-wider  hover:text-primary-300 hover:bg-black hover:py-2 hover:px-4 rounded ${
+            className={`text-xl select-none mr-36 sm:mr-40 mb-44 tracking-wider transition-all duration-300 border border-transparent ${
               isWebClicked
-                ? "bg-black shadow-md text-primary-500 py-2 px-4 rounded cursor-pointer"
-                : "text-gray-700 cursor-pointer"
+                ? "bg-black/80 shadow-lg shadow-[#2ecc71]/20 text-[#2ecc71] py-3 px-6 rounded-md cursor-pointer border-[#2ecc71]/30"
+                : "text-gray-300 cursor-pointer hover:text-[#2ecc71] hover:bg-black/70 hover:py-3 hover:px-2 hover:rounded-md hover:border-[#2ecc71]/30"
             }`}
           >
             <TypeAnimation
@@ -36,26 +37,30 @@ const Welcome = () => {
               wrapper="span"
               speed={40}
               repeat={Infinity}
+              className="font-mono"
             />
           </Link>
         </div>
+
+        {/* Sección Fotografía */}
         <div
-          className={`absolute w-full h-full grid items-center justify-center transition-colors duration-300 ease-in-out hover:text-white tracking-wider bg-[#0c0c10] hover:bg-[#20202a] clip-path-photography`}
+          className={`absolute w-full h-full grid items-center justify-center transition-all duration-500 hover:text-white tracking-wider bg-[#0a0a0a] hover:bg-[#121212] clip-path-photography shadow-lg`}
           onClick={handlePhotoClick}
         >
           <Link
             href="/portphoto"
-            className={`ml-44 mt-36 text-xl select-none hover:text-[#fdd067] hover:bg-black hover:py-2 hover:px-4 rounded ${
+            className={`ml-44 mt-36 text-xl select-none transition-all duration-300 border border-transparent ${
               isPhotoClicked
-                ? "bg-black shadow-md text-[#FFB300] py-2 px-4 rounded cursor-pointer"
-                : "text-gray-700 cursor-pointer"
+                ? "bg-black/80 shadow-lg shadow-white/20 text-white py-3 px-6 rounded-md cursor-pointer border-white/30"
+                : "text-gray-400 cursor-pointer hover:text-white hover:bg-black/70 hover:py-3 hover:px-6 hover:rounded-md hover:border-white/30"
             }`}
           >
             <TypeAnimation
-              sequence={["[Fotografía]", 3000]}
+              sequence={["[Fotografía]", 3000]} 
               wrapper="span"
               speed={40}
               repeat={Infinity}
+              className="font-serif"
             />
           </Link>
         </div>

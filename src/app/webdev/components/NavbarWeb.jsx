@@ -38,32 +38,33 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
   return (
     <div
       ref={navRef}
-      className="w-screen h-20 bg-[#20202a] shadow-md fixed top-0 left-0 z-50"
+      className="w-screen h-20 bg-[#0a1914] shadow-lg shadow-[#2ecc71]/10 fixed top-0 left-0 z-50 border-b border-[#2ecc71]/20"
     >
       <div className="flex justify-between items-center container mx-auto px-4 h-full">
-        <Link href={"/"} className="h-[40px]">
+        <Link href={"/"} className="h-[40px] relative group">
           <Image
             src="/images/logoWhite.svg"
             alt="LOGO"
             width={200}
             height={40}
             priority
-            className="object-contain h-full"
+            className="object-contain h-full transition-all duration-300 group-hover:brightness-125"
           />
+          <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#2ecc71] transition-all duration-300 group-hover:w-full"></div>
         </Link>
         
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
-              className="flex items-center px-3 py-2 border rounded text-primary-500 hover:text-primary-300 border-slate-200 hover:border-white"
+              className="flex items-center px-3 py-2 border rounded text-[#2ecc71] hover:text-[#39e385] border-[#2ecc71]/30 hover:border-[#2ecc71]"
             >
               Menú
             </button>
           ) : (
             <button
               onClick={() => setNavbarOpen(false)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-primary-500 transition-colors"
+              className="flex items-center px-3 py-2 border rounded border-[#2ecc71]/30 text-[#2ecc71] transition-colors hover:text-[#39e385] hover:border-[#2ecc71]"
             >
               <XMarkIcon className="h-5 w-5" />
             </button>
@@ -77,9 +78,10 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
               <button
                 key={index}
                 onClick={() => setActiveSection(link.path)}
-                className="hover:bg-primary-600 transition-colors rounded-full px-3 py-2"
+                className="text-gray-300 hover:text-[#2ecc71] transition-colors px-3 py-2 relative group"
               >
                 {link.title}
+                <span className="absolute left-0 bottom-0 h-0.5 w-0 bg-[#2ecc71] group-hover:w-full transition-all duration-300"></span>
               </button>
             ))}
         </div>
@@ -90,17 +92,17 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
           navbarOpen ? "max-h-96" : "max-h-0"
         }`}
       >
-        <ul className="flex flex-col items-center space-y-4 py-4 bg-[#20202a]">
+        <ul className="flex flex-col items-center space-y-4 py-4 bg-[#0a1914] border-t border-[#2ecc71]/20">
           {navLinks
             .filter((link) => link.path !== activeSection)
             .map((link, index) => (
-              <li key={index}>
+              <li key={index} className="w-full text-center">
                 <button
                   onClick={() => {
                     setActiveSection(link.path);
                     setNavbarOpen(false);
                   }}
-                  className="hover:bg-primary-600 transition-colors rounded-full px-3 py-2"
+                  className="w-full text-gray-300 hover:text-[#2ecc71] hover:bg-black/30 transition-colors px-3 py-2"
                 >
                   {link.title}
                 </button>
