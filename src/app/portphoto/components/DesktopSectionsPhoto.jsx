@@ -3,20 +3,20 @@ import React from "react";
 const DesktopSectionsPhoto = ({ secciones, seccionActiva, setSeccionActiva }) => (
   <>
     {/* Navegación de secciones - Estilo monocromático */}
-    <section className="bg-black border-y border-white/10 shadow-md px-4 md:px-12 py-4 sticky top-20 z-10">
+    <section className="bg-black border-y border-white/10  shadow-md px-4 md:px-12 py-4 sticky top-20 z-10">
       <div className="grid grid-cols-1 md:grid-cols-5 gap-4 justify-items-center max-w-6xl mx-auto">
         {Object.keys(secciones).map((seccion) => (
           <button
             key={seccion}
             className={`relative group overflow-hidden transition-all duration-300 px-3 py-2 w-full rounded ${
               seccionActiva === seccion 
-              ? "bg-[#FFB300]/20 border border-[#FFB300]/80 text-white" 
-              : "bg-black/40 border border-white/10 text-gray-300 hover:border-[#FFB300]/40"
+              ? "bg-[#FFB300]/20 border shadow-white/20 border-[#FFB300]/80 text-white" 
+              : "bg-black/40 border border-white/10 shadow-white/20 text-gray-300 hover:border-[#FFB300]/40"
             }`}
             onClick={() => setSeccionActiva(seccion)}
           >
             {/* Gradiente de hover */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#FFB300]/0 via-[#FFB300]/5 to-[#FFB300]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 shadow-white/20 bg-gradient-to-r from-[#FFB300]/0 via-[#FFB300]/5 to-[#FFB300]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
             {/* Texto del botón */}
             <span className="relative z-10 text-sm tracking-wide group-hover:text-[#FFB300] transition-colors duration-300">

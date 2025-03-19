@@ -87,14 +87,14 @@ const NavbarPhoto = ({ activeSection, setActiveSection }) => {
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
-              className="flex items-center px-3 py-2 border rounded text-white hover:text-gray-300 border-white/20 hover:border-white/50 transition-all duration-300"
+              className="flex items-center px-3 py-2 border border-[#FFB300] shadow-md shadow-[#FFB300]/20 rounded text-white hover:text-gray-300 border-white/20 hover:border-white/50 transition-all duration-300"
             >
               Menú
             </button>
           ) : (
             <button
               onClick={() => setNavbarOpen(false)}
-              className="flex items-center px-3 py-2 border rounded border-white/20 text-white hover:text-gray-300 transition-all duration-300"
+              className="flex items-center px-3 py-2 border rounded border-[#FFB300]/20 text-white hover:text-gray-300 transition-all duration-300"
             >
               <XMarkIcon className="h-5 w-5" />
             </button>
@@ -115,7 +115,7 @@ const NavbarPhoto = ({ activeSection, setActiveSection }) => {
                 <span className="text-gray-300 transition-colors duration-300 group-hover:text-white">
                   {link.title}
                 </span>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0  left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
         </div>
@@ -135,7 +135,7 @@ const NavbarPhoto = ({ activeSection, setActiveSection }) => {
                 <Link 
                   href={link.path}
                   onClick={() => handleNavigation(link.path)}
-                  className="block text-gray-300 hover:text-white border border-transparent hover:border-white/20 transition-all duration-300 rounded-sm px-3 py-2"
+                  className="block text-gray-300 hover:text-white border border-[#FFB300]/20 hover:border-[#FFB300] transition-all duration-300 rounded-sm px-3 py-2"
                 >
                   {link.title}
                 </Link>

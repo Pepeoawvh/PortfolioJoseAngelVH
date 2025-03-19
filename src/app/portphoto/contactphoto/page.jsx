@@ -20,11 +20,10 @@ const ContactPhoto = () => {
           </div>
         </div>
         
-        <section className="relative z-10 px-6 md:px-10 py-6">
+        <section className="relative z-10 text-center px-6 md:px-10 py-6">
           <p className="text-gray-300 leading-relaxed max-w-lg">
             Estoy disponible para colaborar en proyectos fotográficos, 
-            tanto comerciales como artísticos. Contáctame para discutir 
-            tus ideas y convertirlas en imágenes impactantes.
+            tanto comerciales como artísticos.
           </p>
         </section>
       </header>
@@ -69,8 +68,7 @@ const ContactPhoto = () => {
                     <span className="h-2.5 w-2.5 rounded-full bg-[#FFB300] mr-3"></span>
                     Ubicación
                   </h2>
-                  <p className="text-gray-300">Santiago, Chile</p>
-                  <p className="text-gray-300">Disponible para proyectos en todo el país y extranjero</p>
+                  <p className="text-gray-300">Valparaíso, Chile</p>
                 </div>
               </div>
             </div>

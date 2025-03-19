@@ -22,7 +22,7 @@ const MobileSectionsPhoto = ({ secciones, seccionesAbiertas, toggleSeccion }) =>
         >
           <span className="font-medium tracking-wide">{secciones[seccion].titulo}</span>
           {seccionesAbiertas[seccion] ? (
-            <ChevronUp className="h-5 w-5 text-[#FFB300]" />
+            <ChevronUp className="h-5  w-5 text-[#FFB300]" />
           ) : (
             <ChevronDown className="h-5 w-5 text-gray-400 group-hover:text-[#FFB300]" />
           )}

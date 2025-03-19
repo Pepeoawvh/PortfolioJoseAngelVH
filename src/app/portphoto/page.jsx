@@ -25,8 +25,8 @@ const PortPhoto = () => {
               <button
                 className={`group relative overflow-hidden rounded-md transition-all duration-300
                   ${activeSection === "fotolibros" 
-                    ? "bg-[#FFB300]/20 border border-[#FFB300]/80" 
-                    : "bg-black/40 border border-white/10 hover:border-[#FFB300]/40"}`}
+                    ? "bg-[#FFB300]/20 border shadow-md shadow-[#FFB300]/20 border-[#FFB300]/80" 
+                    : "bg-black/40 border border-[#FFB300]/20 hover:border-[#FFB300]/40"}`}
                 onClick={() => toggleSection("fotolibros")}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#FFB300]/0 via-[#FFB300]/5 to-[#FFB300]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -39,11 +39,11 @@ const PortPhoto = () => {
               </button>
               
               {/* Botón Proyectos */}
-              <button
+              <button 
                 className={`group relative overflow-hidden rounded-md transition-all duration-300
                   ${activeSection === "proyectos" 
-                    ? "bg-[#FFB300]/20 border border-[#FFB300]/80" 
-                    : "bg-black/40 border border-white/10 hover:border-[#FFB300]/40"}`}
+                    ? "bg-[#FFB300]/20 border border-[#FFB300]/80 shadow-md shadow-[#FFB300]/20" 
+                    : "bg-black/40 border border-[#FFB300]/20 hover:border-[#FFB300]/40"}`}
                 onClick={() => toggleSection("proyectos")}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#FFB300]/0 via-[#FFB300]/5 to-[#FFB300]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -59,8 +59,8 @@ const PortPhoto = () => {
               <button
                 className={`group relative overflow-hidden rounded-md transition-all duration-300
                   ${activeSection === "materialEducativo" 
-                    ? "bg-[#FFB300]/20 border border-[#FFB300]/80" 
-                    : "bg-black/40 border border-white/10 hover:border-[#FFB300]/40"}`}
+                    ? "bg-[#FFB300]/20 border border-[#FFB300]/80 shadow-md shadow-[#FFB300]/20" 
+                    : "bg-black/40 border border-[#FFB300]/20 hover:border-[#FFB300]/40"}`}
                 onClick={() => toggleSection("materialEducativo")}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#FFB300]/0 via-[#FFB300]/5 to-[#FFB300]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

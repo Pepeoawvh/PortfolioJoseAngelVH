@@ -49,7 +49,7 @@ const FormPhoto = () => {
           {/* Texto del botón */}
           <div className="flex flex-col items-start">
             <span className="text-lg font-medium text-white tracking-wide group-hover:text-[#FFB300] transition-colors duration-300">Contáctame por WhatsApp</span>
-            <span className="text-xs text-gray-300 font-light group-hover:text-white transition-colors duration-300">Respuesta rápida garantizada</span>
+            <span className="text-xs text-gray-300 font-light group-hover:text-white transition-colors duration-300">Suelo responder rápidamente</span>
           </div>
         </Link>
       </div>
@@ -59,11 +59,8 @@ const FormPhoto = () => {
         <p className="text-gray-400 text-sm">
           También puedes enviarme un correo a{" "}
           <a href="mailto:jpp@gmail.com" className="text-[#FFB300] hover:text-white transition-colors duration-300">
-            contacto@josevaldes.com
+            jpp.valdés@gmail.com
           </a>
-        </p>
-        <p className="text-gray-500 text-xs mt-2">
-          Disponible para proyectos fotográficos en Chile y el extranjero
         </p>
       </div>
     </div>

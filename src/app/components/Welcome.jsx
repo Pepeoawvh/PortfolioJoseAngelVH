@@ -28,7 +28,7 @@ const Welcome = () => {
             href="/webdev"
             className={`text-xl select-none mr-36 sm:mr-40 mb-44 tracking-wider transition-all duration-300 border border-transparent ${
               isWebClicked
-                ? "bg-black/80 shadow-lg shadow-[#2ecc71]/20 text-[#2ecc71] py-3 px-2 rounded-md cursor-pointer border-[#2ecc71]/30"
+                ? "bg-black/80 shadow-lg shadow-[#2ecc71]/20 text-[#2ecc71] py-3 px-0 md:px-2 rounded-md cursor-pointer border-[#2ecc71]/30"
                 : "text-gray-300 cursor-pointer hover:text-[#2ecc71] hover:bg-black/70 hover:py-3 hover:px-2 hover:rounded-md hover:border-[#2ecc71]/30"
             }`}
           >

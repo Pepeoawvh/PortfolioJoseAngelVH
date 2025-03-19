@@ -31,10 +31,10 @@ const FooterPhoto = () => {
         
         {/* Línea decorativa monocromática */}
         <div className="flex justify-center my-4">
-          <div className="h-px w-24 bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+          <div className="h-px w-24 bg-gradient-to-r from-transparent via-[#FFB300]/40 to-transparent"></div>
         </div>
         
-        {/* Copyright */}
+        {/* Copyright */} 
         <div className="text-center text-xs text-gray-400 mt-2">
           &copy; {new Date().getFullYear()} José Angel Valdés Hernández | <span className="text-white">Fotografía Profesional</span>
         </div>
@@ -61,7 +61,7 @@ const SocialIcon = ({ href, icon, label }) => (
     </div>
     
     {/* Tooltip */}
-    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs bg-black/80 text-white rounded opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none border border-white/20">
+    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs bg-black/80 text-[#FFB300] rounded opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none border border-white/20">
       {label}
     </span>
   </a>

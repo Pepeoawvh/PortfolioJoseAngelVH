@@ -9,7 +9,7 @@ const EmailSection = () => {
       {/* Cabecera con título */}
       <div className="pb-8 pt-8">
         <h2 className="text-4xl font-bold mb-2 text-center">
-          <span className="text-[#2ecc71]">Contacta</span>me
+          <span className="text-[#2ecc71]">Contactame </span>
         </h2>
         <div className="h-1 w-24 bg-gradient-to-r from-[#d63384]/10 via-[#2ecc71] to-[#d63384]/10 mx-auto"></div>
       </div>
@@ -63,14 +63,14 @@ const EmailSection = () => {
               
               {/* Texto del botón */}
               <h4 className="text-xl font-bold text-white mb-2">Contáctame por WhatsApp</h4>
-              <p className="text-gray-400 text-sm text-center mb-2">Respuesta rápida garantizada</p>
+              <p className="text-gray-400 text-sm text-center mb-2">Suelo responder rápidamente</p>
               
               {/* Número de teléfono */}
               <span className="text-lg font-mono text-[#2ecc71] mt-2">+56 9 4986 6129</span>
               
               {/* Mensaje de call-to-action */}
               <span className="mt-4 px-6 py-2 bg-black/30 rounded-full text-sm text-white transition-all duration-300 group-hover:bg-[#2ecc71]/20">
-                Haz clic para chatear ahora
+                Presiona para enviar un mensaje
               </span>
             </a>
           </div>
