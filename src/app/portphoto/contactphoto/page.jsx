@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const ContactPhoto = () => {
   return (
-    <div className={`flex flex-col min-h-screen bg-[#0a0a0a] ${sourceSansPro.className}`}>
+    <div className={`flex  flex-col min-h-screen bg-[#0a0a0a] ${sourceSansPro.className}`}>
       <header className="relative grid grid-cols-1 md:grid-cols-2 items-center py-10 mt-20">
         {/* Fondo con efecto de viñeta */}
         <div className="absolute inset-0 bg-black shadow-[inset_0_0_100px_rgba(0,0,0,0.9)] z-0"></div>

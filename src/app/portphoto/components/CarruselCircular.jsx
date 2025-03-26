@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
@@ -29,49 +29,80 @@ const CarruselCircular = () => {
   const [index, setIndex] = useState(0);
   const [fadeIn, setFadeIn] = useState(true);
   const [autoplay, setAutoplay] = useState(true);
+  const timerRef = useRef(null); // Referencia para controlar el temporizador
+  const AUTOPLAY_INTERVAL = 8000; // 8 segundos para el cambio automático
+  const FADE_DURATION = 300; // Duración de la transición de fade
 
-  // Función para avanzar a la siguiente imagen
-  const handleNext = () => {
-    setAutoplay(false); // Detener autoplay al interactuar manualmente
+  // Función para cambiar la imagen con control de animación
+  const changeImage = (newIndex) => {
     setFadeIn(false);
     
     setTimeout(() => {
-      setIndex((prev) => (prev + 1) % images.length);
+      setIndex(newIndex);
       setFadeIn(true);
-    }, 300);
+    }, FADE_DURATION);
+  };
+
+  // Función para avanzar a la siguiente imagen
+  const handleNext = () => {
+    // Calcular el nuevo índice
+    const nextIndex = (index + 1) % images.length;
+    
+    // Cambiar la imagen
+    changeImage(nextIndex);
+    
+    // Reiniciar el temporizador
+    resetAutoplayTimer();
   };
 
   // Función para retroceder a la imagen anterior
   const handlePrevious = () => {
-    setAutoplay(false); // Detener autoplay al interactuar manualmente
-    setFadeIn(false);
+    // Calcular el nuevo índice
+    const prevIndex = index === 0 ? images.length - 1 : index - 1;
     
-    setTimeout(() => {
-      setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-      setFadeIn(true);
-    }, 300);
+    // Cambiar la imagen
+    changeImage(prevIndex);
+    
+    // Reiniciar el temporizador
+    resetAutoplayTimer();
   };
 
-  // Autoplay para cambiar automáticamente las imágenes
-  useEffect(() => {
-    let intervalId;
-    
-    if (autoplay) {
-      intervalId = setInterval(() => {
-        setFadeIn(false);
-        
-        setTimeout(() => {
-          setIndex((prev) => (prev + 1) % images.length);
-          setFadeIn(true);
-        }, 500);
-      }, 7000);
+  // Función para reiniciar el temporizador
+  const resetAutoplayTimer = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
     }
+    
+    // Reiniciar autoplay pero mantener el estado
+    setAutoplay(true);
+  };
 
-    return () => clearInterval(intervalId);
-  }, [autoplay]);
+  // Gestionar el autoplay
+  useEffect(() => {
+    // Limpiar el temporizador existente
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+    
+    // Si autoplay está activo, configurar un nuevo temporizador
+    if (autoplay) {
+      timerRef.current = setTimeout(() => {
+        // Avanza automáticamente a la siguiente imagen
+        const nextIndex = (index + 1) % images.length;
+        changeImage(nextIndex);
+      }, AUTOPLAY_INTERVAL);
+    }
+    
+    // Limpieza al desmontar o cambiar de dependencias
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
+  }, [autoplay, index]); // Dependencias: autoplay y el índice actual
 
   return (
-    <div className="w-full max-w-7xl mx-auto relative group mt-4">
+    <div className="select-none w-full max-w-7xl mx-auto relative group mt-4">
       {/* Marco exterior con sombra para dar profundidad */}
       <div className="bg-white rounded-md p-12 shadow-[0_5px_25px_rgba(0,0,0,0.15)]">
         {/* Contenedor de la imagen con borde sutil */}

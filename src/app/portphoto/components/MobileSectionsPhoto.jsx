@@ -2,7 +2,7 @@ import React from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 const MobileSectionsPhoto = ({ secciones, seccionesAbiertas, toggleSeccion }) => (
-  <div className="space-y-3">
+  <div className="space-y-3 select-none">
     {Object.keys(secciones).map((seccion) => (
       <div 
         key={seccion} 

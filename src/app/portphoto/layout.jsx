@@ -4,7 +4,7 @@ import FooterPhoto from "./components/FooterPhoto";
 
 const PortPhotoLayout = ({ children }) => {
   return (
-    <div className="grid auto-rows-min h-screen bg-[#191923] text-gray-50">
+    <div className="grid select-none auto-rows-min h-screen bg-[#191923] text-gray-50">
       <NavbarPhoto/>
       <main>{children}</main>
       <FooterPhoto />

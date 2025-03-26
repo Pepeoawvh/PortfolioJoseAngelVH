@@ -47,7 +47,7 @@ const FormPhoto = () => {
 </svg>
           
           {/* Texto del botón */}
-          <div className="flex flex-col items-start">
+          <div className="flex select-none flex-col items-start">
             <span className="text-lg font-medium text-white tracking-wide group-hover:text-[#FFB300] transition-colors duration-300">Contáctame por WhatsApp</span>
             <span className="text-xs text-gray-300 font-light group-hover:text-white transition-colors duration-300">Suelo responder rápidamente</span>
           </div>

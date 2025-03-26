@@ -25,7 +25,7 @@ const Fotolibros = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+    <div className="grid select-none grid-cols-1 md:grid-cols-3 gap-4 p-4">
       {libros.map((libro, index) => (
         <div
           key={index}

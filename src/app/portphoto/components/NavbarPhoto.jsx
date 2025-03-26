@@ -68,7 +68,7 @@ const NavbarPhoto = ({ activeSection, setActiveSection }) => {
           : 'bg-[#0a0a0a]'
       }`}
     >
-      <div className="flex justify-between items-center container mx-auto px-4 h-full">
+      <div className="flex select-none justify-between items-center container mx-auto px-4 h-full">
         <Link href="/" className="h-[40px] relative group">
           <Image
             src="/images/logoWhite.svg"

@@ -15,7 +15,7 @@ const PortPhoto = () => {
   };
 
   return (
-    <div className={`flex flex-col min-h-screen bg-[#0a0a0a] ${sourceSansPro.className}`}>
+    <div className={`flex select-none flex-col min-h-screen bg-[#0a0a0a] ${sourceSansPro.className}`}>
       <main className="flex-grow pt-24 pb-12"> 
         {/* Sección de navegación - eliminado sticky */}
         <section className="bg-black border-y border-white/5 py-4 shadow-md mb-12">

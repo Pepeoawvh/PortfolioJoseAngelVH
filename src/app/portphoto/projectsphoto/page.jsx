@@ -20,7 +20,7 @@ const ProyectosPh = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+    <div className="grid select-none grid-cols-1 md:grid-cols-3 gap-4 p-4">
       {proyectos.map((proyecto, index) => (
         <div key={index} className="border p-4 rounded-md">
           <Image src={proyecto.src} alt={proyecto.title} width={300} height={200} className="rounded-md" />
