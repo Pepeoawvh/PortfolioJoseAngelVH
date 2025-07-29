@@ -54,9 +54,6 @@ cd PortfolioJoseAngelVH
 2. Instalar dependencias
 npm install
 
-2. Instalar dependencias
-npm install
-
 3. Crea un archivo .env usando .env copy como base.
 
 4. Ejecuta en desarrollo:
