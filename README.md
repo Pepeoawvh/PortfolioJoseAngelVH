@@ -1,26 +1,80 @@
-# Sitio web de Portafolio
+# Portfolio de José Ángel Valdés Hernández
 
-Este es un sitio web de portafolio construido con Next.js y Tailwind CSS. Muestra tus habilidades, proyectos y logros en un diseño elegante y receptivo.
+Este es el repositorio de mi portafolio profesional, desarrollado con **Next.js** y desplegado en **Vercel**, que busca integrar de manera clara y estética dos de mis principales disciplinas: la fotografía y el desarrollo web. El sitio está diseñado para mostrar mis trabajos, habilidades y trayectoria profesional, con énfasis en una experiencia de navegación fluida, responsiva y moderna.
 
-## Instalación
+🔗 [Ver sitio en producción](https://joseangelportfolio.vercel.app)
 
-1. Clona el repositorio: `git clone https://github.com/judygab/nextjs-portfolio.git`
-2. Navega al directorio del proyecto: `cd portfolio-website`
-3. Instala las dependencias: `npm install`
+## 🚀 Tecnologías utilizadas
 
-## Uso
+- **Next.js** — Framework de React para renderizado estático y dinámico.
+- **React** — Para la construcción de componentes reutilizables.
+- **Firebase** — Para almacenamiento de formularios.
+- **Tailwind CSS** — Estilizado rápido y adaptativo.
+- **Vercel** — Plataforma de despliegue.
 
-1. Inicia el servidor de desarrollo: `npm run dev`
-2. Abre tu navegador y visita [http://localhost:3000](http://localhost:3000) para ver el sitio web.
+## 📂 Estructura general del sitio
 
-## Dependencias
+El sitio se divide en dos grandes rutas, accesibles desde la pantalla de inicio:
 
-Las siguientes dependencias son necesarias para este proyecto:
+### 1. Portafolio de Fotografía
 
-- **Next.js:** Un framework de React para renderizado del lado del servidor y generación de sitios estáticos.
-- **Tailwind CSS:** Un framework CSS altamente personalizable.
-- **React:** Una biblioteca de JavaScript para construir interfaces de usuario.
-- **React Icons:** Una colección de iconos populares para proyectos de React.
-## Licencia
+- Inicio visual con carrusel de fotografías.
+- Barra de navegación:
+  - Sobre mí
+  - Contacto
+- Secciones principales:
+  - Fotolibros
+  - Proyectos (en construcción): trabajos de investigación visual, cuentas temáticas de Instagram, etc.
+  - Material educativo (en construcción): trípticos informativos, actividades, y evidencia de talleres realizados.
+  - Redes sociales: enlaces a **Instagram** y **Behance**.
 
-Este proyecto está licenciado bajo la [Licencia MIT](https://opensource.org/licenses/MIT). Siéntete libre de usar, modificar y distribuir el código según los términos de la licencia.
+### 2. Portafolio de Desarrollo Web
+
+- Descripción inicial del perfil profesional.
+- Botón de descarga de CV.
+- Sección con pestañas:
+  - **Habilidades**: tecnologías manejadas.
+  - **Educación**: instituciones formadoras.
+  - **Certificaciones**: insignias obtenidas.
+- Navegación:
+  - **Proyectos Web**:
+    - Formativos
+    - Particulares (clientes)
+    - Personales
+  - **Contacto**: formulario con backend en Firebase.
+
+## 🔧 Instalación local
+
+1. Clona el repositorio:
+
+git clone https://github.com/Pepeoawvh/PortfolioJoseAngelVH.git
+cd PortfolioJoseAngelVH
+
+
+2. Instalar dependencias
+npm install
+
+2. Instalar dependencias
+npm install
+
+3. Crea un archivo .env usando .env copy como base.
+
+4. Ejecuta en desarrollo:
+npm run dev
+
+5. Abre el navegador en: http://localhost:3000
+
+## Estado del proyecto
+Sitio funcional y en producción.
+
+Módulos de fotografía y desarrollo web disponibles.
+
+Secciones de Proyectos y Material educativo aún en desarrollo.
+
+
+## Autor
+José Ángel Valdés Hernández
+Desarrollador Web & Fotógrafo
+Correo: jpp.valdes@gmail.com
+[Instagram](https://www.instagram.com/joseangel.vh/)
+[LinkedIn](https://www.linkedin.com/in/jose-angel-valdes-hernandez/)
