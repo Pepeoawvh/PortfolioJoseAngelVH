@@ -37,5 +37,4 @@ const WebDev = () => {
     </div>
   );
 };
-
 export default WebDev;
