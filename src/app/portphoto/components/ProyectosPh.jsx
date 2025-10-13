@@ -4,22 +4,27 @@ import Link from "next/link";
 const ProyectosPh = () => {
   const libros = [
     {
-      src: "/images/projects/LCDLP.jpg",
-      title: "La caza de las pantallas",
-      description: "Ensayo visual y reflexivo sobre la evolución del rol de la fotografía en la era digital. Este proyecto resultó en un fotolibro que funciona como comentario crítico sobre nuestra relación con las imágenes y pantallas",
-      link: "https://www.behance.net/gallery/215597665/La-caza-de-las-Pantallas",
+      src: "/images/projects/photo/proy/jvhig.jpg",
+      title: "Joseangel.vh",
+      description: "Cuenta de instagram de trabajo personal, selección fotografías de autoría propia.",
+      link: "https://www.instagram.com/joseangel.vh/",
+    }, {
+      src: "/images/projects/photo/proy/ER.jpg",
+      title: "escrinshots_random",
+      description: "Curatoría experimental de imagenes, en su mayoría orientadas a fotografía de pantallas (screenshots) tomadas en diferentes contextos de la vida digital, redes sociales, videojuegos, navegacion web y otros dispositivos. El proyecto explora la relación entre la imagen digital y la narrativa personal, creando un diálogo entre el espectador y las imágenes seleccionadas.",
+      link: "https://www.instagram.com/escrinshots_random/",
     },
     {
-      src: "/images/projects/despliegueluz.jpg",
-      title: "Despliegue de la luz",
-      description: "Fotolibro que explora el espectro visible a través de una aproximación tanto física como poética a la luz. Un recorrido visual por los colores y sus manifestaciones en diferentes contextos.",
-      link: "/libro2",
+      src: "/images/projects/photo/proy/pplabs.jpg",
+      title: "pp.labs",
+      description: "Laboratorio experimental de imagenes, es un espacio abierto a la exploración creativa. Mezclando fotografía, fotomontaje, imágenes de IA generativa, dibujo, narrativa y musica. ",
+      link: "https://www.instagram.com/pp.labs/",
     },
     {
-      src: "/images/projects/stalkerph.jpg",
+      src: "/images/projects/photo/proy/SPH.jpg",
       title: "Stalker.ph",
       description: "Proyecto transmedia que combina fotografía de juegos (screenshots) con narrativa personal. Incluye componente de redes sociales con una comunidad activa de seguidores.",
-      link: "/libro3",
+      link: "https://www.instagram.com/escrinshots_random/",
     },
     // Agrega más libros aquí
   ];
@@ -38,7 +43,7 @@ const ProyectosPh = () => {
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="relative z-10 text-white">
             <h3 className="text-lg font-semibold mt-2">{libro.title}</h3>
-            <p className="text-sm w-1/2 text-justify">{libro.description}</p>
+            <p className="text-sm w-3/4 text-left tracking-wide ">{libro.description}</p>
             <Link href={libro.link} className="text-[#FFB300] hover:text-yellow-400">
               Ver más
             </Link>

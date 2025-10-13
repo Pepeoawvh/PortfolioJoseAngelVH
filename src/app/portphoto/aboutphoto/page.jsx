@@ -116,59 +116,7 @@ const AboutPhoto = () => {
         </div>
       ),
     },
-    proyectos: {
-      titulo: "Proyectos Destacados",
-      subtitulo: "Mi obra personal",
-      contenido: (
-        <div className="space-y-6" id="proyectos-destacados">
-          <div className="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 items-center bg-black/30 p-4 rounded-md border border-white/5 hover:border-[#FFB300]/20 transition-all duration-300">
-            <Image
-              src="/images/projects/LCDLP.jpg"
-              alt="La Caza de las Pantallas"
-              width={3000}
-              height={3000}
-              className="h-28 w-auto rounded-md shadow-lg"
-            />
-            <div>
-              <h3 className="font-semibold text-lg text-white mb-2">La Caza de las Pantallas</h3>
-              <p className="text-gray-300">
-                Ensayo visual y reflexivo sobre la evolución del rol de la fotografía en la era digital. Este proyecto resultó en un fotolibro que funciona como comentario crítico sobre nuestra relación con las imágenes y pantallas. <Link href="https://www.behance.net/gallery/215597665/La-caza-de-las-Pantallas" className="text-[#FFB300] hover:text-white transition-colors duration-300">Ver en Behance</Link>
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 items-center bg-black/30 p-4 rounded-md border border-white/5 hover:border-[#FFB300]/20 transition-all duration-300">
-            <Image
-              src="/images/projects/despliegueluz.jpg"
-              alt="Despliegue de la Luz"
-              width={3000}
-              height={3000}
-              className="h-28 w-auto rounded-md shadow-lg"
-            />
-            <div>
-              <h3 className="font-semibold text-lg text-white mb-2">Despliegue de la Luz</h3>
-              <p className="text-gray-300">
-                Fotolibro que explora el espectro visible a través de una aproximación tanto física como poética a la luz. Un recorrido visual por los colores y sus manifestaciones en diferentes contextos.
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 items-center bg-black/30 p-4 rounded-md border border-white/5 hover:border-[#FFB300]/20 transition-all duration-300">
-            <Image
-              src="/images/projects/stalkerph.jpg"
-              alt="Stalker.ph"
-              width={3000}
-              height={3000}
-              className="h-28 w-auto rounded-md shadow-lg"
-            />
-            <div>
-              <h3 className="font-semibold text-lg text-white mb-2">Stalker.ph</h3>
-              <p className="text-gray-300">
-                Proyecto transmedia que combina fotografía de juegos (screenshots) con narrativa personal. Incluye componente de redes sociales con una comunidad activa de seguidores.
-              </p>
-            </div>
-          </div>
-        </div>
-      ),
-    },
+    
     filosofia: {
       titulo: "Filosofía Fotográfica",
       subtitulo: "Mi visión creativa",
@@ -223,7 +171,7 @@ const AboutPhoto = () => {
   };
 
   return (
-    <div className={`flex flex-col min-h-screen bg-[#0a0a0a] ${sourceSansPro.className}`}>
+    <div className={`flex flex-col min-h-screen  bg-[#0a0a0a] ${sourceSansPro.className}`}>
       <HeaderPhoto />
       <main className="flex-grow">
         {esMobil ? (

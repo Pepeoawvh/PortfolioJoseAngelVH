@@ -1,7 +1,7 @@
 "use client";
-import Welcome from "./components/Welcome";
-import NavbarIntro from "./components/NavbarIntro";
-import Footer from "./components/Footer";
+import Welcome from "./components/ui/Welcome";
+import NavbarIntro from "./components/layout/NavbarIntro";
+import Footer from "./components/layout/Footer";
 
 export default function Home() {
   return (

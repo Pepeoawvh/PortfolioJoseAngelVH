@@ -4,7 +4,7 @@ const DesktopSectionsPhoto = ({ secciones, seccionActiva, setSeccionActiva }) =>
   <>
     {/* Navegación de secciones - Estilo monocromático */}
     <section className="bg-black select-none border-y border-white/10  shadow-md px-4 md:px-12 py-4 sticky top-20 z-10">
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4 justify-items-center max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 justify-items-center max-w-6xl mx-auto">
         {Object.keys(secciones).map((seccion) => (
           <button
             key={seccion}

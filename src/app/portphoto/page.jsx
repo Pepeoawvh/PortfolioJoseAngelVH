@@ -79,20 +79,8 @@ const PortPhoto = () => {
         {activeSection && (
           <div className="transition-all duration-500 ease-in-out overflow-hidden px-4 mb-16">
             {activeSection === "fotolibros" && <Fotolibros />}
-            {activeSection === "proyectos" && (
-              <div className="text-center py-16">
-                <CameraIcon className="h-16 w-16 mx-auto text-[#FFB300]/30 mb-6" />
-                <h2 className="text-2xl font-medium text-white mb-3">Sección en construcción</h2>
-                <p className="text-gray-400 max-w-lg mx-auto">Estamos trabajando en esta sección. Muy pronto podrás ver aquí los proyectos fotográficos completos.</p>
-              </div>
-            )}
-            {activeSection === "materialEducativo" && (
-              <div className="text-center py-16">
-                <CameraIcon className="h-16 w-16 mx-auto text-[#FFB300]/30 mb-6" />
-                <h2 className="text-2xl font-medium text-white mb-3">Sección en construcción</h2>
-                <p className="text-gray-400 max-w-lg mx-auto">Estamos desarrollando el material educativo. En breve encontrarás aquí recursos para aprender fotografía.</p>
-              </div>
-            )}
+            {activeSection === "proyectos" && <ProyectosPh />}
+            {activeSection === "materialEducativo" && <EducPh />}
           </div>
         )}
 
