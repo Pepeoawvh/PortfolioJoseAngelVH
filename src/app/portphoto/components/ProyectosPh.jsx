@@ -24,7 +24,7 @@ const ProyectosPh = () => {
       src: "/images/projects/photo/proy/SPH.jpg",
       title: "Stalker.ph",
       description: "Proyecto transmedia que combina fotografía de juegos (screenshots) con narrativa personal. Incluye componente de redes sociales con una comunidad activa de seguidores.",
-      link: "https://www.instagram.com/escrinshots_random/",
+      link: "https://www.instagram.com/stalker.ph/",
     },
     // Agrega más libros aquí
   ];

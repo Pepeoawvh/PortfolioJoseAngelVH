@@ -1,7 +1,6 @@
 import "./globals.css";
 import { jost } from './ui/fonts';
 import { Suspense } from 'react';
-import Script from 'next/script';
 
 // Metadata mejorada y expandida para Next.js App Router
 export const metadata = {

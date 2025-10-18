@@ -28,7 +28,7 @@ const WebDev = () => {
         activeSection={activeSection}
         setActiveSection={setActiveSection}
       />
-      {/* Añadimos un div espaciador con la altura exacta del navbar */}
+      {/*espaciador con la altura exacta del navbar */}
       <div className="h-20"></div>
       <main className="flex-grow">
         {renderSection()}

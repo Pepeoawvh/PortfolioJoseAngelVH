@@ -38,10 +38,10 @@ const NavbarIntro = () => {
             className="transition-transform duration-300 group-hover:scale-105 filter group-hover:brightness-125"
           />
           {/* Línea decorativa estilo fotografía (blanco y negro) */}
-          <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 h-0.5 w-0 bg-gradient-to-r from-gray-500 via-white to-gray-500 transition-all duration-300 group-hover:w-full"></div>
+          <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 h-[0.5px] w-0 bg-gradient-to-r from-gray-500 via-white to-gray-500 transition-all duration-300 group-hover:w-full"></div>
           
           {/* Efecto de brillo en hover (plateado) */}
-          <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 h-1 w-0 blur-sm bg-gray-300 opacity-0 transition-all duration-300 group-hover:w-full group-hover:opacity-80"></div>
+          <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 h-[1px] w-0 blur-sm bg-gray-300 opacity-0 transition-all duration-300 group-hover:w-full group-hover:opacity-80"></div>
         </Link>
       </div>
     </header>

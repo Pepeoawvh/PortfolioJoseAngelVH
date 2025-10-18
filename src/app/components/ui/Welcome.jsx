@@ -51,8 +51,8 @@ const Welcome = () => {
             href="/portphoto"
             className={`ml-44 mt-36 text-xl select-none transition-all duration-300 border border-transparent ${
               isPhotoClicked
-                ? "bg-black/80 shadow-lg shadow-white/20 text-white py-3 px-6 rounded-md cursor-pointer border-white/30"
-                : "text-gray-400 cursor-pointer hover:text-white hover:bg-black/70 hover:py-3 hover:px-6 hover:rounded-md hover:border-white/30"
+                ? "bg-black/80 shadow-lg shadow-[#FFB300]/20 text-[#FFB300] py-3 px-6 rounded-md cursor-pointer border-[#FFB300]"
+                : "text-gray-400 cursor-pointer hover:text-[#FFB300] hover:bg-black/70 hover:py-3 hover:px-6 hover:rounded-md hover:border-[#FFB300]/40"
             }`}
           >
             <TypeAnimation
