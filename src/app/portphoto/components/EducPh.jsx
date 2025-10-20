@@ -29,8 +29,7 @@ const EducPh = () => {
         "Triptico informativo, se entrega a estudiantes de educación Básica y Media, este número contiene revelado analógico para actividades del taller.",
       pdf: "/docs/educ/evl4.pdf",
     },
-  ];
-
+  ]
   return (
     <div className="grid select-none grid-cols-1 md:grid-cols-3 gap-4 p-4">
       {libros.map((libro, index) => (
