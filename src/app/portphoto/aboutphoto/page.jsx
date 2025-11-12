@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { sourceSansPro } from "../../ui/fonts";
-import HeaderPhoto from "../components/HeaderPhoto";
+import HeaderPhoto from "../components/HeaderAbout";
 import MobileSectionsPhoto from "../components/MobileSectionsPhoto";
-import DesktopSectionsPhoto from "../components/DesktopSectionsPhoto";
+import DesktopSectionsPhoto from "../components/AboutPhoto";
 import Image from "next/image";
 import Link from "next/link";
 
