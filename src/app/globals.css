@@ -26,3 +26,11 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+@keyframes slowZoomIn {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.3);
+  }
+}

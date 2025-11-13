@@ -171,9 +171,12 @@ export default function Carrusel() {
           priority={index === 0}
           quality={90}
           sizes="100vw"
-          className={`object-cover object-center transition-all duration-500 ease-in-out ${
-            fadeIn ? "opacity-100 scale-100" : "opacity-0 scale-[1.01]"
-          }`}
+          className={`object-cover object-center transition-opacity duration-500 ease-in-out
+    ${
+      fadeIn
+        ? "opacity-100 animate-[slowZoomIn_20s_ease-in-out_forwards]"
+        : "opacity-0"
+    }`}
         />
 
         {/* Overlay de carga */}
@@ -197,7 +200,7 @@ export default function Carrusel() {
             aria-label="Imagen anterior"
             disabled={isLoading}
             className={`h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-black/30 hover:bg-black/50 text-white flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FFB300] active:scale-95 backdrop-blur-sm
-              ${isLoading ? "opacity-50 cursor-not-allowed" : "opacity-100"}`}
+                ${isLoading ? "opacity-50 cursor-not-allowed" : "opacity-100"}`}
           >
             <ChevronLeftIcon className="h-7 w-7 sm:h-8 sm:w-8" />
           </button>
@@ -208,7 +211,7 @@ export default function Carrusel() {
             aria-label="Imagen siguiente"
             disabled={isLoading}
             className={`h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-black/30 hover:bg-black/50 text-white flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FFB300] active:scale-95 backdrop-blur-sm
-              ${isLoading ? "opacity-50 cursor-not-allowed" : "opacity-100"}`}
+                ${isLoading ? "opacity-50 cursor-not-allowed" : "opacity-100"}`}
           >
             <ChevronRightIcon className="h-7 w-7 sm:h-8 sm:w-8" />
           </button>
@@ -225,8 +228,8 @@ export default function Carrusel() {
               onClick={() => !isLoading && handleChange(i)}
               disabled={isLoading}
               className={`h-2 rounded-full transition-all duration-300 ${
-                i === index 
-                  ? "w-8 bg-white/90" 
+                i === index
+                  ? "w-8 bg-white/90"
                   : "w-2 bg-white/40 hover:bg-white/70 hover:w-4"
               } ${isLoading ? "opacity-50 cursor-not-allowed" : ""}`}
             />

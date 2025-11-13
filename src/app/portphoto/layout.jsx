@@ -30,7 +30,7 @@ function DropdownSection() {
           scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full 
           scrollbar-thumb-[#FFB300]/40 scrollbar-track-[#111]`}
       >
-        <div className="bg-[#111] border-t border-gray-700 shadow-lg">
+        <div className="bg-black/70 backdrop-blur-sm border-t border-gray-700 shadow-lg">
           <div className="max-w-6xl mx-auto px-6 py-8">
             {activeSection === "fotolibros" && <Fotolibros />}
             {activeSection === "proyectos" && <ProyectosPh />}
