@@ -25,20 +25,15 @@ const NavbarPhoto = () => {
 
   const { activeSection, setActiveSection } = usePhoto();
 
-  // Si hay una sección abierta y haces clic en otra, la cambia directamente.
-  const toggleSection = (section) => {
-    setActiveSection((prev) => {
-      if (prev === section) return null; // si haces clic en la misma, se cierra
-      return section; // si haces clic en otra, se reemplaza directamente
-    });
-  };
-
   const handleSeccionChange = (seccion) => {
-    toggleSection(seccion);
+    setActiveSection((prev) => (prev === seccion ? null : seccion));
     setNavbarOpen(false);
   };
 
-  const handleNavigation = () => setNavbarOpen(false);
+  const handleNavigation = () => {
+    setNavbarOpen(false);
+    setActiveSection(null);
+  };
 
   // efecto scroll
   useEffect(() => {
@@ -50,27 +45,28 @@ const NavbarPhoto = () => {
   // cerrar menú móvil y secciones al hacer click afuera
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      // Verifica si el click fue dentro del navbar
-      if (navRef.current && !navRef.current.contains(event.target)) {
+      const clickedInNavbar = navRef.current && navRef.current.contains(event.target);
+      
+      // Verificar si el click fue en el panel de contenido desplegable
+      const dropdownPanel = document.querySelector('[data-dropdown-panel]');
+      const clickedInPanel = dropdownPanel && dropdownPanel.contains(event.target);
+      
+      // Solo cerrar si el click NO fue en navbar NI en el panel
+      if (!clickedInNavbar && !clickedInPanel) {
         setNavbarOpen(false);
         setActiveSection(null);
       }
     };
-    // Usamos mousedown en lugar de click para capturarlo antes
+    
     document.addEventListener("mousedown", handleOutsideClick);
     return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, [setActiveSection]);
 
-  // Botón con mejor manejo de eventos para evitar conflictos
+  // Botón de sección
   const Btn = ({ id, children }) => {
     const active = activeSection === id;
 
-    const handleClick = (e) => {
-      // Evita que el evento burbujee
-      e.stopPropagation();
-      e.preventDefault();
-      
-      // Cambio directo de sección
+    const handleClick = () => {
       setActiveSection((prev) => (prev === id ? null : id));
     };
 
@@ -154,7 +150,7 @@ const NavbarPhoto = () => {
               <Link
                 key={index}
                 href={link.path}
-                onClick={() => handleNavigation(link.path)}
+                onClick={handleNavigation}
                 className="relative group px-3 py-2"
               >
                 <span className="text-gray-300 transition-colors duration-300 group-hover:text-white text-sm font-medium">
@@ -199,10 +195,7 @@ const NavbarPhoto = () => {
               return (
                 <button
                   key={key}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleSeccionChange(key);
-                  }}
+                  onClick={() => handleSeccionChange(key)}
                   className={`w-full text-center py-3 rounded-lg border transition-all duration-300 ${
                     active
                       ? "bg-[#FFB300]/20 text-white border-[#FFB300]/60"
@@ -235,7 +228,7 @@ const NavbarPhoto = () => {
               <li key={index} className="w-4/5 text-center">
                 <Link
                   href={link.path}
-                  onClick={() => handleNavigation(link.path)}
+                  onClick={handleNavigation}
                   className="block text-gray-300 hover:text-white border border-[#FFB300]/20 hover:border-[#FFB300] transition-all duration-300 rounded-sm px-3 py-3"
                 >
                   {link.title}

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import NavbarPhoto from "./components/NavbarPhoto";
 import FooterPhoto from "./components/FooterPhoto";
 import { PhotoProvider, usePhoto } from "./context/PhotoContext";
@@ -8,44 +8,22 @@ import ProyectosPh from "./components/ProyectosPh";
 import EducPh from "./components/EducPh";
 
 function DropdownSection() {
-  const { activeSection, setActiveSection } = usePhoto();
+  const { activeSection } = usePhoto();
   const panelRef = useRef(null);
-
-  // 🔸 Cerrar al hacer clic fuera del panel Y fuera del navbar
-  useEffect(() => {
-    function handleClickOutside(event) {
-      // Solo cerrar si el click no fue en el panel NI en los botones del navbar
-      const clickedButton = event.target.closest('button[role="tab"]');
-      
-      if (
-        panelRef.current &&
-        !panelRef.current.contains(event.target) &&
-        !clickedButton
-      ) {
-        setActiveSection(null);
-      }
-    }
-
-    if (activeSection) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [activeSection, setActiveSection]);
 
   return (
     <>
-      {/* Fondo invisible para capturar clics fuera del panel */}
+      {/* Fondo invisible solo visual */}
       {activeSection && (
         <div 
-          className="fixed inset-0 z-30" 
+          className="fixed inset-0 z-30 pointer-events-none" 
           aria-hidden="true"
-          onClick={() => setActiveSection(null)}
         ></div>
       )}
 
       <div
         ref={panelRef}
+        data-dropdown-panel
         className={`fixed top-[80px] left-0 w-full z-40 transition-all duration-300 ease-out
           ${activeSection ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}
           max-h-[calc(100vh-80px)] overflow-y-auto
