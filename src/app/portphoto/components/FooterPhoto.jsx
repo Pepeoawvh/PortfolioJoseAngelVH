@@ -8,7 +8,7 @@ import {
 
 const FooterPhoto = () => {
   return (
-    <footer className="bg-[#0a0a0a] select-none text-white py-6 border-t border-white/10 shadow-inner">
+    <footer className="bg-[#0a0a0a] select-none text-white pb-4  border-t border-white/10 shadow-inner">
       <div className="container mx-auto px-4">
         {/* Contenedor de iconos sociales */}
         <div className="flex justify-center space-x-6">

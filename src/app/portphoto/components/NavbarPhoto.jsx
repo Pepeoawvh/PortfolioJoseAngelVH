@@ -47,30 +47,31 @@ const NavbarPhoto = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // cerrar menú móvil al hacer click afuera
+  // cerrar menú móvil y secciones al hacer click afuera
   useEffect(() => {
     const handleOutsideClick = (event) => {
+      // Verifica si el click fue dentro del navbar
       if (navRef.current && !navRef.current.contains(event.target)) {
         setNavbarOpen(false);
+        setActiveSection(null);
       }
     };
-    document.addEventListener("click", handleOutsideClick);
-    return () => document.removeEventListener("click", handleOutsideClick);
-  }, []);
+    // Usamos mousedown en lugar de click para capturarlo antes
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, [setActiveSection]);
 
-  // Botón con stopPropagation para evitar que el click active el "outside"
+  // Botón con mejor manejo de eventos para evitar conflictos
   const Btn = ({ id, children }) => {
     const active = activeSection === id;
 
-    const handleMouseDown = (e) => {
-      // Evita que el mousedown burbujee y dispare el listener global
-      e.stopPropagation();
-    };
-
     const handleClick = (e) => {
-      // Evita que el click burbujee y se cierre antes de abrir
+      // Evita que el evento burbujee
       e.stopPropagation();
-      toggleSection(id);
+      e.preventDefault();
+      
+      // Cambio directo de sección
+      setActiveSection((prev) => (prev === id ? null : id));
     };
 
     return (
@@ -79,7 +80,6 @@ const NavbarPhoto = () => {
         role="tab"
         aria-selected={active}
         aria-controls={`panel-${id}`}
-        onMouseDown={handleMouseDown}
         onClick={handleClick}
         className={`relative px-4 py-2 rounded-lg text-sm transition-all duration-300 group ${
           active
@@ -199,7 +199,6 @@ const NavbarPhoto = () => {
               return (
                 <button
                   key={key}
-                  onMouseDown={(e) => e.stopPropagation()}
                   onClick={(e) => {
                     e.stopPropagation();
                     handleSeccionChange(key);

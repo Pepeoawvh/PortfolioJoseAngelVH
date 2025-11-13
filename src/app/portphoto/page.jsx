@@ -5,7 +5,7 @@ import Carrusel from "./components/Carrusel";
 export default function PortPhoto() {
   return (
     <div className={`flex flex-col  bg-[#0a0a0a] ${sourceSansPro.className}`}>
-      <main className="flex-grow  pt-12">
+      <main className="flex-grow">
         <div className="px-4">
           <div className="max-w-6xl mx-auto animate-fade animate-once animate-duration-300">
             <Carrusel />
