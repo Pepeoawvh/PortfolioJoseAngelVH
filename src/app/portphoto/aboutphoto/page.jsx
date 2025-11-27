@@ -52,7 +52,7 @@ const AboutPhoto = () => {
       titulo: "Especialización",
       subtitulo: "Áreas de expertise",
       contenido: (
-        <div className="space-y-6">
+        <div className="space-y-2   ">
           <div className="flex items-start bg-black/30 p-4 rounded-md border border-white/5 hover:border-white/20 transition-all duration-300">
             <Image
               src="/images/icons/LEicon.png"
