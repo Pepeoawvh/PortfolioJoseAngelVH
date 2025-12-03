@@ -34,7 +34,7 @@ function DropdownSection() {
           <div className="max-w-6xl mx-auto px-6 py-8">
             {activeSection === "fotolibros" && <Fotolibros />}
             {activeSection === "proyectos" && <ProyectosPh />}
-            {activeSection === "materialEducativo" && <EducPh />}
+            {activeSection === "experienciasEducativas" && <EducPh />}
           </div>
         </div>
       </div>

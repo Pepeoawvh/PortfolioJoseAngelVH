@@ -127,8 +127,8 @@ const NavbarPhoto = () => {
         <div className="hidden md:flex items-center space-x-6">
           <Btn id="fotolibros">Fotolibros</Btn>
           <Btn id="proyectos">Proyectos</Btn>
-          <Btn id="materialEducativo">Material Educativo</Btn>
-
+          <Btn id="experienciasEducativas">Experiencias Educativas</Btn>
+        
           {/* Si NO estamos en /portphoto, mostramos el botón Galería */}
           {pathname !== "/portphoto" && (
             <Link
