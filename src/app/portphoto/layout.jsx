@@ -18,7 +18,7 @@ function DropdownSection() {
         <div 
           className="fixed inset-0 z-30 pointer-events-none" 
           aria-hidden="true"
-        ></div>
+        />
       )}
 
       <div
@@ -31,10 +31,15 @@ function DropdownSection() {
           scrollbar-thumb-[#FFB300]/40 scrollbar-track-[#111]`}
       >
         <div className="bg-black/70 backdrop-blur-sm border-t border-gray-700 shadow-lg">
-          <div className="max-w-6xl mx-auto px-6 py-8">
+          <div className="w-full px-4 py-8 sm:px-6 md:max-w-6xl md:mx-auto">
+            {/* ✅ CORRECCIÓN: Responsive padding + width */}
             {activeSection === "fotolibros" && <Fotolibros />}
             {activeSection === "proyectos" && <ProyectosPh />}
-            {activeSection === "experienciasEducativas" && <EducPh />}
+            {activeSection === "experienciasEducativas" && (
+              <div className="w-full space-y-6">
+                <EducPh />
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -46,15 +51,12 @@ export default function PortPhotoLayout({ children }) {
   return (
     <PhotoProvider>
       <div className="relative min-h-screen bg-[#191923] text-gray-50 overflow-x-hidden">
-        {/* Navbar siempre fijo */}
         <div className="fixed top-0 left-0 w-full z-50">
           <NavbarPhoto />
         </div>
 
-        {/* Panel flotante */}
         <DropdownSection />
 
-        {/* Contenido principal, debajo del navbar */}
         <main className="relative z-0 pt-[80px]">{children}</main>
 
         <FooterPhoto />
