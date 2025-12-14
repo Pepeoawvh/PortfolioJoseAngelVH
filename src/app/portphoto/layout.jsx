@@ -50,14 +50,14 @@ function DropdownSection() {
 export default function PortPhotoLayout({ children }) {
   return (
     <PhotoProvider>
-      <div className="relative min-h-screen bg-[#191923] text-gray-50 overflow-x-hidden">
+      <div className="relative h-full bg-[#0a0a0a] text-gray-50 overflow-x-hidden">
         <div className="fixed top-0 left-0 w-full z-50">
           <NavbarPhoto />
         </div>
 
         <DropdownSection />
 
-        <main className="relative z-0 pt-[80px]">{children}</main>
+        <main className="relative z-0 pt-[80px] ">{children}</main>
 
         <FooterPhoto />
       </div>

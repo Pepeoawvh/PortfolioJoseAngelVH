@@ -29,7 +29,7 @@ const HeaderPhoto = () => {
   }, []);
 
   return (
-    <header className="relative select-none grid grid-cols-1 md:grid-cols-[0.71fr,1fr] items-center text-center py-6 mt-20 bg-gray-800 text-white">
+    <header className="relative select-none grid grid-cols-1 md:grid-cols-[0.71fr,1fr] items-center text-center py-6 bg-gray-800 text-white">
       <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${fade ? "opacity-100" : "opacity-0"}`}>
         <Image
           src={images[currentImageIndex].src}
