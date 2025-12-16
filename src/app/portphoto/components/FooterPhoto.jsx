@@ -4,6 +4,7 @@ import {
   faInstagram,
   faBehance,
   faWhatsapp,
+  faFlickr,
 } from "@fortawesome/free-brands-svg-icons";
 
 const FooterPhoto = () => {
@@ -20,7 +21,12 @@ const FooterPhoto = () => {
           <SocialIcon 
             href="https://www.behance.net/ljpp" 
             icon={faBehance} 
-            label="Behance"
+            label="Behance - Proyectos de Autor"
+          />
+          <SocialIcon
+            href="https://flickr.com/photos/elpp/albums"
+            icon={faFlickr}
+            label="Flickr - Galería Comercial"
           />
           <SocialIcon 
             href="https://wa.me/56949866129" 
