@@ -3,34 +3,25 @@ import React, { useState } from "react";
 import { firestoreDB } from "../../firebase/config.js";
 
 const Form = () => {
-  // Creamos un estado para guardar los datos del formulario
-  const [datos, setDatos] = useState({
+  const [formData, setFormData] = useState({
     nombre: "",
     telefono: "",
     correo: "",
     mensaje: "",
   });
 
-  // Creamos una función para manejar el cambio de los inputs
   const handleChange = (e) => {
-    // Actualizamos el estado con el valor del input
-    setDatos({
-      ...datos,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Creamos una función, proceso asincrono, para manejar el envío del formulario
   const handleSubmit = async (e) => {
-    // Evitamos el comportamiento por defecto del formulario
     e.preventDefault();
-    // Intentar conectarse a la colección de bbdd, y agrega nuevo doc
     try {
-      await firestoreDB.collection("formularioPortafolio").add(datos);
+      await firestoreDB.collection("formularioPortafolio").add(formData);
       alert("Mensaje enviado, te contactaré lo antes posible ;)");
     } catch (error) {
-      alert("No se pudo enviar el mensaje ;( intentalo nuevamente");
-      console.log(error);
+      console.error(error);
+      alert("No se pudo enviar el mensaje ;( inténtalo nuevamente");
     }
   };
 
@@ -41,13 +32,14 @@ const Form = () => {
         id="form"
         onSubmit={handleSubmit}
       >
+        {/* Nombre */}
         <input
           className="text-gray-400 px-2 form bg-[#20202a] rounded-md focus:outline-none"
           type="text"
           id="nombre"
           name="nombre"
           required
-          value={datos.nombre}
+          value={formData.nombre}
           onChange={handleChange}
           placeholder="Nombre"
           autoComplete="name"
@@ -55,38 +47,42 @@ const Form = () => {
           maxLength={45}
         />
 
+        {/* Teléfono (opcional) */}
         <input
           className="text-gray-400 px-2 bg-[#20202a] rounded-md focus:outline-none "
           type="tel"
           id="telefono"
           name="telefono"
-          value={datos.telefono}
+          value={formData.telefono}
           onChange={handleChange}
           placeholder="Telefono 9 4321 5678 (opcional)"
           maxLength={12}
           minLength={9}
           pattern="\d*"
         />
+
+        {/* Correo */}
         <input
           className="text-gray-400 px-2 bg-[#20202a] rounded-md focus:outline-none "
           type="email"
           id="correo"
           name="correo"
           required
-          value={datos.correo}
+          value={formData.correo}
           onChange={handleChange}
           placeholder="Correo suco@rreo.cl"
           autoComplete="email"
         />
-        <input
-          className="text-gray-400 px-2 bg-[#20202a] rounded-md h-24 focus:outline-none items-start "
-          type="text"
+
+        {/* Mensaje */}
+        <textarea
+          className="text-gray-400 px-2 bg-[#20202a] rounded-md h-24 focus:outline-none resize-none"
           id="mensaje"
           name="mensaje"
           required
-          value={datos.mensaje}
+          value={formData.mensaje}
           onChange={handleChange}
-          placeholder="Aqui tu mensaje"
+          placeholder="Aquí tu mensaje"
           minLength={10}
           maxLength={1000}
         />

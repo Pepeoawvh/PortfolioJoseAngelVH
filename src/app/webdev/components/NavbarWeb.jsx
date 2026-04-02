@@ -53,7 +53,8 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
           <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#2ecc71] transition-all duration-300 group-hover:w-full"></div>
         </Link>
         
-        <div className="mobile-menu block md:hidden">
+        {/* --- Botón hamburguesa / cerrar (móvil) --- */}
+        <div className="block md:hidden">
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
@@ -71,6 +72,7 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
           )}
         </div>
 
+        {/* --- Navegación escritorio --- */}
         <div className="hidden md:flex space-x-8">
           {navLinks
             .filter((link) => link.path !== activeSection)
@@ -87,6 +89,7 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
         </div>
       </div>
 
+      {/* --- Menú desplegable móvil --- */}
       <div
         className={`md:hidden transition-[max-height] duration-500 ease-in-out overflow-hidden ${
           navbarOpen ? "max-h-96" : "max-h-0"

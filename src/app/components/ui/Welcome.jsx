@@ -29,7 +29,7 @@ const Welcome = () => {
           {/* Imagen de fondo para Web Dev */}
           <div className="absolute inset-0 transition-opacity duration-700 opacity-10  group-hover:opacity-40">
             <Image
-              src="/images/photos/code.jpg" // Cambia por tu ruta de imagen
+              src="/images/photos/code.jpg"
               alt="Desarrollo Web Background"
               fill
               className="object-cover"
@@ -66,7 +66,7 @@ const Welcome = () => {
           {/* Imagen de fondo para Fotografía */}
           <div className="absolute inset-0 transition-opacity duration-700 opacity-15  group-hover:opacity-45">
             <Image
-              src="/images/photos/profileBackground/camaraNaranja.jpg" // Cambia por tu ruta de imagen
+              src="/images/photos/profileBackground/camaraNaranja.jpg"
               alt="Fotografía Background"
               fill
               className="object-cover"

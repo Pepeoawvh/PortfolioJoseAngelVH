@@ -11,11 +11,11 @@ const navLinks = [
   { title: "Contacto", path: "/portphoto/contactphoto" },
 ];
 
-// ✅ FIX: ID UNIFICADO
+// IDs de sección sincronizados con PhotoContext
 const seccionesNav = {
   fotolibros: "Fotolibros",
   proyectos: "Proyectos",
-  experienciasEducativas: "Experiencias Educativas",  // ← CAMBIADO de materialEducativo
+  experienciasEducativas: "Experiencias Educativas",
 };
 
 const NavbarPhoto = () => {
@@ -25,7 +25,7 @@ const NavbarPhoto = () => {
   const pathname = usePathname();
   const { activeSection, setActiveSection } = usePhoto();
 
-  // ✅ FUNCIÓN UNIFICADA (desktop + mobile)
+  // Alterna la sección activa; cierra el menú móvil si estaba abierto
   const handleSeccionChange = (seccion) => {
     setActiveSection((prev) => (prev === seccion ? null : seccion));
     setNavbarOpen(false);
@@ -58,7 +58,7 @@ const NavbarPhoto = () => {
     return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, [setActiveSection]);
 
-  // ✅ Btn ORIGINAL para DESKTOP (estilo sin cambios)
+  // Botón de sección con indicador de estado activo (escritorio)
   const DesktopBtn = ({ id, children }) => {
     const active = activeSection === id;
     return (
@@ -67,7 +67,7 @@ const NavbarPhoto = () => {
         role="tab"
         aria-selected={active}
         aria-controls={`panel-${id}`}
-        onClick={() => handleSeccionChange(id)}  // ✅ Usa función unificada
+        onClick={() => handleSeccionChange(id)}
         className={`relative px-4 py-2 rounded-lg text-sm transition-all duration-300 group ${
           active
             ? "bg-[#FFB300]/20 text-white border border-[#FFB300]/60 shadow-[0_0_15px_-5px_rgba(255,179,0,0.4)]"
@@ -83,13 +83,12 @@ const NavbarPhoto = () => {
     );
   };
 
-  // ✅ MobileBtn ORIGINAL (estilo sin cambios)
+  // Botón de sección con indicador de estado activo (móvil)
   const MobileBtn = ({ id, children }) => {
     const active = activeSection === id;
     return (
       <button
-        key={id}
-        onClick={() => handleSeccionChange(id)}  // ✅ Usa función unificada
+        onClick={() => handleSeccionChange(id)}
         className={`w-full text-center py-3 rounded-lg border transition-all duration-300 ${
           active
             ? "bg-[#FFB300]/20 text-white border-[#FFB300]/60"
@@ -109,7 +108,7 @@ const NavbarPhoto = () => {
           <div className="absolute -bottom-1 left-0 h-0.5 w-0 bg-gradient-to-r from-gray-500 via-white to-gray-500 transition-all duration-300 group-hover:w-full"></div>
         </Link>
 
-        {/* DESKTOP - ESTILO ORIGINAL */}
+        {/* --- Navegación escritorio --- */}
         <div className="hidden md:flex items-center space-x-6">
           <DesktopBtn id="fotolibros">Fotolibros</DesktopBtn>
           <DesktopBtn id="proyectos">Proyectos</DesktopBtn>
@@ -130,7 +129,7 @@ const NavbarPhoto = () => {
           ))}
         </div>
 
-        {/* MOBILE BUTTON - ESTILO ORIGINAL */}
+        {/* --- Botón hamburguesa / cerrar (móvil) --- */}
         <div className="block md:hidden">
           {!navbarOpen ? (
             <button onClick={() => setNavbarOpen(true)} className="flex items-center px-3 py-2 border border-[#FFB300] shadow-md shadow-[#FFB300]/20 rounded text-white hover:text-gray-300 border-white/20 hover:border-white/50 transition-all duration-300">
@@ -144,12 +143,12 @@ const NavbarPhoto = () => {
         </div>
       </div>
 
-      {/* MOBILE MENU - ESTILO ORIGINAL */}
+      {/* --- Menú desplegable móvil --- */}
       <div className={`md:hidden transition-[max-height] duration-500 ease-in-out overflow-hidden ${navbarOpen ? "max-h-96" : "max-h-0"}`}>
         <ul className="flex flex-col items-center space-y-4 py-4 backdrop-blur-md bg-black/95 border-t border-white/10">
           <div className="w-4/5 space-y-2 mb-4">
             {Object.entries(seccionesNav).map(([key, titulo]) => (
-              <MobileBtn key={key} id={key}>{titulo}</MobileBtn>  // ✅ Usa MobileBtn unificado
+              <MobileBtn key={key} id={key}>{titulo}</MobileBtn>
             ))}
           </div>
 

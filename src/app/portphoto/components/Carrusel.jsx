@@ -1,9 +1,9 @@
-"use client";
+﻿"use client";
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
-const images = [
+const CAROUSEL_IMAGES = [
   "/images/photos/profileBackground/camaraNaranja.jpg",
   "/images/photos/profileBackground/cerroMisterio.jpg",
   "/images/photos/profileBackground/laserYellow.jpg",
@@ -49,9 +49,9 @@ export default function Carrusel() {
 
   const startTimer = useCallback(() => {
     safeClear();
-    if (!autoplay || images.length <= 1) return;
+    if (!autoplay || CAROUSEL_IMAGES.length <= 1) return;
     timerRef.current = setTimeout(() => {
-      handleChange((index + 1) % images.length, { fromTimer: true });
+      handleChange((index + 1) % CAROUSEL_IMAGES.length, { fromTimer: true });
     }, AUTOPLAY_INTERVAL);
   }, [autoplay, index]);
 
@@ -87,7 +87,7 @@ export default function Carrusel() {
       clearTimeout(timer);
       finalize();
     };
-    img.src = images[target];
+    img.src = CAROUSEL_IMAGES[target];
   };
 
   const handleChange = (newIndex, { fromTimer = false } = {}) => {
@@ -102,12 +102,12 @@ export default function Carrusel() {
 
   const next = useCallback(() => {
     if (isLoading) return;
-    handleChange((index + 1) % images.length);
+    handleChange((index + 1) % CAROUSEL_IMAGES.length);
   }, [index, isLoading]);
 
   const prev = useCallback(() => {
     if (isLoading) return;
-    handleChange(index === 0 ? images.length - 1 : index - 1);
+    handleChange(index === 0 ? CAROUSEL_IMAGES.length - 1 : index - 1);
   }, [index, isLoading]);
 
   // Autoplay lifecycle
@@ -164,9 +164,9 @@ export default function Carrusel() {
       <div className="relative w-full h-full bg-[#131318] overflow-hidden">
         {/* Imagen actual */}
         <Image
-          key={images[index]}
-          src={images[index]}
-          alt={`Fotografía ${index + 1} de ${images.length}`}
+          key={CAROUSEL_IMAGES[index]}
+          src={CAROUSEL_IMAGES[index]}
+          alt={`Fotografía ${index + 1} de ${CAROUSEL_IMAGES.length}`}
           fill
           priority={index === 0}
           quality={90}
@@ -219,7 +219,7 @@ export default function Carrusel() {
 
         {/* Indicadores */}
         <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-          {images.map((_, i) => (
+          {CAROUSEL_IMAGES.map((_, i) => (
             <button
               key={i}
               type="button"
@@ -240,7 +240,7 @@ export default function Carrusel() {
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent pt-12 pb-4 px-4 sm:px-6">
           <div className="flex justify-between items-center text-white">
             <p className="text-sm sm:text-base font-light opacity-90">
-              #{index + 1}/{images.length}
+              #{index + 1}/{CAROUSEL_IMAGES.length}
             </p>
             <p className="text-sm sm:text-base font-medium opacity-90">
               José Angel Valdés H.
