@@ -2,58 +2,149 @@ import React from "react";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
-  return (
-    <div className="group/card transition-all duration-300 hover:transform hover:scale-[1.02]">
-      {/* Contenedor de la imagen con efecto de borde en hover */}
-      <div
-        className="h-52 md:h-64 rounded-t-xl relative group overflow-hidden border border-transparent transition-all duration-300 group-hover/card:border-[#2ecc71]/30 group-hover/card:shadow-lg group-hover/card:shadow-[#2ecc71]/10"
-        style={{ background: `url(${imgUrl})`, backgroundSize: "cover", backgroundPosition: "center" }}
-      >
-        {/* Overlay al hacer hover */}
-        <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#0a1914] bg-opacity-0 hidden group-hover:grid group-hover:grid-cols-2 group-hover:bg-opacity-90 transition-all duration-500">
-          {/* Botón de repositorio */}
-          <div className="flex flex-col justify-center items-center">
+const TechBadge = ({ label }) => (
+  <span className="text-xs px-2 py-0.5 bg-[#2ecc71]/10 text-[#2ecc71] border border-[#2ecc71]/20 font-mono tracking-wide">
+    {label}
+  </span>
+);
+
+const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl, techs = [], isFeatured = false }) => {
+  if (isFeatured) {
+    return (
+      <div className="group/card flex flex-col md:flex-row border-l-2 border-[#2ecc71] bg-[#0d1f18] transition-all duration-300 hover:bg-[#0f2419]">
+        {/* Imagen */}
+        <div
+          className="w-full md:w-1/2 h-64 md:h-auto md:min-h-[300px] relative overflow-hidden flex-shrink-0"
+          style={{ background: `url(${imgUrl})`, backgroundSize: "cover", backgroundPosition: "center" }}
+        >
+          <div className="absolute inset-0 bg-[#0a1914]/0 group-hover/card:bg-[#0a1914]/65 transition-all duration-500 flex items-center justify-center gap-10 opacity-0 group-hover/card:opacity-100">
             <Link
               href={gitUrl}
-              className="h-14 w-14 border-2 relative rounded-full border-[#2ecc71]/50 hover:border-[#2ecc71] group/link transition-all duration-300"
               target="_blank"
               rel="noopener noreferrer"
+              className="flex flex-col items-center gap-1.5 text-gray-300 hover:text-[#2ecc71] transition-colors duration-200"
             >
-              <CodeBracketIcon className="h-10 w-10 text-gray-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-[#2ecc71] transition-all duration-300" />
-              {/* Efecto de halo */}
-              <span className="absolute inset-0 rounded-full opacity-0 group-hover/link:opacity-100 transition-opacity duration-300 bg-[#2ecc71]/5 blur-sm"></span>
+              <CodeBracketIcon className="h-8 w-8" />
+              <span className="text-xs font-medium">Repositorio</span>
             </Link>
-            <span className="text-gray-300 mt-2 text-sm font-medium group-hover/link:text-[#2ecc71] transition-colors duration-300">Repositorio</span>
-          </div>
-
-          {/* Botón de vista previa */}
-          <div className="flex flex-col justify-center items-center">
             <Link
               href={previewUrl}
-              className="h-14 w-14 border-2 relative rounded-full border-[#d63384]/40 hover:border-[#d63384]/80 group/link transition-all duration-300"
               target="_blank"
               rel="noopener noreferrer"
+              className="flex flex-col items-center gap-1.5 text-gray-300 hover:text-[#d63384] transition-colors duration-200"
             >
-              <EyeIcon className="h-10 w-10 text-gray-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-[#d63384]/80 transition-all duration-300" />
-              {/* Efecto de halo */}
-              <span className="absolute inset-0 rounded-full opacity-0 group-hover/link:opacity-100 transition-opacity duration-300 bg-[#d63384]/5 blur-sm"></span>
+              <EyeIcon className="h-8 w-8" />
+              <span className="text-xs font-medium">Ver Sitio</span>
             </Link>
-            <span className="text-gray-300 mt-2 text-sm font-medium group-hover/link:text-[#d63384]/80 transition-colors duration-300">Vista Previa</span>
+          </div>
+        </div>
+
+        {/* Contenido */}
+        <div className="flex flex-col justify-between p-8 flex-1 border-t border-[#2ecc71]/10 md:border-t-0 md:border-l">
+          <div>
+            <span className="text-xs font-mono tracking-widest text-[#2ecc71]/70 uppercase mb-3 block">
+              — Proyecto Destacado
+            </span>
+            <h3 className="text-2xl font-bold text-white mb-4 leading-tight">{title}</h3>
+            {techs.length > 0 && (
+              <div className="flex flex-wrap gap-2 mb-5">
+                {techs.map((t, i) => (
+                  <TechBadge key={i} label={t} />
+                ))}
+              </div>
+            )}
+            <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href={gitUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-gray-400 hover:text-[#2ecc71] transition-colors duration-200 border border-white/10 hover:border-[#2ecc71]/30 px-4 py-2"
+            >
+              <CodeBracketIcon className="h-4 w-4" />
+              Repositorio
+            </Link>
+            <Link
+              href={previewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-gray-400 hover:text-[#d63384] transition-colors duration-200 border border-white/10 hover:border-[#d63384]/30 px-4 py-2"
+            >
+              <EyeIcon className="h-4 w-4" />
+              Ver Sitio
+            </Link>
           </div>
         </div>
       </div>
-      
-      {/* Contenedor de la información */}
-      <div className="text-white rounded-b-xl mt-0 bg-[#0a1914] py-4 px-4 border-t-0 border-x border-b border-[#2ecc71]/10 transition-all duration-300 group-hover/card:border-[#2ecc71]/20">
-        {/* Título con decoración */}
-        <div className="relative mb-2">
-          <h5 className="text-xl font-semibold">{title}</h5>
-          <div className="h-0.5 w-12 bg-gradient-to-r from-[#2ecc71]/50 to-transparent mt-1 transition-all duration-300 group-hover/card:w-24"></div>
+    );
+  }
+
+  return (
+    <div className="group/card flex flex-col md:flex-row border border-white/5 bg-[#0d1f18] hover:border-white/10 transition-all duration-300">
+      {/* Imagen */}
+      <div
+        className="w-full md:w-2/5 h-48 relative overflow-hidden flex-shrink-0"
+        style={{ background: `url(${imgUrl})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      >
+        <div className="absolute inset-0 bg-[#0a1914]/0 group-hover/card:bg-[#0a1914]/65 transition-all duration-500 flex items-center justify-center gap-8 opacity-0 group-hover/card:opacity-100">
+          <Link
+            href={gitUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-1 text-gray-300 hover:text-[#2ecc71] transition-colors duration-200"
+          >
+            <CodeBracketIcon className="h-6 w-6" />
+            <span className="text-xs">Repositorio</span>
+          </Link>
+          <Link
+            href={previewUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-1 text-gray-300 hover:text-[#d63384] transition-colors duration-200"
+          >
+            <EyeIcon className="h-6 w-6" />
+            <span className="text-xs">Ver Sitio</span>
+          </Link>
         </div>
-        
-        {/* Descripción */}
-        <p className="text-gray-400 text-sm">{description}</p>
+      </div>
+
+      {/* Contenido */}
+      <div className="flex flex-col justify-between p-6 flex-1 border-t border-white/5 md:border-t-0 md:border-l group-hover/card:border-white/10 transition-colors duration-300">
+        <div>
+          <h4 className="text-lg font-semibold text-white mb-2">{title}</h4>
+          {techs.length > 0 && (
+            <div className="flex flex-wrap gap-1.5 mb-3">
+              {techs.map((t, i) => (
+                <TechBadge key={i} label={t} />
+              ))}
+            </div>
+          )}
+          <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
+        </div>
+
+        <div className="mt-4 flex items-center gap-3">
+          <Link
+            href={gitUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-[#2ecc71] transition-colors duration-200"
+          >
+            <CodeBracketIcon className="h-3.5 w-3.5" />
+            Repositorio
+          </Link>
+          <span className="text-gray-700">·</span>
+          <Link
+            href={previewUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-[#d63384] transition-colors duration-200"
+          >
+            <EyeIcon className="h-3.5 w-3.5" />
+            Ver Sitio
+          </Link>
+        </div>
       </div>
     </div>
   );

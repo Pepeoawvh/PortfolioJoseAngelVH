@@ -7,11 +7,9 @@ const EmailSection = () => {
   return (
     <section id="contact" className="animate-fade animate-delay-200 bg-[#0a1914]">
       {/* Cabecera con título */}
-      <div className="pb-8 pt-8">
-        <h2 className="text-4xl font-bold mb-2 text-center">
-          <span className="text-[#2ecc71]">Contactame </span>
-        </h2>
-        <div className="h-1 w-24 bg-gradient-to-r from-[#d63384]/10 via-[#2ecc71] to-[#d63384]/10 mx-auto"></div>
+      <div className="pb-8 pt-8 max-w-4xl mx-auto px-6">
+        <h2 className="text-4xl font-bold mb-2 text-white">Contacto</h2>
+        <div className="h-0.5 w-12 bg-gradient-to-r from-[#2ecc71] to-transparent"></div>
       </div>
       
       <div className="grid md:grid-cols-2 gap-8 px-8 md:px-12 lg:px-20 pb-20">
@@ -19,7 +17,7 @@ const EmailSection = () => {
         <div className="flex flex-col justify-center">
           <h3 className="text-2xl font-bold text-white mb-4">Conversemos</h3>
           
-          <div className="bg-black/20 border border-[#2ecc71]/10 rounded-lg p-6 shadow-inner mb-6 relative overflow-hidden">
+          <div className="bg-[#0d1f18] border border-white/5 p-6 mb-6 relative overflow-hidden">
             {/* Decoración de fondo */}
             <div className="absolute -right-10 -bottom-10 w-32 h-32 text-[#2ecc71]/5">
               <FontAwesomeIcon icon={faWhatsapp} className="w-full h-full" />
@@ -43,14 +41,14 @@ const EmailSection = () => {
         <div className="flex flex-col justify-center items-center">
           <div className="relative group max-w-sm w-full">
             {/* Efecto de aura */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#2ecc71]/30 to-[#d63384]/10 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#2ecc71]/30 to-[#d63384]/10 blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
             
             {/* Botón */}
             <a 
               href="https://wa.me/56949866129?text=Hola,%20te%20contacto%20desde%20tu%20portfolio%20web." 
               target="_blank" 
               rel="noopener noreferrer"
-              className="relative flex flex-col items-center justify-center bg-[#0f2c1b] border border-[#2ecc71]/30 rounded-lg p-8 transition-all duration-300 hover:border-[#2ecc71]/50 hover:shadow-lg hover:shadow-[#2ecc71]/20"
+              className="relative flex flex-col items-center justify-center bg-[#0d1f18] border border-[#2ecc71]/20 p-8 transition-all duration-300 hover:border-[#2ecc71]/40 hover:shadow-lg hover:shadow-[#2ecc71]/10"
             >
               {/* Ícono de WhatsApp */}
               <div className="relative mb-4">
@@ -69,7 +67,7 @@ const EmailSection = () => {
               <span className="text-lg font-mono text-[#2ecc71] mt-2">+56 9 4986 6129</span>
               
               {/* Mensaje de call-to-action */}
-              <span className="mt-4 px-6 py-2 bg-black/30 rounded-full text-sm text-white transition-all duration-300 group-hover:bg-[#2ecc71]/20">
+              <span className="mt-4 px-6 py-2 bg-black/30 text-sm text-white transition-all duration-300 group-hover:bg-[#2ecc71]/20">
                 Presiona para enviar un mensaje
               </span>
             </a>
