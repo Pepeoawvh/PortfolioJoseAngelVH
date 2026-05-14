@@ -65,33 +65,49 @@ const TAB_DATA = [
             <Link href="https://www.credly.com/badges/f83b2e7b-43f3-4135-8d35-63212c36ce4d/public_url"
               className="transition-transform duration-200 hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2ecc71]/30 p-2">
               <Image src="https://images.credly.com/size/680x680/images/791d0469-ca15-4bc9-b9b3-2b8dca821b62/image.png"
-                width={150} height={150} alt="Certificacion" className="rounded-sm" loading="lazy"/>
+                width={150} height={150} alt="Certificación JavaScript Algorithms and Data Structures" className="rounded-sm" loading="lazy"/>
             </Link>
             <Link href="https://www.credly.com/badges/e0a8aa56-d906-4040-a1a6-254d02053649/public_url"
               className="transition-transform duration-200 hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2ecc71]/30 p-2">
               <Image src="https://images.credly.com/size/680x680/images/71ed1274-3d7c-40f4-9194-e464643719e3/image.png"
-                width={150} height={150} alt="Certificacion" className="rounded-sm" loading="lazy"/>
+                width={150} height={150} alt="Certificación Responsive Web Design" className="rounded-sm" loading="lazy"/>
             </Link>
             <Link href="https://www.credly.com/badges/299da870-993e-4be6-a7fb-05a6cb647ac5/public_url"
               className="transition-transform duration-200 hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2ecc71]/30 p-2">
               <Image src="https://images.credly.com/size/680x680/images/50a7358c-80d1-4a5d-a1d7-a9e0997de2be/image.png"
-                width={150} height={150} alt="Certificacion" className="rounded-sm" loading="lazy"/>
+                width={150} height={150} alt="Certificación Front End Development Libraries" className="rounded-sm" loading="lazy"/>
             </Link>
             <Link href="https://www.credly.com/badges/ef2ec8e9-fb6c-4fe0-8e65-c8ff48c7fef2/public_url"
               className="transition-transform duration-200 hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2ecc71]/30 p-2">
               <Image src="https://images.credly.com/size/680x680/images/5a6985ec-c5f8-4c59-8668-8278971a368e/image.png"
-                width={150} height={150} alt="Certificacion" className="rounded-sm" loading="lazy"/>
+                width={150} height={150} alt="Certificación Back End Development and APIs" className="rounded-sm" loading="lazy"/>
             </Link>
             <Link href="https://www.credly.com/badges/c6dd2b2c-9149-429d-94de-5ceed5770d58/public_url"
               className="transition-transform duration-200 hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2ecc71]/30 p-2">
               <Image src="https://images.credly.com/size/680x680/images/17dd77a2-4101-4d2b-84da-425fb5591c9a/image.png"
-                width={150} height={150} alt="Certificacion" className="rounded-sm" loading="lazy"/>
+                width={150} height={150} alt="Certificación Relational Database" className="rounded-sm" loading="lazy"/>
             </Link>
             <Link href="https://www.credly.com/badges/6359af9b-0d3f-40e0-ae4b-ce284b65c4b9/public_url"
               className="transition-transform duration-200 hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2ecc71]/30 p-2">
               <Image src="https://images.credly.com/size/680x680/images/0513e558-a243-40ca-a27a-dd088eed3e4f/image.png"
-                width={150} height={150} alt="Certificacion" className="rounded-sm" loading="lazy"/>
+                width={150} height={150} alt="Certificación Scientific Computing with Python" className="rounded-sm" loading="lazy"/>
             </Link>
+          </div>
+        </CertGroup>
+
+        {/* Grupo: UX/UI */}
+        <CertGroup title="UX / UI">
+          <div className="grid grid-cols-1 items-center gap-4">
+            <div className="justify-self-center sm:justify-self-start p-2">
+              <Image
+                src="/badges/uxui.png"
+                width={500}
+                height={400}
+                alt="Insignia UX/UI"
+                className="rounded-sm"
+                loading="lazy"
+              />
+            </div>
           </div>
         </CertGroup>
 
@@ -143,17 +159,17 @@ const AboutSection = () => {
   return (
     <section className="text-white bg-[#0a1914]" id="about">
       {/* Grid estable: altura de imagen fija para evitar “saltos” */}
-      <div className="mx-5 px-4 xl:px-16 py-4 grid md:grid-cols-2 gap-8 xl:gap-16 items-start">
+      <div className="max-w-6xl mx-auto px-4 py-4 grid md:grid-cols-2 gap-8 xl:gap-12 items-start">
         {/* Columna izquierda (imagen) con wrapper estable */}
         <div className="relative">
-          <div className="relative w-full min-h-[420px] md:min-h-[520px] overflow-hidden border border-[#2ecc71]/10">
+          <div className="relative w-full aspect-[4/3] overflow-hidden border border-[#2ecc71]/10">
             <Image
               src="/images/about-image.png"
-              alt="Jose Angel VH"
+              alt="José Angel Valdés Hernández, Desarrollador Web Fullstack"
               fill
               sizes="(max-width: 768px) 90vw, 40vw"
               className="object-cover object-center"
-              priority={false}
+              priority={true}
             />
             <div
               className="pointer-events-none absolute inset-0 opacity-0 hover:opacity-20 transition-opacity duration-300"

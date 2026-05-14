@@ -64,8 +64,7 @@ const NavbarPhoto = () => {
     return (
       <button
         type="button"
-        role="tab"
-        aria-selected={active}
+        aria-expanded={active}
         aria-controls={`panel-${id}`}
         onClick={() => handleSeccionChange(id)}
         className={`relative px-4 py-2 rounded-lg text-sm transition-all duration-300 group ${
@@ -101,10 +100,10 @@ const NavbarPhoto = () => {
   };
 
   return (
-    <div ref={navRef} className={`w-screen h-20 fixed top-0 left-0 z-50 transition-all duration-300 ${scrolled ? "bg-black/95 backdrop-blur-md shadow-lg shadow-black/30" : "bg-black/90 backdrop-blur-sm"}`}>
+    <nav ref={navRef} aria-label="Navegación principal" className={`w-full h-20 fixed top-0 left-0 z-50 transition-all duration-300 ${scrolled ? "bg-black/95 backdrop-blur-md shadow-lg shadow-black/30" : "bg-black/90 backdrop-blur-sm"}`}>
       <div className="flex justify-between items-center container mx-auto px-4 h-full">
         <Link href="/" className="h-[40px] relative group">
-          <Image src="/images/logoWhite.svg" alt="LOGO" width={200} height={40} priority className="object-contain h-full transition-transform duration-300 group-hover:brightness-125" />
+          <Image src="/images/logoWhite.svg"           alt="José Angel Valdés - Portafolio" width={200} height={40} priority className="object-contain h-full transition-transform duration-300 group-hover:brightness-125" />
           <div className="absolute -bottom-1 left-0 h-0.5 w-0 bg-gradient-to-r from-gray-500 via-white to-gray-500 transition-all duration-300 group-hover:w-full"></div>
         </Link>
 
@@ -132,19 +131,29 @@ const NavbarPhoto = () => {
         {/* --- Botón hamburguesa / cerrar (móvil) --- */}
         <div className="block md:hidden">
           {!navbarOpen ? (
-            <button onClick={() => setNavbarOpen(true)} className="flex items-center px-3 py-2 border border-[#FFB300] shadow-md shadow-[#FFB300]/20 rounded text-white hover:text-gray-300 border-white/20 hover:border-white/50 transition-all duration-300">
+            <button
+              onClick={() => setNavbarOpen(true)}
+              aria-label="Abrir menú"
+              aria-expanded={navbarOpen}
+              aria-controls="mobile-menu-photo"
+              className="flex items-center px-3 py-2 border border-[#FFB300] shadow-md shadow-[#FFB300]/20 rounded text-white hover:text-gray-300 transition-all duration-300">
               Menú
             </button>
           ) : (
-            <button onClick={() => setNavbarOpen(false)} className="flex items-center px-3 py-2 border rounded border-[#FFB300]/20 text-white hover:text-gray-300 transition-all duration-300">
-              <XMarkIcon className="h-5 w-5" />
+            <button
+              onClick={() => setNavbarOpen(false)}
+              aria-label="Cerrar menú"
+              aria-expanded={navbarOpen}
+              aria-controls="mobile-menu-photo"
+              className="flex items-center px-3 py-2 border rounded border-[#FFB300]/20 text-white hover:text-gray-300 transition-all duration-300">
+              <XMarkIcon className="h-5 w-5" aria-hidden="true" />
             </button>
           )}
         </div>
       </div>
 
       {/* --- Menú desplegable móvil --- */}
-      <div className={`md:hidden transition-[max-height] duration-500 ease-in-out overflow-hidden ${navbarOpen ? "max-h-96" : "max-h-0"}`}>
+      <div id="mobile-menu-photo" className={`md:hidden transition-[max-height] duration-500 ease-in-out overflow-hidden ${navbarOpen ? "max-h-96" : "max-h-0"}`}>
         <ul className="flex flex-col items-center space-y-4 py-4 backdrop-blur-md bg-black/95 border-t border-white/10">
           <div className="w-4/5 space-y-2 mb-4">
             {Object.entries(seccionesNav).map(([key, titulo]) => (
@@ -169,7 +178,7 @@ const NavbarPhoto = () => {
           ))}
         </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 

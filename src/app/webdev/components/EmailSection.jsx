@@ -12,7 +12,7 @@ const EmailSection = () => {
         <div className="h-0.5 w-12 bg-gradient-to-r from-[#2ecc71] to-transparent"></div>
       </div>
       
-      <div className="grid md:grid-cols-2 gap-8 px-8 md:px-12 lg:px-20 pb-20">
+      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto px-6 pb-20">
         {/* Columna izquierda: Información de contacto */}
         <div className="flex flex-col justify-center">
           <h3 className="text-2xl font-bold text-white mb-4">Conversemos</h3>
@@ -41,7 +41,7 @@ const EmailSection = () => {
         <div className="flex flex-col justify-center items-center">
           <div className="relative group max-w-sm w-full">
             {/* Efecto de aura */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#2ecc71]/30 to-[#d63384]/10 blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#2ecc71]/30 to-[#2ecc71]/10 blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
             
             {/* Botón */}
             <a 
@@ -75,7 +75,7 @@ const EmailSection = () => {
           
           {/* Nota adicional */}
           <p className="text-gray-400 text-center text-xs mt-6 max-w-sm">
-            También puedes revisar mis credenciales en <span className="text-[#d63384]">LinkedIn</span> o ver mi repositorio de código en <span className="text-[#2ecc71]">GitHub</span> a través de los enlaces en el pie de página.
+            También puedes revisar mis credenciales en <span className="text-[#2ecc71]">LinkedIn</span> o ver mi repositorio de código en <span className="text-[#2ecc71]">GitHub</span> a través de los enlaces en el pie de página.
           </p>
         </div>
       </div>

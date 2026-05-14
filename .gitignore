@@ -25,7 +25,12 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
+.env.local
 .env*.local
+.env*
+"env copy"
+.env\ copy
 
 # vercel
 .vercel
@@ -41,3 +46,11 @@ firestore.indexes.json
 firestore.rules
 .firebaserc
 sender.js
+
+# opencode internal (plugin, lockfile — agents/ y skills/ sí se versionan)
+.opencode/node_modules
+.opencode/package.json
+.opencode/package-lock.json
+.opencode/bun.lock
+.opencode/.gitignore
+skills-lock.json

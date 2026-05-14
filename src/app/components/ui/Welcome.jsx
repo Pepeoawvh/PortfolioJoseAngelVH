@@ -30,7 +30,8 @@ const Welcome = () => {
           <div className="absolute inset-0 transition-opacity duration-700 opacity-10  group-hover:opacity-40">
             <Image
               src="/images/photos/code.jpg"
-              alt="Desarrollo Web Background"
+              alt=""
+              aria-hidden="true"
               fill
               className="object-cover"
               priority
@@ -67,7 +68,8 @@ const Welcome = () => {
           <div className="absolute inset-0 transition-opacity duration-700 opacity-15  group-hover:opacity-45">
             <Image
               src="/images/photos/profileBackground/camaraNaranja.jpg"
-              alt="Fotografía Background"
+              alt=""
+              aria-hidden="true"
               fill
               className="object-cover"
               priority

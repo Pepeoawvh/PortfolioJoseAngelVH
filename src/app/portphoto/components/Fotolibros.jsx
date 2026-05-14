@@ -1,9 +1,19 @@
-import React, { useEffect, useRef, useState } from "react";
+'use client'
+import React, { useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { useDropdownClose } from "../hooks/useDropdownClose";
 
 const Fotolibros = ({ onClose = () => {} }) => {
   const [visible, setVisible] = useState(true);
   const containerRef = useRef(null);
+
+  const handleClose = () => {
+    setVisible(false);
+    onClose();
+  };
+
+  useDropdownClose(visible, handleClose, containerRef);
 
   const libros = [
     {
@@ -30,34 +40,6 @@ const Fotolibros = ({ onClose = () => {} }) => {
     // Agrega más libros aquí
   ];
 
-  useEffect(() => {
-    if (!visible) return;
-
-    const handleOutsideClick = (e) => {
-      if (containerRef.current && !containerRef.current.contains(e.target)) {
-        setVisible(false);
-        onClose();
-      }
-    };
-
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") {
-        setVisible(false);
-        onClose();
-      }
-    };
-
-    document.addEventListener("mousedown", handleOutsideClick);
-    document.addEventListener("touchstart", handleOutsideClick);
-    document.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-      document.removeEventListener("touchstart", handleOutsideClick);
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [visible, onClose]);
-
   if (!visible) return null;
 
   return (
@@ -68,24 +50,28 @@ const Fotolibros = ({ onClose = () => {} }) => {
       {libros.map((libro, index) => (
         <div
           key={index}
-          className="relative border p-4 rounded-md overflow-hidden group"
+          className="relative border p-4 rounded-md overflow-hidden group min-h-[280px]"
         >
-          <div
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-in-out transform group-hover:scale-110"
-            style={{ backgroundImage: `url(${libro.src})` }}
-          />
+          {/* Imagen de fondo con next/image */}
+          <div className="absolute inset-0 transition-transform duration-500 ease-in-out group-hover:scale-110">
+            <Image
+              src={libro.src}
+              alt={libro.title}
+              fill
+              className="object-cover"
+            />
+          </div>
+          {/* Overlay oscuro */}
           <div className="absolute inset-0 bg-black opacity-50" />
+          {/* Contenido */}
           <div className="relative z-10 text-white h-full flex flex-col p-4">
             <h3 className="text-lg font-semibold mb-2">{libro.title}</h3>
-
-            {/* Descripción completa, sin recortar */}
             <p className="text-sm tracking-wide leading-relaxed">{libro.description}</p>
-
             <div className="mt-auto pt-4">
               {libro.link && libro.link.startsWith("/") ? (
                 <Link
                   href={libro.link}
-                  className="inline-block px-3 py-1 rounded-md text-[#FFB300] border border-[#FFB300] hover:bg-yellow-400 hover:text-white transition-colors text-xs md:text-sm"
+                  className="inline-block px-3 py-1 rounded-md text-[#FFB300] border border-[#FFB300] hover:bg-[#FFB300] hover:text-black transition-colors text-xs md:text-sm"
                 >
                   Ver más →
                 </Link>
@@ -94,7 +80,7 @@ const Fotolibros = ({ onClose = () => {} }) => {
                   href={libro.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-3 py-1 rounded-md text-[#FFB300] border border-[#FFB300] hover:bg-yellow-400 hover:text-white transition-colors text-xs md:text-sm"
+                  className="inline-block px-3 py-1 rounded-md text-[#FFB300] border border-[#FFB300] hover:bg-[#FFB300] hover:text-black transition-colors text-xs md:text-sm"
                 >
                   Ver más →
                 </a>

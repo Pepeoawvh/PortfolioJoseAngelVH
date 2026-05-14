@@ -58,7 +58,7 @@ const FormPhoto = () => {
       <div className="mt-10 text-center">
         <p className="text-gray-400 text-sm">
           También puedes enviarme un correo a{" "}
-          <a href="mailto:jpp@gmail.com" className="text-[#FFB300] hover:text-white transition-colors duration-300">
+          <a href="mailto:jpp.valdés@gmail.com" className="text-[#FFB300] hover:text-white transition-colors duration-300">
             jpp.valdés@gmail.com
           </a>
         </p>

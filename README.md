@@ -1,237 +1,269 @@
-# Portfolio de José Ángel Valdés Hernández
+# 🌐 Portafolio Personal — José Angel Valdés Hernández
 
-> Portafolio profesional dual que integra las disciplinas de **fotografía** y **desarrollo web** bajo una identidad visual propia..
 
-🔗 [Ver sitio en producción](https://joseangelportfolio.vercel.app)
+**Portafolio personal dual** que presenta dos mundos creativos en un solo sitio web: el de un desarrollador web fullstack y el de un fotógrafo profesional. Construido con Next.js 14 App Router, con identidades visuales completamente independientes, animaciones fluidas y un diseño responsivo optimizado.
 
----
-
-## Tabla de contenidos
-
-1. [Descripción del proyecto](#descripción-del-proyecto)
-2. [Proceso UX](#proceso-ux)
-3. [Mockups](#mockups)
-4. [Paleta de colores](#paleta-de-colores)
-5. [Tipografía](#tipografía)
-6. [Diseño del prototipo](#diseño-del-prototipo)
-7. [Entorno de desarrollo y tecnologías](#entorno-de-desarrollo-y-tecnologías)
-8. [Instalación local](#instalación-local)
-9. [Estado del proyecto](#estado-del-proyecto)
-10. [Autor](#autor)
+🔗 **Sitio en vivo:** [joseangelportfolio.vercel.app](https://joseangelportfolio.vercel.app)
 
 ---
 
-## Descripción del proyecto
+## Descripción
 
-Portafolio profesional desarrollado con **Next.js 14** y desplegado en **Vercel**. El sitio está dividido en dos módulos autónomos accesibles desde una pantalla de bienvenida:
+Este proyecto es un portafolio personal de doble identidad. Desde una página de bienvenida animada con pantalla dividida en diagonal, el visitante elige entre dos experiencias visuales completamente distintas:
 
-| Módulo | Propósito |
-|---|---|
-| **Portafolio Fotográfico** | Exhibición de obra visual, fotolibros, proyectos educativos y redes sociales |
-| **Portafolio Web** | Presentación de perfil profesional, habilidades, proyectos de desarrollo y formulario de contacto |
+- **`/webdev`** — Portafolio de Desarrollo Web con temática verde oscura, proyectos fullstack, habilidades técnicas, certificaciones y CV descargable.
+- **`/portphoto`** — Portafolio Fotográfico con temática negra y ámbar, carrusel de fotografías de pantalla completa, libros fotográficos, proyectos y formulario de contacto.
 
 ---
 
-## Proceso UX
+## Demo
 
-### Objetivos de diseño
+> **Sitio en producción:** https://joseangelportfolio.vercel.app
 
-El diseño responde a los siguientes principios UX:
-
-- **Claridad jerárquica**: cada módulo posee su propia identidad visual sin romper la coherencia global del sitio.
-- **Reducción de fricción**: navegación directa desde la pantalla de inicio hacia el módulo de interés del usuario.
-- **Diseño responsivo**: la interfaz se adapta a dispositivos móviles, tabletas y escritorio sin pérdida de funcionalidad.
-- **Consistencia visual**: tokens de color, tipografía y espaciado aplicados de forma sistemática mediante Tailwind CSS.
-- **Accesibilidad**: contraste de color sobre fondos oscuros verificado para cumplir con ratios mínimos WCAG AA.
-
-### Arquitectura de información
-
-```
-Pantalla de Inicio (Welcome)
-├── Portafolio Fotográfico (/portphoto)
-│   ├── Inicio (carrusel visual)
-│   ├── Fotolibros
-│   ├── Proyectos fotográficos
-│   ├── Experiencias educativas
-│   ├── Sobre mí (/aboutphoto)
-│   └── Contacto (/contactphoto)
-└── Portafolio Web (/webdev)
-    ├── Perfil profesional + descarga de CV
-    ├── Habilidades / Educación / Certificaciones (tabs)
-    ├── Proyectos Web (Formativos · Particulares · Personales)
-    └── Contacto (formulario con Firebase)
-```
-
-### Usuario objetivo
-
-El sitio está orientado a dos perfiles de usuario principales:
-
-- **Clientes potenciales y contratantes** que necesitan evaluar rápidamente el trabajo y las capacidades del autor.
-- **Pares profesionales y colaboradores** que buscan referencias técnicas o proyectos compartidos.
-
-La pantalla de inicio actúa como bifurcación intencional para que cada perfil acceda directamente al módulo que le es relevante, reduciendo el ruido cognitivo.
-
----
-
-## Mockups
-
-> _Añade aquí capturas o imágenes de los wireframes y mockups de alta fidelidad._
-
-| Vista | Descripción |
-|---|---|
-| `https://imgur.com/fAO2ZsX` | Pantalla de bienvenida — escritorio |
-| `https://imgur.com/EWiDklD` | Pantalla de bienvenida — móvil |
-| `https://imgur.com/WlCdvaQ` | Inicio del portafolio fotográfico |
-| `https://imgur.com/EWiDklD` | Inicio del portafolio web |
-
-> Herramienta utilizada para el prototipado: _(completar — ej. Figma, Adobe XD, etc.)_
-
----
-
-## Paleta de colores
-
-El sistema de color está basado en una lógica de **contraste alto sobre fondo oscuro**, reforzando una estética contemporánea vinculada al trabajo creativo y tecnológico.
-
-### Módulo Web (`/webdev`)
-
-| Rol | Token | Valor HEX | Muestra |
-|---|---|---|---|
-| Fondo principal | `bg-[#0a1914]` | `#0a1914` | ![](https://placehold.co/20x20/0a1914/0a1914) |
-| Acento primario | `#2ecc71` / `lime` | `#2ecc71` | ![](https://placehold.co/20x20/2ecc71/2ecc71) |
-| Bordes y sombras | `#2ecc71` con opacidad | `rgba(46,204,113,0.2)` | — |
-| Texto principal | `white` | `#ffffff` | — |
-
-### Módulo Fotográfico (`/portphoto`)
-
-> _Completar con los valores de color específicos del módulo fotográfico._
-
-### Teoría del color aplicada
-
-- **Verde lima / esmeralda** como acento: evoca naturaleza, crecimiento y creatividad. En combinación con fondos casi-negros (#0a1914) genera un contraste vívido de alta legibilidad sin tensión visual.
-- **Fondo verde oscuro profundo** (`#0a1914`): diferencia intencionalmente con el negro puro para dar calidez al fondo y reforzar la identidad de marca.
-- **Estrategia de opacidad progresiva**: los bordes y sombras usan el color acento con baja opacidad (10–20 %) para crear profundidad sin sobrecargar la interfaz.
-
----
-
-## Tipografía
-
-El sistema tipográfico emplea cuatro familias de Google Fonts cargadas a través de `next/font` para máximo rendimiento, usando la estrategia de **tipografía funcional por rol**:
-
-| Fuente | Familia | Pesos | Rol de uso |
-|---|---|---|---|
-| **Montserrat** | Geométrica sans-serif | Variable | Títulos principales, logotipo, encabezados de sección |
-| **Jost** | Geométrica sans-serif | 400, 700 | Subtítulos, etiquetas, elementos de navegación |
-| **Questrial** | Geométrica redondeada | 400 | Texto descriptivo, párrafos de presentación |
-| **Source Sans 3** | Humanista sans-serif | 400, 700 | Cuerpo de texto, formularios, contenido informativo |
-
-### Fundamentación tipográfica
-
-- **Montserrat** fue elegida como fuente de display por su solidez geométrica y su amplia presencia en branding digital contemporáneo. Su versatilidad en pesos permite establecer jerarquías claras sin cambiar de familia.
-- **Jost** complementa a Montserrat en registros secundarios; comparte la geometría pero con proporciones más compactas, ideal para navegación y etiquetas de UI.
-- **Questrial** aporta una lectura fluida en párrafos extensos gracias a sus terminaciones redondeadas, que reducen la fatiga visual en pantallas de alta densidad.
-- **Source Sans 3** (sucesor de Source Sans Pro de Adobe) fue diseñada específicamente para interfaces digitales. Su estructura humanista la hace altamente legible en cuerpos pequeños, siendo ideal para formularios y contenido funcional.
-
-La selección evita mezclar familias con personalidades tipográficas opuestas, manteniendo coherencia dentro del espectro **geométrico–humanista**.
-
----
-
-## Diseño del prototipo
-
-> _[https://www.figma.com/design/o1KWCMAIHOHLyap33UB18u/Portafolio?node-id=0-1&t=xIyK4PhTRuEABoA6-1](ENLACE FIGMA)_git
-
-### Decisiones de diseño de prototipo
-
-- **Pantalla de bienvenida**: diseñada con una división diagonal mediante `clip-path` para separar visualmente los dos mundos (fotografía / web) sin construir una pantalla de selección convencional. La interacción es inmediata e intuitiva.
-- **Navegación fija (`fixed top`)**: se optó por un navbar persistente en todos los módulos para garantizar que el usuario siempre tenga acceso a la navegación, incluso en contenido largo.
-- **Carrusel fotográfico**: el módulo de fotografía utiliza un carrusel con efecto `slowZoomIn` (CSS keyframe) para dar dinamismo sin distraer del contenido.
-- **Sistema de pestañas (tabs)**: en el módulo web, las secciones de perfil usan un sistema de tabs con animación para reducir el scroll y mantener la información compacta.
-- **Formulario de contacto**: componente reutilizado en ambos módulos con adaptaciones visuales por contexto, conectado a Firebase Firestore como backend sin servidor.
-
----
-
-## Entorno de desarrollo y tecnologías
-
-### Stack principal
-
-| Tecnología | Versión | Propósito |
+| Landing Page | Portafolio Web Dev | Portafolio Fotografía |
 |---|---|---|
-| **Next.js** | ^14.1.4 | Framework React (SSR/SSG, routing, optimización de imágenes y fuentes) |
-| **React** | 18.2.0 | Construcción de componentes de UI |
-| **Tailwind CSS** | ^3.4.18 | Sistema de estilos por utilidades; tokens de diseño y responsividad |
-| **Firebase** | ^12.4.0 | Backend serverless para formulario de contacto (Firestore) |
-| **Framer Motion** | ^10.18.0 | Animaciones declarativas de componentes |
-| **Vercel** | — | Plataforma de despliegue con CI/CD automático desde `main` |
-
-### Librerías de UI y componentes
-
-| Librería | Propósito |
-|---|---|
-| **@headlessui/react** | Componentes accesibles sin estilos (menú, diálogo, tabs) |
-| **@heroicons/react** | Iconografía SVG del ecosistema Tailwind |
-| **@fortawesome/react-fontawesome** | Iconos de marcas y UI adicionales |
-| **lucide-react** | Set de iconos complementario |
-| **react-type-animation** | Animación de texto tipo máquina de escribir |
-| **react-animated-numbers** | Contadores animados para estadísticas |
-
-### Plugins de Tailwind
-
-| Plugin | Uso |
-|---|---|
-| `tailwindcss-animated` | Clases de animación utilitarias |
-| `tailwindcss-textshadow` | Sombras tipográficas |
-| `tailwind-scrollbar` | Personalización de barras de desplazamiento |
-| `tailwind-clip-path` | Utilidades de recorte por polígono |
-
-### Entorno de desarrollo
-
-- **Node.js**: >= 18
-- **Gestor de paquetes**: npm
-- **Linter**: ESLint con configuración `eslint-config-next`
-- **Control de versiones**: Git + GitHub
-- **Editor recomendado**: VS Code
+| *(Agrega screenshot aquí)* | *(Agrega screenshot aquí)* | *(Agrega screenshot aquí)* |
 
 ---
 
-## Instalación local
+## Tech Stack
+
+### Frontend
+| Tecnología | Versión | Uso |
+|---|---|---|
+| **Next.js** | 14.x | Framework principal, App Router, SSR/SSG |
+| **React** | 18.x | Biblioteca de UI |
+| **JavaScript (JSX)** | ES2022+ | Lenguaje principal del proyecto |
+
+### Estilos
+| Tecnología | Versión | Uso |
+|---|---|---|
+| **Tailwind CSS** | 3.x | Sistema de estilos utilitario |
+| **tailwindcss-animated** | 1.x | Clases de animación de entrada (`animate-fade`, `animate-fade-up`) |
+| **tailwindcss-textshadow** | 2.x | Sombras de texto |
+| **tailwind-scrollbar** | 3.x | Scrollbar personalizado |
+| **tailwind-clip-path** | 1.x | Clip-paths personalizados (pantalla diagonal del landing) |
+
+### Animaciones
+| Tecnología | Versión | Uso |
+|---|---|---|
+| **Framer Motion** | 10.x | Animaciones de scroll y entrada en proyectos |
+| **react-type-animation** | 3.x | Efecto de escritura animada en el landing |
+| **react-animated-numbers** | 1.x | Contadores numéricos animados |
+
+### Backend y Servicios
+| Tecnología | Versión | Uso |
+|---|---|---|
+| **Firebase** | 12.x | Firestore — almacenamiento de mensajes del formulario de contacto |
+
+### Iconos y Fuentes
+| Tecnología | Uso |
+|---|---|
+| **FontAwesome** (brands + solid) | Iconos de redes sociales y tecnologías |
+| **Heroicons** | Controles del carrusel fotográfico |
+| **Lucide React** | Iconos adicionales de la UI |
+| **Google Fonts** (Jost, Montserrat, Questrial, Source Sans 3) | Tipografía del sitio |
+
+### Infraestructura
+| Tecnología | Uso |
+|---|---|
+| **Vercel** | Hosting y deployment continuo (rama `main`) |
+| **Firebase Hosting** | Proyecto configurado (`portafolio-65500`) |
+
+---
+
+## Características principales
+
+### Landing Page (`/`)
+- Pantalla dividida en diagonal con `clip-path: polygon()` — verde para Desarrollo Web, ámbar para Fotografía
+- Efecto de escritura animada (typewriter) en ambas mitades
+- Navbar con logo personal y footer con links a todas las redes sociales
+
+### Portafolio Desarrollo Web (`/webdev`)
+- **Arquitectura SPA** — las secciones se cambian por estado de React sin recargar la página
+- **Sección About** con bio, foto de perfil y pestañas:
+  - `Habilidades`: Stack completo (Node.js, Express, MongoDB, JavaScript, React, Next.js)
+  - `Educación`: Bootcamp FullStack (UDD) + Bootcamp DevOps (Adalid/SENCE)
+  - `Certificaciones`: 6 badges de Credly + certificado PDF descargable
+  - CV descargable en PDF
+- **Sección Proyectos** con filtro por categorías:
+  - *Proyectos Particulares*: proyectos para clientes reales
+  - *Proyectos Personales*: proyectos propios
+  - *Proyectos de Formación*: proyectos de bootcamp
+  - Animaciones de entrada con Framer Motion, proyectos destacados al tope
+  - Cada tarjeta muestra: título, descripción, badges de tecnologías, link a GitHub y preview en vivo
+- **Sección Contacto** — CTA directo a WhatsApp con mensaje pre-llenado
+
+### Portafolio Fotografía (`/portphoto`)
+- **Carrusel de pantalla completa** — 20 fotografías propias, autoplay cada 8s, efecto Ken Burns (zoom lento), transiciones fade, navegación por teclado (←→ y Escape), pausa al hover
+- **Navegación con dropdowns** — paneles animados que se despliegan desde el navbar:
+  - `Fotolibros`: 3 libros fotográficos personales
+  - `Proyectos`: 4 proyectos de Instagram
+  - `Experiencias Educativas`: experiencias formativas en fotografía
+- **Página About** (`/portphoto/aboutphoto`) con diseño responsivo:
+  - Escritorio: pestañas para cambiar secciones
+  - Mobile: acordeón colapsable
+  - Secciones: Perfil Profesional, Especialización, Filosofía Fotográfica, Servicios
+- **Página de Contacto** (`/portphoto/contactphoto`) con formulario conectado a Firebase Firestore e información de negocio (horarios, ubicación en Valparaíso)
+
+---
+
+## Estructura del proyecto
+
+```
+PortfolioJoseAngelVH/
+├── src/
+│   ├── app/
+│   │   ├── layout.js                 # Layout raíz — metadata, SEO, Schema.org, fuentes
+│   │   ├── page.js                   # Landing page con pantalla dividida (/)
+│   │   ├── globals.css               # Estilos globales
+│   │   ├── ui/
+│   │   │   └── fonts.js              # Definición de Google Fonts
+│   │   ├── components/               # Componentes compartidos globales
+│   │   │   ├── layout/
+│   │   │   │   ├── NavbarIntro.jsx   # Navbar del landing (solo logo)
+│   │   │   │   ├── Footer.jsx        # Footer con redes sociales
+│   │   │   │   ├── MenuOverlay.jsx   # Menú mobile
+│   │   │   │   ├── NavLink.jsx       # Link de navegación reutilizable
+│   │   │   │   └── WspButton.jsx     # Botón flotante de WhatsApp
+│   │   │   └── ui/
+│   │   │       ├── Welcome.jsx       # Componente de pantalla dividida
+│   │   │       └── Form.jsx          # Componente de formulario genérico
+│   │   ├── webdev/                   # Ruta /webdev — Portafolio Web Dev
+│   │   │   ├── page.jsx              # Página principal (SPA con cambio de secciones)
+│   │   │   └── components/
+│   │   │       ├── NavbarWeb.jsx
+│   │   │       ├── FooterWeb.jsx
+│   │   │       ├── AboutWeb.jsx      # Sección About con pestañas
+│   │   │       ├── WebProjectsSection.jsx  # Sección de proyectos con filtros
+│   │   │       ├── ProjectCard.jsx   # Tarjeta de proyecto individual
+│   │   │       ├── EmailSection.jsx  # Sección de contacto (WhatsApp CTA)
+│   │   │       └── TabButton.jsx     # Botón de pestaña reutilizable
+│   │   └── portphoto/                # Ruta /portphoto — Portafolio Fotografía
+│   │       ├── layout.jsx            # Layout con navbar + panels por Context
+│   │       ├── page.jsx              # Galería principal (carrusel)
+│   │       ├── context/
+│   │       │   └── PhotoContext.jsx  # Estado global del dropdown activo
+│   │       ├── aboutphoto/
+│   │       │   └── page.jsx          # Página About fotógrafo (responsiva)
+│   │       ├── contactphoto/
+│   │       │   └── page.jsx          # Página de contacto + formulario Firebase
+│   │       └── components/
+│   │           ├── NavbarPhoto.jsx   # Navbar con triggers de dropdown
+│   │           ├── FooterPhoto.jsx
+│   │           ├── Carrusel.jsx      # Carrusel de pantalla completa (custom)
+│   │           ├── AboutPhoto.jsx    # Secciones desktop (pestañas)
+│   │           ├── MobileSectionsPhoto.jsx  # Secciones mobile (acordeón)
+│   │           ├── Fotolibros.jsx    # Panel dropdown — Fotolibros
+│   │           ├── ProyectosPh.jsx   # Panel dropdown — Proyectos fotográficos
+│   │           ├── EducPh.jsx        # Panel dropdown — Experiencias educativas
+│   │           ├── FormPhoto.jsx     # Formulario de contacto con Firebase
+│   │           └── ProjectTag.jsx    # Tag de proyecto reutilizable
+│   ├── lib/
+│   │   ├── config.js
+│   │   ├── constants.js              # (reservado para constantes globales)
+│   │   └── helpers.js                # (reservado para utilidades)
+│   └── services/
+│       └── firebase/
+│           ├── config.js             # Inicialización de Firebase (env vars)
+│           ├── index.js              # Exportaciones de Firebase
+│           └── sender.js            # Servicio de envío del formulario
+├── public/
+│   ├── images/                       # Imágenes estáticas (fotos, screenshots, logos)
+│   ├── docs/                         # PDFs (CV, certificado DevOps)
+│   ├── github-icon.svg
+│   ├── linkedin-icon.svg
+│   └── wspicon.svg
+├── next.config.js                    # Config Next.js (dominio remoto: images.credly.com)
+├── tailwind.config.js                # Config Tailwind (colores, plugins, clip-paths)
+├── postcss.config.js
+├── tsconfig.json                     # TS config (allowJs, strict: false)
+├── .firebaserc                       # Alias del proyecto Firebase
+├── .env                              # Variables de entorno (no commitear)
+└── package.json
+```
+
+---
+
+## Instalación y uso local
+
+### Requisitos previos
+
+- **Node.js** >= 18.x
+- **npm** >= 9.x (o `pnpm` / `yarn`)
+- Una cuenta de **Firebase** con un proyecto Firestore creado
+
+### 1. Clonar el repositorio
 
 ```bash
-# 1. Clonar el repositorio
-git clone https://github.com/Pepeoawvh/PortfolioJoseAngelVH.git
+git clone https://github.com/tu-usuario/PortfolioJoseAngelVH.git
 cd PortfolioJoseAngelVH
+```
 
-# 2. Instalar dependencias
+### 2. Instalar dependencias
+
+```bash
 npm install
+```
 
-# 3. Configurar variables de entorno
-cp ".env copy" .env
-# Editar .env con tus credenciales de Firebase
+### 3. Configurar variables de entorno
 
-# 4. Ejecutar en modo desarrollo
+Crea un archivo `.env` en la raíz del proyecto basándote en el siguiente template:
+
+```env
+# Firebase — Configuración del proyecto
+API_KEY=tu_firebase_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=tu_proyecto.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=tu_proyecto_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=tu_proyecto.appspot.com
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=tu_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=tu_app_id
+```
+
+> Puedes obtener estos valores desde la **Consola de Firebase** → Configuración del proyecto → Tus apps → SDK de Firebase.
+
+### 4. Ejecutar en modo desarrollo
+
+```bash
 npm run dev
 ```
 
-Abrir en el navegador: [http://localhost:3000](http://localhost:3000)
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
 ---
 
-## Estado del proyecto
+## Variables de entorno
 
-| Módulo | Estado |
-|---|---|
-| Pantalla de bienvenida | ✅ Producción |
-| Portafolio Web | ✅ Producción |
-| Portafolio Fotográfico — Inicio y Fotolibros | ✅ Producción |
-| Portafolio Fotográfico — Proyectos | 🚧 En desarrollo |
-| Portafolio Fotográfico — Experiencias educativas | 🚧 En desarrollo |
+| Variable | Requerida | Descripción |
+|---|---|---|
+| `API_KEY` | Sí | API Key de Firebase |
+| `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN` | Sí | Auth domain del proyecto Firebase |
+| `NEXT_PUBLIC_FIREBASE_PROJECT_ID` | Sí | ID del proyecto Firebase |
+| `NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET` | Sí | Storage bucket de Firebase |
+| `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID` | Sí | Sender ID de Firebase |
+| `NEXT_PUBLIC_FIREBASE_APP_ID` | Sí | App ID de Firebase |
+
+> **Importante:** Nunca subas el archivo `.env` al repositorio. Está incluido en `.gitignore`.
 
 ---
 
 ## Autor
 
-**José Ángel Valdés Hernández**  
-Desarrollador Web & Fotógrafo
+**José Angel Valdés Hernández**
+Desarrollador Web Fullstack & Fotógrafo Profesional
+Valparaíso, Chile
 
-- 📧 jpp.valdes@gmail.com
-- [Instagram](https://www.instagram.com/joseangel.vh/)
-- [LinkedIn](https://www.linkedin.com/in/jose-angel-valdes-hernandez/)
-- [Behance](https://www.behance.net/joseangelvy)
+| Red | Link |
+|---|---|
+| GitHub | [github.com/JoseAngelVH](https://github.com/JoseAngelVH) |
+| LinkedIn | [linkedin.com/in/joseangelvaldes](https://linkedin.com/in/joseangelvaldes) |
+| Instagram | [@joseangel.vh](https://www.instagram.com/joseangel.vh) |
+| Behance | [behance.net/joseangelvaldes](https://www.behance.net/joseangelvaldes) |
+| WhatsApp | [+56 9 4986 6129](https://wa.me/56949866129?text=Hola,%20me%20interesa%20contactarte) |
+| Portafolio | [joseangelportfolio.vercel.app](https://joseangelportfolio.vercel.app) |
+
+---
+
+## Licencia
+
+Este proyecto es de uso personal. El código fuente puede servir como referencia, pero los contenidos (fotografías, textos, nombre y marca personal) son propiedad exclusiva del autor.

@@ -1,7 +1,7 @@
 ﻿"use client";
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { ChevronLeftIcon, ChevronRightIcon, PauseIcon, PlayIcon } from "@heroicons/react/24/solid";
 
 const CAROUSEL_IMAGES = [
   "/images/photos/profileBackground/camaraNaranja.jpg",
@@ -30,6 +30,7 @@ export default function Carrusel() {
   const [index, setIndex] = useState(0);
   const [fadeIn, setFadeIn] = useState(true);
   const [autoplay, setAutoplay] = useState(true);
+  const [isPaused, setIsPaused] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [pendingIndex, setPendingIndex] = useState(null);
 
@@ -126,6 +127,17 @@ export default function Carrusel() {
     startTimer();
   };
 
+  // Pausa/reanuda por botón (persiste entre hovers)
+  const togglePause = () => {
+    if (isPaused) {
+      setIsPaused(false);
+      resume();
+    } else {
+      setIsPaused(true);
+      pause();
+    }
+  };
+
   // Teclado
   useEffect(() => {
     const onKey = (e) => {
@@ -144,7 +156,7 @@ export default function Carrusel() {
       }
       if (e.key === "Escape") {
         e.preventDefault();
-        pause();
+        togglePause();
       }
     };
     window.addEventListener("keydown", onKey);
@@ -157,8 +169,8 @@ export default function Carrusel() {
       className="select-none w-screen h-[70vh] min-h-[500px] max-h-[800px] relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
       aria-roledescription="carousel"
       aria-label="Carrusel de fotografías"
-      onMouseEnter={pause}
-      onMouseLeave={resume}
+      onMouseEnter={() => { if (!isPaused) pause(); }}
+      onMouseLeave={() => { if (!isPaused) resume(); }}
     >
       {/* Contenedor principal que ocupa todo el espacio */}
       <div className="relative w-full h-full bg-[#131318] overflow-hidden">
@@ -217,6 +229,20 @@ export default function Carrusel() {
           </button>
         </div>
 
+        {/* Botón pausa/reanudar — WCAG 2.2.2: el usuario puede detener el autoplay */}
+        <button
+          type="button"
+          onClick={togglePause}
+          aria-label={isPaused ? "Reanudar presentación" : "Pausar presentación"}
+          aria-pressed={isPaused}
+          className="absolute bottom-10 right-4 sm:right-6 z-20 bg-black/40 hover:bg-black/60 text-white rounded-full p-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FFB300] focus:ring-offset-1 focus:ring-offset-black/40"
+        >
+          {isPaused
+            ? <PlayIcon className="h-5 w-5" aria-hidden="true" />
+            : <PauseIcon className="h-5 w-5" aria-hidden="true" />
+          }
+        </button>
+
         {/* Indicadores */}
         <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
           {CAROUSEL_IMAGES.map((_, i) => (
@@ -229,7 +255,7 @@ export default function Carrusel() {
               disabled={isLoading}
               className={`h-2 rounded-full transition-all duration-300 ${
                 i === index
-                  ? "w-8 bg-white/90"
+                  ? "w-8 bg-[#FFB300]"
                   : "w-2 bg-white/40 hover:bg-white/70 hover:w-4"
               } ${isLoading ? "opacity-50 cursor-not-allowed" : ""}`}
             />

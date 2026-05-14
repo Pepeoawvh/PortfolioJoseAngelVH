@@ -1,186 +1,222 @@
-"use client";
-import React, { useState, useEffect } from "react";
+'use client'
+import React from "react";
 import { sourceSansPro } from "../../ui/fonts";
 import HeaderPhoto from "../components/HeaderAbout";
 import MobileSectionsPhoto from "../components/MobileSectionsPhoto";
 import DesktopSectionsPhoto from "../components/AboutPhoto";
 import Image from "next/image";
-import Link from "next/link";
+
+const secciones = {
+  perfil: {
+    titulo: "Perfil Profesional",
+    subtitulo: "Fotógrafo Profesional",
+    contenido: (
+      <div className="space-y-5">
+        <p className="text-gray-300 leading-relaxed">
+          Llevo fotografiando desde los 13 años. Lo que comenzó como una curiosidad se fue convirtiendo
+          en una forma de pensar y de relacionarme con las imágenes, hasta derivar en una formación
+          profesional formal en el Instituto Arcos de Viña del Mar, donde me titulé en 2017 con un
+          proyecto de investigación sobre la imagen digital y su reproductibilidad masiva.
+        </p>
+        <p className="text-gray-300 leading-relaxed">
+          A lo largo de ese recorrido he trabajado en distintos géneros: paisaje, arquitectura,
+          fotografía 360°, producto y retrato. Pero en paralelo he mantenido una práctica personal
+          sostenida en proyectos de autor que exploran la imagen desde otro ángulo: la curaduría,
+          el archivo digital, el fotomontaje y más recientemente la imagen generativa.
+        </p>
+        <p className="text-gray-300 leading-relaxed">
+          Para mí no existe una contradicción entre el trabajo técnico y comercial y la producción
+          personal. Son dos modos de la misma pregunta.
+        </p>
+      </div>
+    ),
+  },
+  especializacion: {
+    titulo: "Especialización",
+    subtitulo: "Áreas de expertise",
+    contenido: (
+      <div className="space-y-3">
+        <div className="flex items-start bg-black/30 p-4 border border-white/5 hover:border-[#FFB300]/20 transition-all duration-300">
+          <Image
+            src="/images/icons/LEicon.png"
+            alt="Icono de Larga Exposición"
+            width={72}
+            height={72}
+            className="mr-4 opacity-90 flex-shrink-0"
+          />
+          <div>
+            <h3 className="font-semibold text-base text-white mb-1">Fotografía de Larga Exposición y Light Painting</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              He desarrollado una técnica personal que combina largas exposiciones con el uso de láser
+              de alta energía para intervenir la escena en tiempo real. El resultado es una imagen que
+              no podría existir de otra forma: construida, no capturada. La postproducción selectiva
+              acentúa las tonalidades y refuerza la intención creativa de cada disparo.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start bg-black/30 p-4 border border-white/5 hover:border-[#FFB300]/20 transition-all duration-300">
+          <Image
+            src="/images/icons/LAicon.png"
+            alt="Icono de Paisaje"
+            width={72}
+            height={72}
+            className="mr-4 opacity-90 flex-shrink-0"
+          />
+          <div>
+            <h3 className="font-semibold text-base text-white mb-1">Fotografía de Paisaje</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              El paisaje es mi laboratorio natural. Me atrae especialmente la montaña en condiciones
+              de niebla, la atmósfera que transforma lo familiar en algo indescifrable. Busco imágenes
+              que transmitan escala, silencio y la sensación de estar presente en un lugar que muy
+              pocos han visto exactamente así.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start bg-black/30 p-4 border border-white/5 hover:border-[#FFB300]/20 transition-all duration-300">
+          <Image
+            src="/images/icons/360icon.png"
+            alt="Icono de Arquitectónica 360"
+            width={72}
+            height={72}
+            className="mr-4 opacity-90 flex-shrink-0"
+          />
+          <div>
+            <h3 className="font-semibold text-base text-white mb-1">Fotografía 360° y Arquitectónica</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Produzco recorridos virtuales inmersivos para inmuebles, museos, espacios educativos y
+              proyectos de arquitectura. La tecnología 360° permite que el espectador experimente
+              el espacio antes de pisarlo, lo que genera valor real tanto para la venta como para
+              la comunicación institucional.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start bg-black/30 p-4 border border-white/5 hover:border-[#FFB300]/20 transition-all duration-300">
+          <Image
+            src="/images/icons/psicon.png"
+            alt="Icono de PostProducción"
+            width={72}
+            height={72}
+            className="mr-4 opacity-90 flex-shrink-0"
+          />
+          <div>
+            <h3 className="font-semibold text-base text-white mb-1">Postproducción Digital</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Dominio avanzado de Adobe Lightroom y Photoshop para retoque, edición de color y
+              manipulación de imagen. Complementado con conocimientos de diseño gráfico, diagramación
+              e impresión digital y offset — lo que me permite acompañar un proyecto desde la captura
+              hasta su reproducción final en cualquier soporte.
+            </p>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+
+  filosofia: {
+    titulo: "Filosofía Fotográfica",
+    subtitulo: "Mi visión creativa",
+    contenido: (
+      <div className="space-y-5 text-gray-300">
+        <p className="leading-relaxed">
+          Entiendo la fotografía como la culminación de un deseo humano antiquísimo, la cúspide de
+          una búsqueda: congelar los instantes, confirmar la existencia a pesar de su finitud. Ese
+          impulso comenzó mucho antes de la cámara, cuando alguien grabó un animal en la pared de
+          una cueva o cuando un pintor se detuvo frente a un paisaje con la intención de retratarlo
+          —ese instante en que el creador tiene un clic espontáneo de intención es el origen de la
+          fotografía. La fotografía fue la cúspide técnica de ese deseo, pero su esencia espiritual
+          es anterior a cualquier aparato.
+        </p>
+
+        <p className="leading-relaxed">
+          Desde esa convicción, un daguerrotipo, una fotografía de paisaje y un pantallazo de
+          videojuego comparten la misma esencia: la intención de preservar las evidencias de
+          existencia, real o digital, antes de que se convierta en polvo. La vida digital deja de
+          serlo, y sus imágenes —si bien diferentes en su materialidad— tienen el mismo ADN de la
+          fotografía.
+        </p>
+
+        <p className="leading-relaxed">
+          Mi trabajo se mueve entre esa dimensión contemplativa y una práctica dinámica y crítica.
+          La masificación de las imágenes transformó el rol del fotógrafo: ya no somos cazadores de
+          momentos precisos o especiales, sino agricultores y curadores en medio de una
+          superabundancia visual. Eso me interesa tanto como tema de investigación —fue el centro
+          de mi tesis{" "}
+          <em>La caza de las pantallas</em> (2017)— como práctica cotidiana, visible en proyectos
+          como <em>Escrinshots_random</em> y <em>pplabs</em>, donde archivo, intervengo y hago
+          dialogar imágenes de distintos orígenes: fotografías propias, capturas digitales,
+          fotomontaje e imagen generativa.
+        </p>
+      </div>
+    ),
+  },
+
+  servicios: {
+    titulo: "Servicios",
+    subtitulo: "Lo que puedo ofrecer",
+    contenido: (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        {[
+          {
+            titulo: "Fotografía Arquitectónica y 360°",
+            descripcion: "Documentación de espacios residenciales, comerciales e institucionales. Recorridos virtuales inmersivos para venta, arriendo o presentación de proyectos.",
+          },
+          {
+            titulo: "Fotografía de Productos",
+            descripcion: "Imágenes para catálogos, e-commerce y comunicación de marca. Fondo neutro o contextualizado según la identidad del producto.",
+          },
+          {
+            titulo: "Fotografía de Paisaje y Naturaleza",
+            descripcion: "Captura en exteriores con énfasis en luz natural, composición atmosférica y condiciones climáticas especiales.",
+          },
+          {
+            titulo: "Larga Exposición y Light Painting",
+            descripcion: "Proyectos artísticos y comerciales con técnica de larga exposición e intervención con láser. Resultados únicos e irrepetibles.",
+          },
+          {
+            titulo: "Retratos Artísticos",
+            descripcion: "Sesiones orientadas a la expresión personal más que a la formalidad. Para artistas, profesionales y proyectos editoriales.",
+          },
+          {
+            titulo: "Talleres y Clases de Fotografía",
+            descripcion: "Formación práctica en fotografía creativa, composición y uso de la luz. Adaptada a distintos niveles y contextos educativos.",
+          },
+        ].map((s, i) => (
+          <div
+            key={i}
+            className="p-4 bg-black/30 border border-white/5 hover:border-[#FFB300]/25 transition-all duration-300 group"
+          >
+            <div className="flex items-start gap-3">
+              <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#FFB300]" />
+              <div>
+                <h3 className="text-white text-sm font-semibold mb-1 group-hover:text-[#FFB300] transition-colors duration-200">
+                  {s.titulo}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{s.descripcion}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    ),
+  },
+};
 
 const AboutPhoto = () => {
-  const [seccionActiva, setSeccionActiva] = useState("perfil");
-  const [seccionesAbiertas, setSeccionesAbiertas] = useState({});
-  const [esMobil, setEsMobil] = useState(false);
-
-  // Detectar si es dispositivo móvil al cargar y al cambiar tamaño
-  useEffect(() => {
-    const verificarTamanio = () => {
-      setEsMobil(window.innerWidth < 768);
-    };
-    verificarTamanio();
-    window.addEventListener("resize", verificarTamanio);
-    return () => window.removeEventListener("resize", verificarTamanio);
-  }, []);
-
-  const toggleSeccion = (seccion) => {
-    if (esMobil) {
-      setSeccionesAbiertas((prev) => ({
-        ...prev,
-        [seccion]: !prev[seccion],
-      }));
-    } else {
-      setSeccionActiva(seccion);
-    }
-  };
-
-  const secciones = {
-    perfil: {
-      titulo: "Perfíl Profesional",
-      subtitulo: "Fotógrafo Profesional y Artista Visual",
-      contenido: (
-        <div className="space-y-4">
-          <p className="text-gray-300">
-            Fotógrafo profesional titulado del Instituto Profesional Arcos (2017) con más de 12 años de experiencia en distintos géneros fotográficos. Mi trabajo se caracteriza por una búsqueda constante, especialmente en técnicas de larga exposición con láser y fotografía de paisaje.
-          </p>
-          <p className="text-gray-300">
-            Intento combinar mi formación técnica con reflexiones sobre el rol de la imagen y la fotografía en la era digital.
-          </p>
-        </div>
-      ),
-    },
-    especializacion: {
-      titulo: "Especialización",
-      subtitulo: "Áreas de expertise",
-      contenido: (
-        <div className="space-y-2   ">
-          <div className="flex items-start bg-black/30 p-4 rounded-md border border-white/5 hover:border-white/20 transition-all duration-300">
-            <Image
-              src="/images/icons/LEicon.png"
-              alt="Icono de Larga Exposición"
-              width={80}
-              height={80}
-              className="mr-4 opacity-90"
-            />
-            <div>
-              <h3 className="font-semibold text-lg text-white mb-2">Fotografía de Larga Exposición y Light Painting</h3>
-              <p className="text-gray-300">
-                He desarrollado una técnica personal de larga exposición utilizando láser de alta energía para &quot;dibujar&quot; sobre las escenas capturadas, con post-producción selectiva para transformar tonalidades.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start bg-black/30 p-4 rounded-md border border-white/5 hover:border-white/20 transition-all duration-300">
-            <Image
-              src="/images/icons/LAicon.png"
-              alt="Icono de Paisaje"
-              width={80}
-              height={80}
-              className="mr-4 opacity-90"
-            />
-            <div>
-              <h3 className="font-semibold text-lg text-white mb-2">Fotografía de Paisaje</h3>
-              <p className="text-gray-300">
-                Especializado en capturar la sublimidad de paisajes naturales, con particular atención a escenas montañosas con efectos de niebla y profundidad atmosférica.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start bg-black/30 p-4 rounded-md border border-white/5 hover:border-white/20 transition-all duration-300">
-            <Image
-              src="/images/icons/360icon.png"
-              alt="Icono de Arquitectónica"
-              width={80}
-              height={80}
-              className="mr-4 opacity-90"
-            />
-            <div>
-              <h3 className="font-semibold text-lg text-white mb-2">Fotografía 360° y Arquitectónica</h3>
-              <p className="text-gray-300">
-                Ofrezco servicios de documentación arquitectónica mediante tecnología 360° para recorridos virtuales inmersivos de inmuebles, museos y espacios educativos.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start bg-black/30 p-4 rounded-md border border-white/5 hover:border-white/20 transition-all duration-300">
-            <Image
-              src="/images/icons/psicon.png"
-              alt="Icono de PostProducción"
-              width={80}
-              height={80}
-              className="mr-4 opacity-90"
-            />
-            <div>
-              <h3 className="font-semibold text-lg text-white mb-2">PostProducción Digital</h3>
-              <p className="text-gray-300">
-                Amplia experiencia y dominio de software de edición de imágenes como Adobe Lightroom y Photoshop, con habilidades avanzadas en retoque y manipulación de imágenes. Además de nociones avanzadas de Diseño gráfico y diagramación. Conocimientos de impresión digital y offset.
-              </p>
-            </div>
-          </div>
-        </div>
-      ),
-    },
-    
-    filosofia: {
-      titulo: "Filosofía Fotográfica",
-      subtitulo: "Mi visión creativa",
-      contenido: (
-        <div className="space-y-4 text-gray-300">
-          <p>
-            Entiendo la fotografía como una afirmación de existencia, un medio para documentar y expresar la presencia de lo que hay en este universo aunque sea de manera efímera. A través de mis imágenes, busco dialogar con la luz —aspecto fundamental que no solo permite ver, sino también existir.
-          </p>
-          <blockquote className="italic border-l-4 border-[#FFB300] pl-4 my-6 py-2 bg-black/30 text-white">
-            &quot;Somos gracias a la luz y es ella misma quien nos permite afirmar su existencia, y por lo tanto, la nuestra.&quot;
-          </blockquote>
-          <p>
-            Esta visión conceptual sustenta mis proyectos personales, mientras que en mi trabajo comercial me enfoco en la excelencia técnica y la satisfacción de requisitos de mis clientes.
-          </p>
-        </div>
-      ),
-    },
-    servicios: {
-      titulo: "Servicios Profesionales",
-      subtitulo: "Lo que puedo ofrecer",
-      contenido: (
-        <div className="bg-black/30 p-5 rounded-md border border-white/5">
-          <ul className="space-y-3">
-            <li className="flex items-center text-gray-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#FFB300] mr-3"></span>
-              Fotografía arquitectónica y recorridos virtuales 360°
-            </li>
-            <li className="flex items-center text-gray-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#FFB300] mr-3"></span>
-              Fotografía de paisaje y naturaleza
-            </li>
-            <li className="flex items-center text-gray-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#FFB300] mr-3"></span>
-              Retratos artísticos
-            </li>
-            <li className="flex items-center text-gray-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#FFB300] mr-3"></span>
-              Fotografía de interiores y exteriores (jardines, espacios residenciales)
-            </li>
-            <li className="flex items-center text-gray-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#FFB300] mr-3"></span>
-              Proyectos fotográficos conceptuales y de autor
-            </li>
-            <li className="flex items-center text-gray-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#FFB300] mr-3"></span>
-              Talleres y clases de Fotografía
-            </li>
-          </ul>
-        </div>
-      ),
-    },
-  };
-
   return (
-    <div className={`flex flex-col min-h-screen  bg-[#0a0a0a] ${sourceSansPro.className}`}>
+    <div className={`flex flex-col min-h-screen bg-[#0a0a0a] ${sourceSansPro.className}`}>
       <HeaderPhoto />
       <main className="flex-grow">
-        {esMobil ? (
-          <section className="px-4 py-4">
-            <MobileSectionsPhoto secciones={secciones} seccionesAbiertas={seccionesAbiertas} toggleSeccion={toggleSeccion} />
-          </section>
-        ) : (
-          <DesktopSectionsPhoto secciones={secciones} seccionActiva={seccionActiva} setSeccionActiva={setSeccionActiva} />
-        )}
+        {/* Mobile: acordeón */}
+        <div className="block md:hidden px-4 py-4">
+          <MobileSectionsPhoto secciones={secciones} />
+        </div>
+        {/* Desktop: pestañas */}
+        <div className="hidden md:block">
+          <DesktopSectionsPhoto secciones={secciones} />
+        </div>
       </main>
     </div>
   );

@@ -4,16 +4,16 @@ import { Suspense } from 'react';
 
 // Metadata mejorada y expandida para Next.js App Router
 export const metadata = {
-  title: "José Angel Valdés | Desarrollo Web & Fotografía",
-  description: "Portfolio profesional de José Angel Valdés. Especialista en desarrollo web frontend y React. Fotógrafo con experiencia en paisaje y retrato. Soluciones digitales creativas y personalizadas.",
+  title: "José Angel Valdés Hernández | Desarrollo Web & Fotografía Profesional",
+  description: "Portafolio de José Angel Valdés Hernández — Desarrollador Web Fullstack y Fotógrafo Profesional con base en Valparaíso, Chile. Proyectos con React, Next.js, Node.js y especialización en larga exposición y light painting.",
   keywords: [
-    "desarrollo web", "frontend developer", "fotografía profesional", "diseño UI/UX", 
-    "portfolio creativo", "Next.js", "React developer", "diseño web", "fotografía paisaje",
-    "desarrollador web Chile", "diseñador web", "fotógrafo profesional Chile"
+    "desarrollo web fullstack", "desarrollador web Chile", "React developer", "Next.js",
+    "fotografía profesional Chile", "fotógrafo Valparaíso", "light painting", "larga exposición",
+    "fotografía 360", "portfolio creativo", "Node.js", "MongoDB", "fotografía paisaje Chile"
   ],
-  authors: [{ name: 'José Angel Valdés' }],
-  creator: 'José Angel Valdés',
-  publisher: 'José Angel Valdés',
+  authors: [{ name: 'José Angel Valdés Hernández' }],
+  creator: 'José Angel Valdés Hernández',
+  publisher: 'José Angel Valdés Hernández',
   formatDetection: {
     email: false,
     address: false,
@@ -22,15 +22,10 @@ export const metadata = {
   metadataBase: new URL('https://joseangelportfolio.vercel.app'),
   alternates: {
     canonical: '/',
-    languages: {
-      'es-CL': '/es',
-      'en-US': '/en',
-    },
   },
   robots: {
     index: true,
     follow: true,
-    nocache: true,
     googleBot: {
       index: true,
       follow: true,
@@ -40,16 +35,16 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'José Angel Valdés | Desarrollo Web & Fotografía',
-    description: 'Portfolio profesional con trabajos destacados en desarrollo frontend y fotografía de paisaje y retrato.',
+    title: 'José Angel Valdés Hernández | Desarrollo Web & Fotografía Profesional',
+    description: 'Portafolio de Desarrollador Web Fullstack y Fotógrafo Profesional. Valparaíso, Chile.',
     url: 'https://joseangelportfolio.vercel.app',
-    siteName: 'Portfolio de José Angel Valdés',
+    siteName: 'Portafolio de José Angel Valdés Hernández',
     images: [
       {
-        url: 'https://joseangelportfolio.vercel.app/images/og-image.jpg',
+        url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'José Angel Valdés - Portfolio Profesional',
+        alt: 'José Angel Valdés Hernández — Desarrollador Web Fullstack y Fotógrafo Profesional',
       },
     ],
     locale: 'es_CL',
@@ -57,26 +52,15 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'José Angel Valdés | Desarrollo Web & Fotografía',
-    description: 'Portfolio profesional con proyectos de desarrollo web y fotografía artística',
-    images: ['https://joseangelportfolio.vercel.app/images/og-image.jpg'],
+    title: 'José Angel Valdés Hernández | Desarrollo Web & Fotografía Profesional',
+    description: 'Portafolio de Desarrollador Web Fullstack y Fotógrafo Profesional. Valparaíso, Chile.',
+    images: ['/images/og-image.jpg'],
   },
   icons: {
     icon: [
       { url: '/favicon.ico' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
-    ],
-    apple: [
-      { url: '/apple-icon.png' },
-    ],
-    other: [
-      {
-        rel: 'mask-icon',
-        url: '/safari-pinned-tab.svg',
-      },
     ],
   },
-  manifest: '/site.webmanifest',
   category: 'technology',
 };
 
@@ -126,11 +110,18 @@ export default function RootLayout({ children }) {
         <meta name="referrer" content="no-referrer-when-downgrade" />
       </head>
       <body className={`bg-[#191923] ${jost.className} text-gray-300 antialiased overflow-x-hidden`}>
-        <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Cargando...</div>}>
+        {/* Skip link — WCAG 2.4.1: permite saltar al contenido principal con teclado */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:font-medium focus:rounded"
+        >
+          Saltar al contenido principal
+        </a>
+        <Suspense fallback={<div role="status" aria-live="polite" className="min-h-screen flex items-center justify-center">Cargando...</div>}>
           <div className="min-h-screen flex flex-col">
-            <main className="flex-grow">
+            <div id="main-content" className="flex-grow">
               {children}
-            </main>
+            </div>
           </div>
         </Suspense>
       </body>

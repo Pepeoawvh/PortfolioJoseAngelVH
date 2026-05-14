@@ -31,6 +31,7 @@ const WebDev = () => {
       {/*espaciador con la altura exacta del navbar */}
       <div className="h-20"></div>
       <main className="flex-grow">
+        <h1 className="sr-only">José Angel Valdés Hernández — Desarrollador Web Fullstack</h1>
         {renderSection()}
       </main>
       <FooterWeb />

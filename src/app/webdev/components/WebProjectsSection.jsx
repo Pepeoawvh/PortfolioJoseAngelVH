@@ -76,7 +76,7 @@ const PROJECTS_DATA = [
     category: "particulares",
     featured: false,
     gitUrl: "/",
-    previewUrl: "/images/projects/6.png",
+    previewUrl: "https://www.ofuentes.cl",
   },
   {
     id: 10,
@@ -150,7 +150,7 @@ const CATEGORY_LABELS = {
 const WebProjectsSection = () => {
   const [category, setCategory] = useState("particulares");
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false });
 
   const filteredProjects = PROJECTS_DATA
     .filter((project) => project.category === category)

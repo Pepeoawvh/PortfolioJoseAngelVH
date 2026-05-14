@@ -27,7 +27,7 @@ const FooterWeb = () => {
         
         {/* Línea decorativa con gradiente */}
         <div className="flex justify-center my-4">
-          <div className="h-px w-32 bg-gradient-to-r from-[#d63384]/10 via-[#2ecc71]/30 to-[#d63384]/10"></div>
+          <div className="h-px w-32 bg-gradient-to-r from-[#2ecc71]/10 via-[#2ecc71]/30 to-[#2ecc71]/10"></div>
         </div>
         
         {/* Copyright */}

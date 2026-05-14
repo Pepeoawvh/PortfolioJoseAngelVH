@@ -1,51 +1,30 @@
-"use client";
-import { useRef } from "react";
 import NavbarPhoto from "./components/NavbarPhoto";
 import FooterPhoto from "./components/FooterPhoto";
-import { PhotoProvider, usePhoto } from "./context/PhotoContext";
-import Fotolibros from "./components/Fotolibros";
-import ProyectosPh from "./components/ProyectosPh";
-import EducPh from "./components/EducPh";
+import { PhotoProvider } from "./context/PhotoContext";
+import DropdownSection from "./components/DropdownSection";
 
-function DropdownSection() {
-  const { activeSection } = usePhoto();
-  const panelRef = useRef(null);
-
-  return (
-    <>
-      {/* Fondo invisible solo visual */}
-      {activeSection && (
-        <div 
-          className="fixed inset-0 z-30 pointer-events-none" 
-          aria-hidden="true"
-        />
-      )}
-
-      <div
-        ref={panelRef}
-        data-dropdown-panel
-        className={`fixed top-[80px] left-0 w-full z-40 transition-all duration-300 ease-out
-          ${activeSection ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}
-          max-h-[calc(100vh-80px)] overflow-y-auto
-          scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full 
-          scrollbar-thumb-[#FFB300]/40 scrollbar-track-[#111]`}
-      >
-        <div className="bg-black/70 backdrop-blur-sm border-t border-gray-700 shadow-lg">
-          <div className="w-full px-4 py-8 sm:px-6 md:max-w-6xl md:mx-auto">
-            {/* ✅ CORRECCIÓN: Responsive padding + width */}
-            {activeSection === "fotolibros" && <Fotolibros />}
-            {activeSection === "proyectos" && <ProyectosPh />}
-            {activeSection === "experienciasEducativas" && (
-              <div className="w-full space-y-6">
-                <EducPh />
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}
+export const metadata = {
+  title: "Fotografía Profesional — José Angel Valdés | Valparaíso, Chile",
+  description:
+    "Portafolio fotográfico de José Angel Valdés Hernández. Especialista en larga exposición, light painting con láser, paisaje y fotografía 360°. Titulado Instituto Arcos, Viña del Mar 2017.",
+  alternates: {
+    canonical: "/portphoto",
+  },
+  openGraph: {
+    title: "Fotografía Profesional — José Angel Valdés",
+    description:
+      "Portafolio fotográfico. Larga exposición, light painting, paisaje y arquitectura 360°. Valparaíso, Chile.",
+    url: "https://joseangelportfolio.vercel.app/portphoto",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Portafolio fotográfico de José Angel Valdés Hernández",
+      },
+    ],
+  },
+};
 
 export default function PortPhotoLayout({ children }) {
   return (
@@ -57,7 +36,7 @@ export default function PortPhotoLayout({ children }) {
 
         <DropdownSection />
 
-        <main className="relative z-0 pt-[80px] ">{children}</main>
+        <main className="relative z-0 pt-[80px]">{children}</main>
 
         <FooterPhoto />
       </div>

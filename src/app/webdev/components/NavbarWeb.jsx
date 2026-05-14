@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -36,15 +37,16 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
   }, []);
 
   return (
-    <div
+    <nav
       ref={navRef}
-      className="w-screen h-20 bg-[#0a1914] shadow-lg shadow-[#2ecc71]/10 fixed top-0 left-0 z-50 border-b border-[#2ecc71]/20"
+      aria-label="Navegación principal"
+      className="w-full h-20 bg-[#0a1914] shadow-lg shadow-[#2ecc71]/10 fixed top-0 left-0 z-50 border-b border-[#2ecc71]/20"
     >
       <div className="flex justify-between items-center container mx-auto px-4 h-full">
         <Link href={"/"} className="h-[40px] relative group">
           <Image
             src="/images/logoWhite.svg"
-            alt="LOGO"
+            alt="José Angel Valdés - Portafolio"
             width={200}
             height={40}
             priority
@@ -58,32 +60,46 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
+              aria-label="Abrir menú"
+              aria-expanded={navbarOpen}
+              aria-controls="mobile-menu-web"
               className="flex items-center px-3 py-2 border rounded text-[#2ecc71] hover:text-[#39e385] border-[#2ecc71]/30 hover:border-[#2ecc71]"
             >
-              Menú
+              <Bars3Icon className="h-5 w-5" />
             </button>
           ) : (
             <button
               onClick={() => setNavbarOpen(false)}
+              aria-label="Cerrar menú"
+              aria-expanded={navbarOpen}
+              aria-controls="mobile-menu-web"
               className="flex items-center px-3 py-2 border rounded border-[#2ecc71]/30 text-[#2ecc71] transition-colors hover:text-[#39e385] hover:border-[#2ecc71]"
             >
-              <XMarkIcon className="h-5 w-5" />
+              <XMarkIcon className="h-5 w-5" aria-hidden="true" />
             </button>
           )}
         </div>
 
         {/* --- Navegación escritorio --- */}
         <div className="hidden md:flex space-x-8">
-          {navLinks
-            .filter((link) => link.path !== activeSection)
-            .map((link, index) => (
+          {navLinks.map((link, index) => (
               <button
                 key={index}
                 onClick={() => setActiveSection(link.path)}
-                className="text-gray-300 hover:text-[#2ecc71] transition-colors px-3 py-2 relative group"
+                className={`transition-colors px-3 py-2 relative group ${
+                  activeSection === link.path
+                    ? "text-[#2ecc71]"
+                    : "text-gray-300 hover:text-[#2ecc71]"
+                }`}
               >
                 {link.title}
-                <span className="absolute left-0 bottom-0 h-0.5 w-0 bg-[#2ecc71] group-hover:w-full transition-all duration-300"></span>
+                <span
+                  className={`absolute left-0 bottom-0 h-0.5 bg-[#2ecc71] transition-all duration-300 ${
+                    activeSection === link.path
+                      ? "w-full"
+                      : "w-0 group-hover:w-full"
+                  }`}
+                ></span>
               </button>
             ))}
         </div>
@@ -91,21 +107,24 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
 
       {/* --- Menú desplegable móvil --- */}
       <div
+        id="mobile-menu-web"
         className={`md:hidden transition-[max-height] duration-500 ease-in-out overflow-hidden ${
           navbarOpen ? "max-h-96" : "max-h-0"
         }`}
       >
         <ul className="flex flex-col items-center space-y-4 py-4 bg-[#0a1914] border-t border-[#2ecc71]/20">
-          {navLinks
-            .filter((link) => link.path !== activeSection)
-            .map((link, index) => (
+          {navLinks.map((link, index) => (
               <li key={index} className="w-full text-center">
                 <button
                   onClick={() => {
                     setActiveSection(link.path);
                     setNavbarOpen(false);
                   }}
-                  className="w-full text-gray-300 hover:text-[#2ecc71] hover:bg-black/30 transition-colors px-3 py-2"
+                  className={`w-full transition-colors px-3 py-2 ${
+                    activeSection === link.path
+                      ? "text-[#2ecc71] border-l-2 border-[#2ecc71]"
+                      : "text-gray-300 hover:text-[#2ecc71] hover:bg-black/30"
+                  }`}
                 >
                   {link.title}
                 </button>
@@ -113,7 +132,7 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
             ))}
         </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 

@@ -1,8 +1,18 @@
-import React, { useEffect, useRef, useState } from "react";
+'use client'
+import React, { useRef, useState } from "react";
+import Image from "next/image";
+import { useDropdownClose } from "../hooks/useDropdownClose";
 
 const EducPh = ({ onClose = () => {} }) => {
   const [visible, setVisible] = useState(true);
   const containerRef = useRef(null);
+
+  const handleClose = () => {
+    setVisible(false);
+    onClose();
+  };
+
+  useDropdownClose(visible, handleClose, containerRef);
 
   const educacion = [
     {
@@ -57,34 +67,6 @@ const EducPh = ({ onClose = () => {} }) => {
     },
   ];
 
-  useEffect(() => {
-    if (!visible) return;
-
-    const handleOutsideClick = (e) => {
-      if (containerRef.current && !containerRef.current.contains(e.target)) {
-        setVisible(false);
-        onClose();
-      }
-    };
-
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") {
-        setVisible(false);
-        onClose();
-      }
-    };
-
-    document.addEventListener("mousedown", handleOutsideClick);
-    document.addEventListener("touchstart", handleOutsideClick);
-    document.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-      document.removeEventListener("touchstart", handleOutsideClick);
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [visible, onClose]);
-
   if (!visible) return null;
 
   return (
@@ -95,13 +77,17 @@ const EducPh = ({ onClose = () => {} }) => {
       {educacion.map((material, index) => (
         <div
           key={index}
-          className="relative border p-4 rounded-md overflow-hidden group"
+          className="relative border p-4 rounded-md overflow-hidden group min-h-[280px]"
         >
-          {/* Imagen de fondo */}
-          <div
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-in-out transform group-hover:scale-110"
-            style={{ backgroundImage: `url(${material.src})` }}
-          />
+          {/* Imagen de fondo con next/image */}
+          <div className="absolute inset-0 transition-transform duration-500 ease-in-out group-hover:scale-110">
+            <Image
+              src={material.src}
+              alt={material.title}
+              fill
+              className="object-cover"
+            />
+          </div>
 
           {/* Overlay negro */}
           <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -111,7 +97,6 @@ const EducPh = ({ onClose = () => {} }) => {
               {material.title}
             </h3>
 
-            {/* Descripción completa, sin resumir */}
             <p className="text-xs md:text-sm flex-1 tracking-wide leading-relaxed">
               {material.description}
             </p>
@@ -121,7 +106,7 @@ const EducPh = ({ onClose = () => {} }) => {
                 <a
                   href={material.pdf}
                   download
-                  className="inline-block px-3 py-1 rounded-md text-[#FFB300] border border-[#FFB300] hover:bg-yellow-400 hover:text-white transition-colors text-xs md:text-sm"
+                  className="inline-block px-3 py-1 rounded-md text-[#FFB300] border border-[#FFB300] hover:bg-[#FFB300] hover:text-black transition-colors text-xs md:text-sm"
                 >
                   Descargar PDF
                 </a>
@@ -130,7 +115,7 @@ const EducPh = ({ onClose = () => {} }) => {
                   href={material.externalLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-3 py-1 rounded-md text-[#FFB300] border border-[#FFB300] hover:bg-yellow-400 hover:text-white transition-colors text-xs md:text-sm"
+                  className="inline-block px-3 py-1 rounded-md text-[#FFB300] border border-[#FFB300] hover:bg-[#FFB300] hover:text-black transition-colors text-xs md:text-sm"
                 >
                   Ver más →
                 </a>
