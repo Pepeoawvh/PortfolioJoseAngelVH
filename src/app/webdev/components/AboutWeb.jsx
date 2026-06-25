@@ -97,13 +97,23 @@ const TAB_DATA = [
 
         {/* Grupo: UX/UI */}
         <CertGroup title="UX / UI">
-          <div className="grid grid-cols-1 items-center gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+            <div className="justify-self-center p-2">
+              <Image
+                src="/badges/badgeUxUi.webp"
+                width={300}
+                height={300}
+                alt="Insignia UX/UI"
+                className="rounded-sm"
+                loading="lazy"
+              />
+            </div>
             <div className="justify-self-center sm:justify-self-start p-2">
               <Image
                 src="/badges/uxui.png"
                 width={500}
                 height={400}
-                alt="Insignia UX/UI"
+                alt="Certificado de curso UX/UI completado"
                 className="rounded-sm"
                 loading="lazy"
               />
@@ -141,6 +151,22 @@ const TAB_DATA = [
             </a>
 
 
+          </div>
+        </CertGroup>
+
+        {/* Grupo: Data Analysis */}
+        <CertGroup title="Data Analysis">
+          <div className="grid grid-cols-1 items-center gap-4">
+            <div className="justify-self-center p-2">
+              <Image
+                src="/badges/BadgeDataAnalisis.png"
+                width={300}
+                height={300}
+                alt="Insignia Data Analysis"
+                className=""
+                loading="lazy"
+              />
+            </div>
           </div>
         </CertGroup>
       </div>
