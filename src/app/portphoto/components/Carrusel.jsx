@@ -166,7 +166,7 @@ export default function Carrusel() {
   return (
     <section
       ref={containerRef}
-      className="select-none w-screen h-[70vh] min-h-[500px] max-h-[800px] relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
+      className="select-none w-screen h-[72vh] min-h-[500px] max-h-[820px] relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
       aria-roledescription="carousel"
       aria-label="Carrusel de fotografías"
       onMouseEnter={() => { if (!isPaused) pause(); }}
@@ -211,7 +211,7 @@ export default function Carrusel() {
             onClick={prev}
             aria-label="Imagen anterior"
             disabled={isLoading}
-            className={`h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-black/30 hover:bg-black/50 text-white flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FFB300] active:scale-95 backdrop-blur-sm
+            className={`h-11 w-11 sm:h-12 sm:w-12 border border-white/30 bg-black/20 hover:border-[#FFB300] hover:bg-black/45 text-white flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FFB300] active:scale-95 backdrop-blur-sm
                 ${isLoading ? "opacity-50 cursor-not-allowed" : "opacity-100"}`}
           >
             <ChevronLeftIcon className="h-7 w-7 sm:h-8 sm:w-8" />
@@ -222,7 +222,7 @@ export default function Carrusel() {
             onClick={next}
             aria-label="Imagen siguiente"
             disabled={isLoading}
-            className={`h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-black/30 hover:bg-black/50 text-white flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FFB300] active:scale-95 backdrop-blur-sm
+            className={`h-11 w-11 sm:h-12 sm:w-12 border border-white/30 bg-black/20 hover:border-[#FFB300] hover:bg-black/45 text-white flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FFB300] active:scale-95 backdrop-blur-sm
                 ${isLoading ? "opacity-50 cursor-not-allowed" : "opacity-100"}`}
           >
             <ChevronRightIcon className="h-7 w-7 sm:h-8 sm:w-8" />
@@ -235,7 +235,7 @@ export default function Carrusel() {
           onClick={togglePause}
           aria-label={isPaused ? "Reanudar presentación" : "Pausar presentación"}
           aria-pressed={isPaused}
-          className="absolute bottom-10 right-4 sm:right-6 z-20 bg-black/40 hover:bg-black/60 text-white rounded-full p-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FFB300] focus:ring-offset-1 focus:ring-offset-black/40"
+          className="absolute bottom-10 right-4 sm:right-6 z-20 border border-white/30 bg-black/35 hover:border-[#FFB300] hover:bg-black/60 text-white p-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FFB300] focus:ring-offset-1 focus:ring-offset-black/40"
         >
           {isPaused
             ? <PlayIcon className="h-5 w-5" aria-hidden="true" />
@@ -253,10 +253,10 @@ export default function Carrusel() {
               aria-current={i === index ? "true" : "false"}
               onClick={() => !isLoading && handleChange(i)}
               disabled={isLoading}
-              className={`h-2 rounded-full transition-all duration-300 ${
+              className={`h-px transition-all duration-300 ${
                 i === index
-                  ? "w-8 bg-[#FFB300]"
-                  : "w-2 bg-white/40 hover:bg-white/70 hover:w-4"
+                ? "w-10 bg-[#FFB300]"
+                : "w-5 bg-white/40 hover:bg-white/70 hover:w-8"
               } ${isLoading ? "opacity-50 cursor-not-allowed" : ""}`}
             />
           ))}

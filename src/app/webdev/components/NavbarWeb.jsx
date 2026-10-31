@@ -40,10 +40,10 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
     <nav
       ref={navRef}
       aria-label="Navegación principal"
-      className="w-full h-20 bg-[#0a1914] shadow-lg shadow-[#2ecc71]/10 fixed top-0 left-0 z-50 border-b border-[#2ecc71]/20"
+      className="w-full h-20 bg-[#0a1914]/95 backdrop-blur-sm shadow-lg shadow-black/20 fixed top-0 left-0 z-50 border-b border-[#2ecc71]/15"
     >
-      <div className="flex justify-between items-center container mx-auto px-4 h-full">
-        <Link href={"/"} className="h-[40px] relative group">
+      <div className="flex justify-between items-center max-w-6xl mx-auto px-5 lg:px-6 h-full">
+        <Link href={"/"} className="h-[40px] relative group transition-transform duration-300 hover:-translate-y-px">
           <Image
             src="/images/logoWhite.svg"
             alt="José Angel Valdés - Portafolio"
@@ -63,7 +63,7 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
               aria-label="Abrir menú"
               aria-expanded={navbarOpen}
               aria-controls="mobile-menu-web"
-              className="flex items-center px-3 py-2 border rounded text-[#2ecc71] hover:text-[#39e385] border-[#2ecc71]/30 hover:border-[#2ecc71]"
+              className="flex items-center px-3 py-2 border border-[#2ecc71]/30 rounded-sm text-[#2ecc71] transition-colors hover:text-[#39e385] hover:border-[#2ecc71]"
             >
               <Bars3Icon className="h-5 w-5" />
             </button>
@@ -73,7 +73,7 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
               aria-label="Cerrar menú"
               aria-expanded={navbarOpen}
               aria-controls="mobile-menu-web"
-              className="flex items-center px-3 py-2 border rounded border-[#2ecc71]/30 text-[#2ecc71] transition-colors hover:text-[#39e385] hover:border-[#2ecc71]"
+              className="flex items-center px-3 py-2 border border-[#2ecc71]/30 rounded-sm text-[#2ecc71] transition-colors hover:text-[#39e385] hover:border-[#2ecc71]"
             >
               <XMarkIcon className="h-5 w-5" aria-hidden="true" />
             </button>
@@ -112,7 +112,7 @@ const NavbarWeb = ({ activeSection, setActiveSection }) => {
           navbarOpen ? "max-h-96" : "max-h-0"
         }`}
       >
-        <ul className="flex flex-col items-center space-y-4 py-4 bg-[#0a1914] border-t border-[#2ecc71]/20">
+        <ul className="flex flex-col items-center space-y-4 py-5 bg-[#0a1914]/98 backdrop-blur-sm border-t border-[#2ecc71]/20">
           {navLinks.map((link, index) => (
               <li key={index} className="w-full text-center">
                 <button

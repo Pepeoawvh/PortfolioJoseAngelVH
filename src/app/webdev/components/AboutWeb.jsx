@@ -188,17 +188,17 @@ const AboutSection = () => {
       <div className="max-w-6xl mx-auto px-4 py-4 grid md:grid-cols-2 gap-8 xl:gap-12 items-start">
         {/* Columna izquierda (imagen) con wrapper estable */}
         <div className="relative">
-          <div className="relative w-full aspect-[4/3] overflow-hidden border border-[#2ecc71]/10">
+          <div className="relative w-full aspect-[4/3] overflow-hidden border border-[#2ecc71]/15 shadow-xl shadow-black/15">
             <Image
               src="/images/about-image.png"
               alt="José Angel Valdés Hernández, Desarrollador Web Fullstack"
               fill
               sizes="(max-width: 768px) 90vw, 40vw"
-              className="object-cover object-center"
+              className="object-cover object-center transition-transform duration-700 ease-out hover:scale-[1.025]"
               priority={true}
             />
             <div
-              className="pointer-events-none absolute inset-0 opacity-0 hover:opacity-20 transition-opacity duration-300"
+              className="pointer-events-none absolute inset-0 opacity-0 hover:opacity-20 transition-opacity duration-500"
               style={{ background: "radial-gradient(60% 60% at 50% 50%, rgba(46,204,113,0.25), transparent 70%)" }}
             />
           </div>

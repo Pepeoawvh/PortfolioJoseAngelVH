@@ -40,7 +40,7 @@ const ContactPhoto = () => {
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-[2fr,1fr] gap-10">
               {/* Formulario */}
-              <div className="bg-[#0d0d0d] rounded-lg border border-white/10 shadow-lg p-8 hover:border-[#FFB300]/20 transition">
+              <div className="bg-[#0d0d0d] border border-white/10 shadow-lg p-8 hover:border-[#FFB300]/20 transition">
                 <h2 className="text-2xl font-semibold text-white mb-6 flex items-center">
                   <span className="h-3 w-3 rounded-full bg-[#FFB300] mr-3"></span>
                   Envíame un mensaje
@@ -50,7 +50,7 @@ const ContactPhoto = () => {
 
               {/* Info lateral */}
               <div className="space-y-8">
-                <div className="bg-[#0d0d0d] rounded-lg border border-white/10 p-6">
+                <div className="bg-[#0d0d0d] border border-white/10 p-6">
                   <h3 className="text-lg font-medium text-white mb-4 flex items-center">
                     <span className="h-2.5 w-2.5 rounded-full bg-[#FFB300] mr-3"></span>
                     Horario de atención
@@ -63,7 +63,7 @@ const ContactPhoto = () => {
                   </ul>
                 </div>
 
-                <div className="bg-[#0d0d0d] rounded-lg border border-white/10 p-6">
+                <div className="bg-[#0d0d0d] border border-white/10 p-6">
                   <h3 className="text-lg font-medium text-white mb-4 flex items-center">
                     <span className="h-2.5 w-2.5 rounded-full bg-[#FFB300] mr-3"></span>
                     Ubicación
@@ -100,7 +100,7 @@ const ContactPhoto = () => {
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="bg-[#0d0d0d] border border-white/10 rounded-lg p-8 hover:border-[#FFB300]/30 transition"
+                  className="bg-[#0d0d0d] border border-white/10 p-8 hover:border-[#FFB300]/30 transition"
                 >
                   <h3 className="text-[#FFB300] font-medium mb-3 text-lg">
                     {item.title}

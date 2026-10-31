@@ -38,7 +38,7 @@ const ImageBlock = ({ imgUrl, previewUrl, title, gitUrl, className }) => {
           alt={title}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover object-top transition-opacity duration-500 group-hover/card:opacity-0"
+          className="object-cover object-top transition-transform duration-700 ease-out group-hover/card:scale-[1.03] group-hover/card:opacity-0"
         />
       )}
 
@@ -49,7 +49,7 @@ const ImageBlock = ({ imgUrl, previewUrl, title, gitUrl, className }) => {
           alt={`Screenshot de ${title}`}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover object-top opacity-0 transition-opacity duration-500 group-hover/card:opacity-100"
+          className="object-cover object-top opacity-0 transition-all duration-700 ease-out group-hover/card:scale-[1.03] group-hover/card:opacity-100"
           unoptimized
         />
       )}
@@ -62,7 +62,7 @@ const ImageBlock = ({ imgUrl, previewUrl, title, gitUrl, className }) => {
       )}
 
       {/* Capa 3: overlay oscuro + acciones — visible en hover y en focus-within (teclado) */}
-      <div className="absolute inset-0 bg-[#0a1914]/0 group-hover/card:bg-[#0a1914]/60 group-focus-within/card:bg-[#0a1914]/65 transition-all duration-500 flex items-center justify-center gap-10 opacity-0 group-hover/card:opacity-100 group-focus-within/card:opacity-100 z-10">
+      <div className="absolute inset-0 bg-[#0a1914]/0 group-hover/card:bg-[#0a1914]/55 group-focus-within/card:bg-[#0a1914]/65 transition-all duration-500 flex items-center justify-center gap-10 opacity-0 group-hover/card:opacity-100 group-focus-within/card:opacity-100 z-10">
         <Link
           href={gitUrl}
           target="_blank"
@@ -97,7 +97,7 @@ const ProjectCard = ({
 }) => {
   if (isFeatured) {
     return (
-      <div className="group/card flex flex-col md:flex-row border-l-2 border-[#2ecc71] bg-[#0d1f18] transition-all duration-300 hover:bg-[#0f2419]">
+      <div className="group/card flex flex-col md:flex-row border-l-2 border-[#2ecc71] bg-[#0d1f18] transition-all duration-300 hover:-translate-y-1 hover:bg-[#0f2419] hover:shadow-xl hover:shadow-black/20">
         <ImageBlock
           imgUrl={imgUrl}
           previewUrl={previewUrl}
@@ -148,7 +148,7 @@ const ProjectCard = ({
   }
 
   return (
-    <div className="group/card flex flex-col md:flex-row border border-white/5 bg-[#0d1f18] hover:border-white/10 transition-all duration-300">
+    <div className="group/card flex flex-col md:flex-row border border-white/5 bg-[#0d1f18] hover:-translate-y-1 hover:border-white/10 hover:shadow-lg hover:shadow-black/15 transition-all duration-300">
       <ImageBlock
         imgUrl={imgUrl}
         previewUrl={previewUrl}

@@ -67,17 +67,15 @@ const NavbarPhoto = () => {
         aria-expanded={active}
         aria-controls={`panel-${id}`}
         onClick={() => handleSeccionChange(id)}
-        className={`relative px-4 py-2 rounded-lg text-sm transition-all duration-300 group ${
+        className={`relative px-3 py-2 text-sm transition-all duration-300 group border-b ${
           active
-            ? "bg-[#FFB300]/20 text-white border border-[#FFB300]/60 shadow-[0_0_15px_-5px_rgba(255,179,0,0.4)]"
-            : "bg-white/10 text-gray-300 border border-white/10 hover:border-[#FFB300]/40 hover:text-white"
+            ? "text-white border-[#FFB300]"
+            : "bg-transparent text-gray-300 border-transparent hover:border-[#FFB300]/50 hover:text-white"
         }`}
       >
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#FFB300]/0 via-[#FFB300]/10 to-[#FFB300]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         <span className={`text-sm md:text-md transition-colors duration-200 ${active ? "text-[#FFB300]" : "text-white group-hover:text-[#FFB300]"}`}>
           {children}
         </span>
-        <div className={`h-0.5 w-0 bg-[#FFB300] transition-all duration-300 ${active ? "w-full" : "group-hover:w-full"}`} />
       </button>
     );
   };
@@ -88,7 +86,7 @@ const NavbarPhoto = () => {
     return (
       <button
         onClick={() => handleSeccionChange(id)}
-        className={`w-full text-center py-3 rounded-lg border transition-all duration-300 ${
+        className={`w-full text-center py-3 border transition-all duration-300 ${
           active
             ? "bg-[#FFB300]/20 text-white border-[#FFB300]/60"
             : "bg-white/5 text-gray-300 border-white/10 hover:border-[#FFB300]/40"
@@ -136,7 +134,7 @@ const NavbarPhoto = () => {
               aria-label="Abrir menú"
               aria-expanded={navbarOpen}
               aria-controls="mobile-menu-photo"
-              className="flex items-center px-3 py-2 border border-[#FFB300] shadow-md shadow-[#FFB300]/20 rounded text-white hover:text-gray-300 transition-all duration-300">
+              className="flex items-center px-3 py-2 border border-[#FFB300]/70 text-white hover:text-gray-300 transition-all duration-300">
               Menú
             </button>
           ) : (
@@ -145,7 +143,7 @@ const NavbarPhoto = () => {
               aria-label="Cerrar menú"
               aria-expanded={navbarOpen}
               aria-controls="mobile-menu-photo"
-              className="flex items-center px-3 py-2 border rounded border-[#FFB300]/20 text-white hover:text-gray-300 transition-all duration-300">
+              className="flex items-center px-3 py-2 border border-[#FFB300]/30 text-white hover:text-gray-300 transition-all duration-300">
               <XMarkIcon className="h-5 w-5" aria-hidden="true" />
             </button>
           )}
@@ -154,7 +152,7 @@ const NavbarPhoto = () => {
 
       {/* --- Menú desplegable móvil --- */}
       <div id="mobile-menu-photo" className={`md:hidden transition-[max-height] duration-500 ease-in-out overflow-hidden ${navbarOpen ? "max-h-96" : "max-h-0"}`}>
-        <ul className="flex flex-col items-center space-y-4 py-4 backdrop-blur-md bg-black/95 border-t border-white/10">
+        <ul className="flex flex-col items-center space-y-4 py-5 backdrop-blur-md bg-black/95 border-t border-white/10">
           <div className="w-4/5 space-y-2 mb-4">
             {Object.entries(seccionesNav).map(([key, titulo]) => (
               <MobileBtn key={key} id={key}>{titulo}</MobileBtn>

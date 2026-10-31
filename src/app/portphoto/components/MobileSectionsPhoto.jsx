@@ -17,9 +17,9 @@ const MobileSectionsPhoto = ({ secciones }) => {
       {Object.keys(secciones).map((seccion) => (
         <div
           key={seccion}
-          className={`border rounded-md overflow-hidden shadow-md transition-all duration-300 ${
+          className={`border border-x-0 overflow-hidden transition-all duration-300 ${
             seccionesAbiertas[seccion]
-              ? "border-[#FFB300]/50 shadow-[#FFB300]/5"
+              ? "border-[#FFB300]/50"
               : "border-white/10 hover:border-white/20"
           }`}
         >

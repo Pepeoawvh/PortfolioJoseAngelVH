@@ -29,7 +29,7 @@ const HeaderPhoto = () => {
   }, []);
 
   return (
-    <header className="relative select-none overflow-hidden min-h-[340px] md:min-h-[400px] flex items-end">
+    <header className="relative select-none overflow-hidden min-h-[360px] md:min-h-[440px] flex items-end">
       {/* Imagen de fondo rotativa */}
       <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${fade ? "opacity-100" : "opacity-0"}`}>
         <Image
@@ -45,13 +45,13 @@ const HeaderPhoto = () => {
       </div>
 
       {/* Gradiente oscuro bottom-up para legibilidad del texto */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-t from-black via-black/60 to-black/10" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0a0a0a] via-black/55 to-black/10" />
 
       {/* Contenido del header */}
-      <div className="relative z-20 w-full max-w-6xl mx-auto px-6 md:px-12 pb-10 pt-16 grid md:grid-cols-2 gap-8 items-end">
+      <div className="relative z-20 w-full max-w-5xl mx-auto px-6 md:px-12 pb-10 pt-16 grid md:grid-cols-2 gap-10 items-end">
         {/* Columna izquierda — identidad */}
         <div>
-          <p className="text-xs font-mono tracking-[0.2em] text-[#FFB300]/70 uppercase mb-3">
+          <p className="text-xs font-mono tracking-[0.2em] text-[#FFB300]/80 uppercase mb-3">
             Portafolio Fotográfico
           </p>
           <h1
@@ -74,7 +74,7 @@ const HeaderPhoto = () => {
             <Link
               href="/docs/JVCVPH25.pdf"
               download="JVCVPH25.pdf"
-              className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-medium text-white bg-transparent border border-[#FFB300] transition-all duration-300 hover:bg-[#FFB300] hover:text-black"
+              className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-medium text-white bg-transparent border border-[#FFB300]/80 transition-all duration-300 hover:bg-[#FFB300] hover:text-black"
             >
               Descargar CV
             </Link>

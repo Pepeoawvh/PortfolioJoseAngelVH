@@ -7,18 +7,18 @@ const DesktopSectionsPhoto = ({ secciones }) => {
   return (
     <>
       {/* Navegación de secciones */}
-      <section className="bg-black select-none border-y border-white/10 shadow-md px-4 md:px-12 py-4 sticky top-20 z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-3 max-w-6xl mx-auto">
+      <section className="bg-black/95 select-none border-y border-white/10 px-4 md:px-12 py-3 sticky top-20 z-10 backdrop-blur-sm">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-1 max-w-5xl mx-auto">
           {Object.keys(secciones).map((seccion) => {
             const active = seccionActiva === seccion;
             return (
               <button
                 key={seccion}
                 type="button"
-                className={`relative group overflow-hidden transition-all duration-200 px-4 py-2.5 w-full text-left
+                className={`relative group overflow-hidden transition-all duration-200 px-4 py-2.5 w-full text-left border-b
                   ${active
-                    ? "bg-[#FFB300]/10 border border-[#FFB300]/60 text-white"
-                    : "bg-transparent border border-white/8 text-gray-400 hover:border-[#FFB300]/30 hover:text-gray-200"
+                    ? "bg-[#FFB300]/5 border-[#FFB300]/70 text-white"
+                    : "bg-transparent border-transparent text-gray-400 hover:border-[#FFB300]/40 hover:text-gray-200"
                   }`}
                 onClick={() => setSeccionActiva(seccion)}
               >
@@ -33,7 +33,7 @@ const DesktopSectionsPhoto = ({ secciones }) => {
       </section>
 
       {/* Contenido activo */}
-      <section className="px-4 md:px-12 py-10 bg-[#0a0a0a]">
+      <section className="px-4 md:px-12 py-12 bg-[#0a0a0a]">
         <div className="max-w-5xl mx-auto">
           {/* Header de sección */}
           <div className="mb-8">

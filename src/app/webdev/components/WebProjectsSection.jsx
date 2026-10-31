@@ -162,12 +162,12 @@ const WebProjectsSection = () => {
   };
 
   return (
-    <section className="max-w-4xl mx-auto px-6 py-16" id="projects">
-      <h2 className="text-4xl font-bold text-white mb-2">Proyectos</h2>
+    <section className="max-w-5xl mx-auto px-6 py-20" id="projects">
+      <h2 className="text-4xl font-bold tracking-tight text-white mb-2">Proyectos</h2>
       <div className="h-0.5 w-12 bg-gradient-to-r from-[#2ecc71] to-transparent mb-10" />
 
       {/* Navegación de categorías — tabs con línea activa */}
-      <div className="border-b border-white/10 flex flex-wrap gap-2 md:gap-8 mb-10">
+      <div className="border-b border-white/10 flex flex-wrap gap-2 md:gap-10 mb-12">
         {Object.entries(CATEGORY_LABELS).map(([key, label]) => (
           <button
             key={key}
